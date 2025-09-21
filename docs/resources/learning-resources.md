@@ -14,6 +14,24 @@ toc: true
 
 为新能源编程学习者精心整理的优质资源集合，涵盖从基础入门到高级应用的各个层面。
 
+## 📋 目录
+
+- [📚 在线课程](#-在线课程)
+- [🔧 预备环境配置](#-预备环境配置)
+- [🤖 机器人技术资源](#-机器人技术资源)
+- [⚡ 电控与硬件开发](#-电控与硬件开发)
+- [🐧 Linux系统学习](#-linux系统学习)
+- [📝 文档编写](#-文档编写)
+- [🌐 开发工具与访问](#-开发工具与访问)
+- [🛠️ 开发工具](#️-开发工具)
+- [📖 技术文档](#-技术文档)
+- [🚀 开源项目](#-开源项目)
+- [📊 数据集](#-数据集)
+- [🎓 在线社区](#-在线社区)
+- [📱 移动应用](#-移动应用)
+- [🎯 学习路径建议](#-学习路径建议)
+- [📅 持续学习计划](#-持续学习计划)
+
 ## 📚 在线课程
 
 ### 编程基础
@@ -84,6 +102,82 @@ toc: true
 - **[TensorFlow官方教程](https://www.tensorflow.org/tutorials)**
   - 深度学习框架教程
   - 从基础到高级应用
+
+## 🔧 预备环境配置
+
+### 虚拟化环境
+- **[VMware Workstation 17.6](https://mp.weixin.gg.com/s/MrEwPwyUKmGpNCbzEM95qQ)**
+  - 专业虚拟机软件
+  - 支持多操作系统开发环境
+  - 备用下载地址：wyouhua.com
+
+## 🤖 机器人技术资源
+
+### 港科大技术文档
+- **[香港科技大学 HKU 技术文档](https://github.com/m2robocon/m2cs)**
+  - ROS教程和Linux系统学习
+  - 机器人竞赛技术资料
+  - 开源项目和代码示例
+
+- **[Linux文件系统教程](https://docs.m2stud.io/cs/linux/fs/)**
+  - Linux基础操作指南
+  - 文件系统管理
+  - 系统配置和优化
+
+### ROS机器人开发
+- **[ROS拓展版开发板](https://www.yahboom.com/study/ROS-Driver-Board)**
+  - 提取码：o8jw
+  - ROS机器人驱动板学习资料
+  - 硬件接口和编程示例
+
+- **[MicroROS机器人控制板](https://www.yahboom.com/study/MicroROS-Board)**
+  - 提取码：dsaf
+  - 微型ROS系统开发
+  - 嵌入式机器人控制
+
+## ⚡ 电控与硬件开发
+
+### Arduino开发
+- **[Arduino基础控制教程](https://docs.m2stud.io/ee/arduino/6-Basic-Contro)**
+  - 电子控制基础
+  - 传感器接口编程
+  - 实际项目案例
+
+### 焊接技术
+- **[焊接技术学习](https://docs.m2stud.io/ee/soldering/Learning-soloering-wires-and-connectors/)**
+  - 电线和连接器焊接
+  - 焊接工具使用
+  - 安全操作规范
+
+## 🐧 Linux系统学习
+
+### 基础教程
+- **[Linux基础教程](https://www.runoob.com/linux/linux-tutorial.html)**
+  - 命令行操作基础
+  - 系统管理和配置
+  - Shell脚本编程
+
+### 嵌入式Linux
+- **[openEuler mica](https://pages.openeuler.openatom.cn/embedded/docs/build/html/master/features/mica/instruction.html)**
+  - 嵌入式Linux发行版
+  - 轻量级系统配置
+  - 物联网设备应用
+
+## 📝 文档编写
+
+### Markdown语法
+- **[Markdown教程](https://www.runoob.com/markdown/md-tutorial.html)**
+  - 文档编写语法
+  - 格式化文本技巧
+  - 技术文档最佳实践
+
+## 🌐 开发工具与访问
+
+### 代码托管访问
+- **[GitHub访问方法](https://blog.csdn.net/2402_87418711/article/details/145461257?fromshare=blogdetail&sharetype=blogdetail&sharerId=145461257&sharerefer=PC&sharesource=2402_87418711&sharefrom=from_link)**
+  - 网络访问优化
+  - 代理配置方法
+  - 开发环境设置
 
 ## 🛠️ 开发工具
 
@@ -429,6 +523,6 @@ toc: true
 
 ---
 
-**持续更新中...** 如果您发现优质资源，欢迎 [提交建议](/community/contribute) 帮助完善这个列表！
+**持续更新中...** 如果您发现优质资源，欢迎 [提交建议](https://github.com/Darrenpig/new_energy_coder_club/issues) 帮助完善这个列表！
 
-**需要帮助？** [查看学习指南](/docs/getting-started) 或 [加入学习小组](/community/study-groups)
+**需要帮助？** [查看学习指南](/docs/getting-started) 或 [加入学习小组](https://github.com/Darrenpig/new_energy_coder_club/discussions)
