@@ -1,8 +1,37 @@
 name: "📝 Docs task"
 description: "文档改进/新增页面/修订路线"
 title: "[docs] "
-labels: ["type:docs"]
+labels: ["type:doc", "status:backlog"]
 body:
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级 (Priority)
+      options:
+        - "prio:P0 (严重阻塞/安全/交付风险)"
+        - "prio:P1 (本迭代必须完成)"
+        - "prio:P2 (重要但可延期)"
+        - "prio:P3 (低优先级/优化项)"
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: 模块归属 (Module)
+      options:
+        - "module:VCU"
+        - "module:MCU"
+        - "module:BMS"
+        - "module:OBC"
+        - "module:DCDC"
+        - "module:EMS"
+        - "module:CAN"
+        - "module:Diag"
+        - "module:Bootloader"
+        - "module:Calibration"
+        - "Other"
+    validations:
+      required: true
   - type: textarea
     id: goal
     attributes:
