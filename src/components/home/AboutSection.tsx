@@ -1,8 +1,17 @@
-import { ArrowRight, GitBranch, Scale, Users, Code, BookOpen, Clock, Trophy, FolderGit2, Map, MapPin, ExternalLink } from 'lucide-react'
+import { ArrowRight, BookOpen, BrainCircuit, Camera, CircuitBoard, Clock, Codepen, Cpu, FolderGit2, GitBranch, Map, MapPin, Scale, Users, Wrench, Trophy, Code, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+
+const iconComponents: { [key: string]: React.ElementType } = {
+  Wrench,
+  Cpu,
+  CircuitBoard,
+  Camera,
+  Codepen,
+  BrainCircuit,
+};
 
 export function AboutSection() {
   const t = useTranslation();
@@ -28,56 +37,22 @@ export function AboutSection() {
                   <p className="leading-relaxed text-left">
                     {t.about.paragraph1}
                   </p>
-                  <div className="mt-6 max-w-4xl mx-auto text-left">
-                    <h2 className="text-3xl font-bold tracking-tight mb-4">
-                      <span className="gradient-text mr-2">{`{`}</span>
-                      {t.about.core_competencies_title}
-                      <span className="gradient-text ml-2">{`}`}</span>
-                    </h2>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-4 text-slate-300">
-                      <div>
-                        <strong className="text-emerald-400">{t.about.processing_manufacturing}</strong>
-                        <ul className="list-disc list-inside mt-2 space-y-1">
-                          <li>{t.about['3d_printing']}</li>
-                          <li>{t.about.smt_welding}</li>
-                          <li>{t.about.laser_engraving}</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <strong className="text-emerald-400">{t.about.motor_drive}</strong>
-                        <ul className="list-disc list-inside mt-2 space-y-1">
-                          <li>{t.about.m3508_motor}</li>
-                          <li>{t.about.dm3519_rail}</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <strong className="text-emerald-400">{t.about.electronic_control}</strong>
-                        <ul className="list-disc list-inside mt-2 space-y-1">
-                          <li>{t.about.esp32_embedded}</li>
-                          <li>{t.about.daplink_wireless}</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <strong className="text-emerald-400">{t.about.vision}</strong>
-                        <ul className="list-disc list-inside mt-2 space-y-1">
-                          <li>{t.about.odin1_module}</li>
-                          <li>{t.about.raspberry_pi}</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <strong className="text-emerald-400">{t.about.software_tools}</strong>
-                        <ul className="list-disc list-inside mt-2 space-y-1">
-                          <li>{t.about.platformio_vscode}</li>
-                          <li>{t.about.ros2_docker}</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <strong className="text-emerald-400">{t.about.ai_development}</strong>
-                        <ul className="list-disc list-inside mt-2 space-y-1">
-                          <li>{t.about.vibe_coding}</li>
-                        </ul>
-                      </div>
-                    </div>
+                  <div className="mt-8 space-y-3">
+                    {t.about.coreAbilities.map((ability, index) => {
+                      const IconComponent = iconComponents[ability.icon];
+                      return (
+                        <div key={index} className="flex items-center gap-4 p-2 rounded-lg hover:bg-white/5 transition-all duration-300 ease-in-out hover:-translate-y-1">
+                          <div className="p-2 bg-emerald-500/10 rounded-full">
+                            {IconComponent && <IconComponent className="w-6 h-6 text-emerald-400" />}
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-slate-300 leading-relaxed">
+                              <strong className="font-semibold text-emerald-400">{ability.title}:</strong> {ability.description}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
                 <div className="mt-8 flex">
@@ -99,7 +74,7 @@ export function AboutSection() {
                    </div>
                    <div>
                      <CardTitle className="gradient-text">{t.about.projectOrigin.title}</CardTitle>
-                     <CardDescription>如果你对本项目还不是那么的了解，我希望你能好好看完下面这部分内容</CardDescription>
+                     <CardDescription>解锁我们的故事，从这里开始</CardDescription>
                    </div>
                 </div>
               </CardHeader>
@@ -111,33 +86,33 @@ export function AboutSection() {
                  </div>
                </CardContent>
              </Card>
+
+            {/* Phase 2 Development */}
+            <div className="mt-8">
+              <Card className="glass-card hover-lift">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-accent/10">
+                      <Clock className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <CardTitle className="gradient-text">{t.about.phase2.title}</CardTitle>
+                      <CardDescription>{t.about.phase2.description}</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="prose prose-sm max-w-none text-muted-foreground">
+                    <p className="leading-relaxed">
+                      {t.about.phase2.content}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
         
-        {/* Phase 2 Development */}
-        <div className="mt-12">
-          <Card className="glass-card hover-lift">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-accent/10">
-                  <Clock className="h-6 w-6 text-accent" />
-                </div>
-                <div>
-                  <CardTitle className="gradient-text">{t.about.phase2.title}</CardTitle>
-                  <CardDescription>{t.about.phase2.description}</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <div className="prose prose-sm max-w-none text-muted-foreground">
-                <p className="leading-relaxed">
-                  {t.about.phase2.content}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
         {/* Core Advantages */}
         <div className="mt-12">
           <div className="text-center mb-8">
