@@ -22,7 +22,7 @@ export function AboutSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.1),transparent_50%),radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.1),transparent_50%)]"></div>
       
       <div className="container relative z-10">
-        <div className="relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border border-white/10">
+        <div className="relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border border-white/10 w-11/12 mx-auto">
           <div className="relative z-10 p-12">
             <div className="text-foreground mb-8">
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6 gradient-text">
@@ -33,7 +33,7 @@ export function AboutSection() {
                   {t.about.title}
                   <span className="gradient-text ml-2">{`}`}</span>
                 </h2>
-                <div className="mt-6 max-w-4xl mx-auto">
+                <div className="mt-6">
                   <p className="leading-relaxed text-left">
                     {t.about.paragraph1}
                   </p>
@@ -66,49 +66,51 @@ export function AboutSection() {
             </div>
 
             {/* Project Origin Story */}
-            <Card className="glass-card hover-lift">
-              <CardHeader className="pb-4">
-                <div className="flex items-center gap-3">
-                   <div className="p-2 rounded-lg bg-primary/10">
-                     <BookOpen className="h-6 w-6 text-primary" />
-                   </div>
-                   <div>
-                     <CardTitle className="gradient-text">{t.about.projectOrigin.title}</CardTitle>
-                     <CardDescription>解锁我们的故事，从这里开始</CardDescription>
-                   </div>
-                </div>
-              </CardHeader>
-               <CardContent className="pt-0">
-                 <div className="prose prose-sm max-w-none text-muted-foreground">
-                   <p className="leading-relaxed whitespace-pre-line">
-                     {t.about.projectOrigin.content}
-                   </p>
-                 </div>
-               </CardContent>
-             </Card>
-
-            {/* Phase 2 Development */}
-            <div className="mt-8">
+            <div>
               <Card className="glass-card hover-lift">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-accent/10">
-                      <Clock className="h-6 w-6 text-accent" />
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <BookOpen className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <CardTitle className="gradient-text">{t.about.phase2.title}</CardTitle>
-                      <CardDescription>{t.about.phase2.description}</CardDescription>
+                      <CardTitle className="gradient-text">{t.about.projectOrigin.title}</CardTitle>
+                      <CardDescription>解锁我们的故事，从这里开始</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="prose prose-sm max-w-none text-muted-foreground">
-                    <p className="leading-relaxed">
-                      {t.about.phase2.content}
+                    <p className="leading-relaxed whitespace-pre-line">
+                      {t.about.projectOrigin.content}
                     </p>
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Phase 2 Development */}
+              <div className="mt-8">
+                <Card className="glass-card hover-lift">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-lg bg-accent/10">
+                        <Clock className="h-6 w-6 text-accent" />
+                      </div>
+                      <div>
+                        <CardTitle className="gradient-text">{t.about.phase2.title}</CardTitle>
+                        <CardDescription>{t.about.phase2.description}</CardDescription>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="prose prose-sm max-w-none text-muted-foreground">
+                      <p className="leading-relaxed">
+                        {t.about.phase2.content}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
