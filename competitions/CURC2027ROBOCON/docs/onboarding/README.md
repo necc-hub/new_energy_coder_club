@@ -20,10 +20,14 @@
 docs/onboarding/
 ├── README.md                      # 本文件：总入口
 ├── resources.md                   # 学习资源清单
-├── how-to-log.md                  # 如何提交学习记录
+├── how-to-log.md                  # 如何提交学习记录/进度
 ├── templates/
-│   └── learning-log-template.md  # 学习记录模板
-└── logs/                          # 学习记录存放处
+│   └── learning-log-template.md  # 详细学习记录模板
+├── members/                       # 新成员个人进度看板
+│   ├── README.md
+│   ├── 新人进度模板.md
+│   └── 朱佩韦.md                 # 示例
+└── logs/                          # 详细学习记录存放处
     ├── mechanical/                # 机械组
     ├── electrical/                # 电控组
     ├── hardware/                  # 硬件组
@@ -42,16 +46,29 @@ docs/onboarding/
    - [视觉组新人学习路线](../../视觉SIG/视觉组/README.md)
    - [硬件组新人学习路线](../../视觉SIG/硬件组/README.md)
    - [运营组新人学习路线](../../运营SIG/README.md)
-3. 再读 [how-to-log.md](./how-to-log.md)，了解怎么写、怎么提交学习记录。
-4. 参考 [templates/learning-log-template.md](./templates/learning-log-template.md) 写自己的第一篇学习记录。
-5. 把学习记录放到 `logs/<你的方向>/<你的昵称>/` 目录下，通过 PR 提交。
+3. 再读 [how-to-log.md](./how-to-log.md)，了解怎么提交学习进度和学习记录。
+4. **创建你的个人进度看板**：复制 [members/新人进度模板.md](./members/新人进度模板.md)，创建 `members/<你的姓名>.md`。
+5. **写详细学习记录**：参考 [templates/learning-log-template.md](./templates/learning-log-template.md)，把每次学习的具体内容放到 `logs/<你的方向>/<你的昵称>/<YYYYMMDD>-<主题>.md`。
+6. 提交 Pull Request。
 
 ---
 
 ## 提交规范
 
+### 个人进度看板（必须）
+
+- **文件位置**：`members/<你的姓名>.md`
+- **更新频率**：首次加入后尽快提交，之后每 1-2 周更新一次
+- **作用**：让组长快速了解你的整体进度
+
+### 详细学习记录（建议）
+
 - **文件位置**：`logs/<方向>/<昵称>/<YYYYMMDD>-<主题>.md`
 - **方向可选**：`mechanical` / `electrical` / `hardware` / `vision` / `operations`
+- **作用**：记录每次具体学习的内容、踩坑、收获
+
+### 通用
+
 - **提交方式**：Fork 仓库 → 在分支上写 → 提交 Pull Request
 - **Review 人**：对应方向的组长或领队
 

@@ -1,10 +1,15 @@
-# 如何提交学习记录
+# 如何提交学习进度与学习记录
 
-学习记录是 NEC 新人最重要的"作业"之一。它不是为了检查你学得多快，而是为了：
+提交学习进度和学习记录是 NEC 新人最重要的"作业"之一。不是为了检查你学得多快，而是为了：
 
 - 帮你梳理学过的内容
 - 让组长了解你的进度和困惑
 - 留下可追溯的成长轨迹
+
+两种提交方式：
+
+1. **个人进度看板**（`members/<你的姓名>.md`）：你的总进度表，参考 26 赛季做法。
+2. **详细学习记录**（`logs/<方向>/<昵称>/<日期>-<主题>.md`）：每次具体学习的记录。
 
 ---
 
@@ -39,7 +44,31 @@ git checkout -b feat/<你的昵称>-learning-log
 
 ---
 
-## 第二步：创建你的学习记录文件
+## 第二步 A：创建你的个人进度看板
+
+参考 26 赛季做法，每位新人需要创建一个以自己姓名命名的进度文件。
+
+文件路径规范：
+
+```text
+competitions/CURC2027ROBOCON/docs/onboarding/members/<你的姓名>.md
+```
+
+示例：
+
+```text
+competitions/CURC2027ROBOCON/docs/onboarding/members/朱佩韦.md
+```
+
+模板位置：[members/新人进度模板.md](./members/新人进度模板.md)
+
+示例文件：[members/朱佩韦.md](./members/朱佩韦.md)
+
+---
+
+## 第二步 B：创建你的详细学习记录文件
+
+每次学完一个具体主题，可以写一篇详细记录。
 
 文件路径规范：
 
@@ -73,6 +102,16 @@ competitions/CURC2027ROBOCON/docs/onboarding/logs/electrical/darrenpig/20250701-
 
 ## 第四步：提交
 
+建议把个人进度看板和详细学习记录一起提交：
+
+```bash
+git add .
+git commit -m "docs(onboarding): update 学习进度 by <姓名>"
+git push origin <你的分支名>
+```
+
+如果只提交详细学习记录：
+
 ```bash
 git add .
 git commit -m "docs(onboarding): add 学习记录 by <昵称> - <主题>"
@@ -93,6 +132,15 @@ git push origin <你的分支名>
 ---
 
 ## 命名示例
+
+### 个人进度看板
+
+| 文件路径 | 说明 |
+|---------|------|
+| `members/朱佩韦.md` | 朱佩韦的个人学习进度看板 |
+| `members/凌敏菲.md` | 凌敏菲的个人学习进度看板 |
+
+### 详细学习记录
 
 | 文件路径 | 说明 |
 |---------|------|
