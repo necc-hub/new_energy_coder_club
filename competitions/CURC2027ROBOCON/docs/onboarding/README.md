@@ -36,9 +36,15 @@ docs/onboarding/
 ## 新人第一步
 
 1. 先读 [resources.md](./resources.md)，找到自己方向的学习资料。
-2. 再读 [how-to-log.md](./how-to-log.md)，了解怎么写、怎么提交学习记录。
-3. 参考 [templates/learning-log-template.md](./templates/learning-log-template.md) 写自己的第一篇学习记录。
-4. 把学习记录放到 `logs/<你的方向>/<你的昵称>/` 目录下，通过 PR 提交。
+2. 再读对应 SIG 的 `README.md`，查看本方向的**新人学习路线**：
+   - [机械组新人学习路线](../../机构SIG/机械组/README.md)
+   - [电控组新人学习路线](../../机构SIG/电控组/README.md)
+   - [视觉组新人学习路线](../../视觉SIG/视觉组/README.md)
+   - [硬件组新人学习路线](../../视觉SIG/硬件组/README.md)
+   - [运营组新人学习路线](../../运营SIG/README.md)
+3. 再读 [how-to-log.md](./how-to-log.md)，了解怎么写、怎么提交学习记录。
+4. 参考 [templates/learning-log-template.md](./templates/learning-log-template.md) 写自己的第一篇学习记录。
+5. 把学习记录放到 `logs/<你的方向>/<你的昵称>/` 目录下，通过 PR 提交。
 
 ---
 
