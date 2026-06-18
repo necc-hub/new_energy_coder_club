@@ -1,5 +1,11 @@
 # 竞赛索引（Competitions Index）
 
+## 2027
+
+| 项目 | 竞赛名称 |
+|------|---------|
+| [CURC2027ROBOCON](CURC2027ROBOCON/) | CURC 2027 ROBOCON — 机构SIG · 视觉SIG · 运营SIG · 新人学习区 |
+
 ## 2026
 
 | 项目 | 竞赛名称 |
