@@ -103,5 +103,8 @@ B站自行找课
 #### 洪嘉悦
 260707   @洪嘉悦 联系CAD SW制图，下载雕刻机软件备用
 
+#### 洪嘉悦
+260720   @洪嘉悦【Epoch2024寒假竞培营】机械组第八次培训】(https://www.bilibili.com/video/BV1k1421Z7xL?vd_source=95759be2016da4087b7a530e7a262fbb)
+
 
 
