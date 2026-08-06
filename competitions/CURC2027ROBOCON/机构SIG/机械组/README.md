@@ -104,7 +104,7 @@ B站自行找课
 260707   @洪嘉悦 联系CAD SW制图，下载雕刻机软件备用
 
 #### 洪嘉悦
-260720   @洪嘉悦【Epoch2024寒假竞培营】机械组第八次培训】(https://www.bilibili.com/video/BV1k1421Z7xL?vd_source=95759be2016da4087b7a530e7a262fbb)
+260720   @洪嘉悦【Epoch2024寒假竞培营 机械组第八次培训】(https://www.bilibili.com/video/BV1k1421Z7xL?vd_source=95759be2016da4087b7a530e7a262fbb)
 
 #### 洪嘉悦
 260723-260725    @洪嘉悦 车架设计、bom
@@ -114,6 +114,11 @@ B站自行找课
 
 #### 洪嘉悦
 260727    @洪嘉悦 sw建模练习十例
+
+#### 洪嘉悦
+260801-260806     @洪嘉悦 【大国工匠插件使用】(https://www.bilibili.com/video/BV1kjKn6CEWu?t=72.3)
+                           sw建模十五例
+                         【工程图出图一到三课】(https://www.bilibili.com/video/BV1vi421h7AV?t=15.6&p=5)
 
 
 
