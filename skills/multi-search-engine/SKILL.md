@@ -1,6 +1,6 @@
 ---
 name: "multi-search-engine"
-description: 多搜索引擎聚合，集成 17 个引擎（8 个国内 + 9 个国际）。支持高级搜索语法、时间筛选、站内搜索、隐私引擎和 WolframAlpha 知识查询。无需 API 密钥。
+description: 多搜索引擎聚合，集成 17 个引擎（8 个国内 + 9 个国际）。支持高级搜索语法、时间筛选、站内搜索、隐私引擎和 WolframAlpha 知识查询。无需 API 密钥。反触发：查百科词条用 baidu-search；要腾讯系权威中文来源用 online-search。
 ---
 
 # Multi Search Engine v2.0.1

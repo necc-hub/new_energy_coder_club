@@ -1,6 +1,6 @@
 ---
 name: news-summary
-description: This skill should be used when the user asks for news updates, daily briefings, or what's happening in the world. Fetches news from trusted international RSS feeds and can create voice summaries.
+description: This skill should be used when the user asks for international news updates, daily briefings, or what's happening in the world. Fetches news from trusted international (English) RSS feeds and can create voice summaries. NOT for: Chinese news browsing by category (use news), Chinese news search/hot lists/weather (use tencent-news), extracting article content from a URL (use news-extractor), tech-industry aggregation (use tech-news-digest).
 ---
 
 # News Summary

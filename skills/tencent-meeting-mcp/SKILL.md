@@ -1,6 +1,6 @@
 ---
 name: tencent-meeting-mcp
-description: "腾讯会议智能助手，支持会议管理、成员管理、录制、转写与智能纪要查询等功能。"
+description: "腾讯会议智能助手，支持会议管理、成员管理、录制、转写与智能纪要查询。当用户需要创建/修改/取消腾讯会议、管理参会成员、查询会议录制与转写内容、获取智能会议纪要时使用。"
 homepage: https://meeting.tencent.com/
 metadata:
   {

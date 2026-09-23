@@ -4,10 +4,10 @@ name: Repository Quality Check
 on:
   # 推送到主分支时触发
   push:
-    branches: [ main, master ]
+    branches: [ main, master, SKill ]
   # 创建Pull Request时触发
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, SKill ]
   # 定时触发（每周一上午9点）
   schedule:
     - cron: '0 9 * * 1'
@@ -36,6 +36,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt || echo "No requirements.txt found"
+      if: hashFiles('requirements.txt') != ''
     
     # 创建必要目录
     - name: Create directories
@@ -43,17 +44,23 @@ jobs:
         mkdir -p quality_reports
         mkdir -p docs
     
-    # 运行质量检查
+    # Skills 索引/结构一致性校验（失败则阻断合并）
+    - name: Validate skills consistency
+      run: python scripts/validate_skills.py
+
+    # 运行质量检查（仅当脚本存在于当前分支）
     - name: Run quality monitor
       run: |
         python scripts/quality_monitor.py . --verbose
       continue-on-error: true
+      if: hashFiles('scripts/quality_monitor.py') != ''
     
-    # 生成第二阶段优化报告
+    # 生成第二阶段优化报告（仅当脚本存在于当前分支）
     - name: Generate phase 2 report
       run: |
         python scripts/phase2_report_generator.py . --verbose
       continue-on-error: true
+      if: hashFiles('scripts/phase2_report_generator.py') != ''
     
     # 上传质量报告作为构建产物
     - name: Upload quality reports
@@ -66,8 +73,9 @@ jobs:
           第二阶段优化报告*.md
         retention-days: 30
     
-    # 检查质量阈值
+    # 检查质量阈值（依赖质量报告，报告不存在则跳过）
     - name: Check quality threshold
+      if: hashFiles('scripts/quality_monitor.py') != ''
       run: |
         python -c "
         import json
@@ -106,8 +114,9 @@ jobs:
             print(f'✅ 质量得分 {score} 达到阈值要求 {threshold}')
         "
     
-    # 创建质量徽章数据
+    # 创建质量徽章数据（依赖质量报告，报告不存在则跳过）
     - name: Create quality badge
+      if: hashFiles('scripts/quality_monitor.py') != ''
       run: |
         python -c "
         import json

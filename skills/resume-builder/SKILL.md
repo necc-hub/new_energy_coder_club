@@ -1,6 +1,6 @@
 ---
 name: resume-builder
-description: Generate professional resumes that conform to the Reactive Resume schema. Use when the user wants to create, build, or generate a resume through conversational AI, or asks about resume structure, sections, or content. This skill guides the agent to ask clarifying questions, avoid hallucination, and produce valid JSON output for https://rxresu.me.
+description: Generate professional resumes that conform to the Reactive Resume schema. Use when the user wants to create, build, or generate a resume through conversational AI and produce JSON conforming to the Reactive Resume (rxresu.me) schema, or asks about resume structure, sections, or content. NOT for: ATS optimization, PDF export, or analyzing an existing resume (use resume-optimizer). This skill guides the agent to ask clarifying questions, avoid hallucination, and produce valid JSON output for https://rxresu.me.
 ---
 
 # Resume Builder for Reactive Resume

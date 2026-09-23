@@ -1,6 +1,6 @@
 ---
 name: tme-openapi
-description: 腾讯音乐开放平台（TME OpenAPI）算子平台通用客户端。提供对 `/musician/agent/operator/*` 一系列「算子」API 的发现、查询与调用能力，是所有需要调用 TME OpenAPI 算子的业务 Skill 的**基础依赖**。本 Skill 仅封装**通用的 API 调用与算子发现流程**，不关心任何具体业务语义（例如宣推、歌曲、发行等）。对调用方暴露 4 个通用工具：`list_apis` / `search_apis` / `get_api_detail` / `invoke_api`。**触发时机**：- 上层业务 Skill 需要调用 TME OpenAPI 算子时，作为**被引用的基础能力**加载；- 用户直接提问"列一下可用算子"、"调一下 xxx 算子"、"搜一下宣推相关的 API"等开发调试场景； - 用户提问"登录腾讯音乐人"、"获取登录态"等 —— 本 Skill 已自包含登录能力。**自包含**：登录态 Token 获取能力已**完整内嵌**到本 Skill，无需依赖任何外部 Skill，调用方无需设置任何环境变量。
+description: 腾讯音乐开放平台（TME OpenAPI）算子平台通用客户端。提供对 `/musician/agent/operator/*` 一系列「算子」API 的发现、查询与调用能力，是所有需要调用 TME OpenAPI 算子的业务 Skill 的**基础依赖**。本 Skill 仅封装**通用的 API 调用与算子发现流程**，不关心任何具体业务语义（例如宣推、歌曲、发行等）。对调用方暴露 4 个通用工具：`list_apis` / `search_apis` / `get_api_detail` / `invoke_api`。**触发时机**：- 上层业务 Skill 需要调用 TME OpenAPI 算子时，作为**被引用的基础能力**加载；- 用户直接提问"列一下可用算子"、"调一下 xxx 算子"、"搜一下宣推相关的 API"等开发调试场景； - 用户提问"登录腾讯音乐人"、"获取登录态"等 —— 本 Skill 已自包含登录能力。**自包含**：登录态 Token 获取能力已**完整内嵌**到本 Skill，无需依赖任何外部 Skill，调用方无需设置任何环境变量。当用户说‘列一下 TME 可用算子’、‘搜一下宣推相关的 API’、‘调一下 xxx 算子’、‘登录腾讯音乐人/获取登录态’，或上层业务 Skill 需要调用 TME OpenAPI 算子时使用。
 ---
 
 # TME OpenAPI（腾讯音乐开放平台算子客户端）

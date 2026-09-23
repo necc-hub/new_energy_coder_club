@@ -1,6 +1,6 @@
 ---
 name: email-skill
-description: "当用户提到邮箱相关能力时，进入这个skill，统一邮件入口（纯路由层）：识别用户意图后路由到 public-skill 或 imap-smtp-email，自身不执行任何脚本"
+description: "当用户提到邮箱相关能力时，进入这个skill，统一邮件入口（纯路由层）：识别用户意图后路由到 public-skill 或 imap-smtp-email，自身不执行任何脚本。当用户说‘发邮件’、‘写邮件’、‘查邮件/收件箱’、‘搜索邮件’、‘下载邮件附件’等任何邮箱相关需求时使用本 skill 做意图路由；已明确要用个人邮箱实际执行收发时改用 imap-smtp-email。"
 version: "3.0"
 trigger_keywords:
   - 发邮件

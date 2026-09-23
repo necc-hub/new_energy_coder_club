@@ -1,6 +1,6 @@
 ---
 name: "chart-visualization"
-description: "把数据转成合适的图表与可渲染的图表规格。用户要可视化数据、选图、生成图表代码（Mermaid/Vega-Lite/Plotly/ECharts）或解释图表时调用。"
+description: "把数据转成合适的图表与可渲染的图表规格。当用户要可视化数据、选图、生成图表代码（Mermaid/Vega-Lite/Plotly/ECharts）或解释图表时使用，例如说“画图”“做图表”“数据可视化”“帮我选个图表类型”时。"
 ---
 
 # Chart Visualization

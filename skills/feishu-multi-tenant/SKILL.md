@@ -1,6 +1,6 @@
 ---
 name: feishu-multi-tenant
-description: 飞书多企业账号接入与移植流程（lark-cli 多 profile + .env 应用凭证）。用户说"配置飞书""接入另一个企业""加飞书账号""lark-cli 登录""FEISHU_APP_ID 拉字段 99991672""多维表格跨企业""飞书凭证没权限""移植飞书应用"时使用。覆盖：双/多企业 profile 并存、user 扫码授权、bot 身份 scope 补齐、.env 凭证写库与验证。核心陷阱：自建应用不能跨企业授权（必须对方企业自建应用）；user 身份有 scope ≠ bot 身份有；bot 加 scope 后需重新发布版本才生效。
+description: 飞书多企业账号接入与移植流程（lark-cli 多 profile + .env 应用凭证）。用户说"配置飞书""接入另一个企业""加飞书账号""lark-cli 登录""FEISHU_APP_ID 拉字段 99991672""多维表格跨企业""飞书凭证没权限""移植飞书应用"时使用。覆盖：双/多企业 profile 并存、user 扫码授权、bot 身份 scope 补齐、.env 凭证写库与验证。核心陷阱：自建应用不能跨企业授权（必须对方企业自建应用）；user 身份有 scope ≠ bot 身份有；bot 加 scope 后需重新发布版本才生效。当用户需要接入新的飞书企业租户、让多个企业账号并存、排查 .env 凭证拉字段报 99991672 或把飞书应用移植到另一个项目/企业时使用。
 ---
 
 # 飞书多企业账号接入 Skill

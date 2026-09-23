@@ -1,6 +1,6 @@
 ---
 name: "patent-application-cn"
-description: "Drafts Chinese patent application materials and package skeletons. Invoke when user asks for 技术交底书、专利申请材料、附图清单或申请打包整理。"
+description: "Drafts Chinese patent application materials and package skeletons. Invoke when user asks for 技术交底书、专利申请材料、附图清单或申请打包整理。当用户要求写中文专利申请、整理技术交底书、按模板改写交底书、列附图清单或打包申请材料时使用。光伏/新能源软件专利的全流程撰写（查新、权利要求书、说明书、天合模板）改用 pv-patent-drafting。"
 ---
 
 # 专利申请（中文）

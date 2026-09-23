@@ -3,6 +3,7 @@ name: online-search
 description: |
   元宝搜索标准版工具。是腾讯元宝的联网搜索服务，提供实时、精准的互联网内容检索能力。
   核心特性：覆盖大量中文网站，包括官方媒体、政府网站等高权威性来源，以及腾讯系核心内容资源。多层精调排序策略，提供准确的内容匹配和排序。
+  反触发：查百科词条用 baidu-search；需要多引擎聚合对比或高级搜索语法用 multi-search-engine。
 metadata:
   openclaw:
     emoji: "🔍"

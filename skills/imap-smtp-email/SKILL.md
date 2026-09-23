@@ -1,6 +1,6 @@
 ---
 name: imap-smtp-email
-description: 通过 IMAP/SMTP 连接个人邮箱，支持完整邮件收发、抄送、附件、HTML、收件箱检索与附件下载；是当前邮件体系中唯一的个人邮箱主通道。
+description: 通过 IMAP/SMTP 连接个人邮箱，支持完整邮件收发、抄送、附件、HTML、收件箱检索与附件下载；是当前邮件体系中唯一的个人邮箱主通道。当用户说‘发邮件给 XX’、‘查一下我的收件箱/未读邮件’、‘搜索某封邮件’、‘下载这封邮件的附件’等需要实际收发个人邮箱邮件时使用；用户只是泛泛提出邮箱需求时先经 email-skill 路由，再由本 skill 执行。
 metadata:
   openclaw:
     emoji: "📧"

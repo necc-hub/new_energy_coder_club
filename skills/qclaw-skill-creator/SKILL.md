@@ -1,6 +1,6 @@
 ---
 name: qclaw-skill-creator
-description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.
+description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations. Use when the user wants to create a new skill, write or update a SKILL.md, or package workflows/scripts/references into a reusable skill. For searching and installing existing skills, use find-skills instead.
 license: Complete terms in LICENSE.txt
 ---
 

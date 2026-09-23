@@ -2,6 +2,7 @@
 name: qclaw-cron-skill
 description: |
   [MANDATORY - MUST LOAD] 凡是涉及定时/提醒/闹钟/周期执行/打卡/签到/cron/schedule/remind 等需求，以及修改/编辑/更新/暂停/恢复/删除/取消推送/改推送目标/改推送渠道等已有定时任务的操作，必须读取本 skill，严禁凭记忆猜测参数。
+  当用户说「每天X点提醒我」「X分钟后叫我」「定个闹钟/打卡/签到」或要修改、暂停、删除已有定时任务/提醒时使用；安装 CLI 工具改用 qclaw-env，写文本文件改用 qclaw-text-file。
 metadata: {"openclaw": {"emoji": "⚙️"}}
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: tech-news-digest
-description: "科技新闻多源聚合摘要。从100+信息源自动采集并评分科技新闻。Keywords: 科技新闻, tech news, RSS, industry trends."
+description: "科技新闻多源聚合摘要。从100+信息源自动采集并评分科技新闻。反触发：中文新闻分类浏览用 news；新闻搜索/热榜用 tencent-news；国际 RSS 日报用 news-summary；提取文章正文用 news-extractor。Keywords: 科技新闻, tech news, RSS, industry trends."
 ---
 
 # 科技新闻聚合 — 从100+信息源自动采集评分科技新闻

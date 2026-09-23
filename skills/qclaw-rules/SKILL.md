@@ -13,6 +13,7 @@ description: |
   - PDF 生成（含中文字符、字体配置、reportlab、fpdf、weasyprint）
   - MCP 工具调用（Playwright MCP、mcporter、工具检索）
   - 用户个人信息出现在对话中（邮箱、账号、偏好、配置）
+  当涉及生成/写入文件、编码乱码、Windows 命令行、浏览器自动化、PDF 生成、MCP 工具调用或用户个人信息场景时使用本规则。
 metadata:
   openclaw:
     emoji: "📋"

@@ -1,7 +1,7 @@
 ---
 name: lark-approval
 version: 1.0.0
-description: "飞书审批 API：审批实例、审批任务管理。"
+description: "飞书审批 API：审批实例与审批任务管理。当用户需要创建/查询/撤销飞书审批实例、处理审批任务（同意/拒绝/转审）、查看审批进度或审批定义时使用。"
 metadata:
   requires:
     bins: ["lark-cli"]

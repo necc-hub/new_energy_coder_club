@@ -1,6 +1,6 @@
 ---
 name: qclaw-env
-description: "OpenClaw skill 全链路环境诊断与安装工具。安装任何 CLI、命令行工具、包管理器、运行时环境时必须使用此 skill。使用场景包括但不限于：(1) 安装或配置任何命令行工具或 CLI（如 gh、ffmpeg、whisper 等），(2) 安装 OpenClaw skill 所需的依赖环境（包括底层运行时 node/npm、python3/pip3、go、uv），(3) 遇到 'command not found'、'未找到命令'、'不是内部或外部命令' 等错误，(4) 用户说'帮我装 xxx'、'安装 xxx'、'配置 xxx 环境'、'setup xxx'、'install xxx'，(5) 检测系统已安装哪些工具、检查环境、环境诊断，(6) 安装包管理器（brew、scoop、winget、choco、npm、pip 等），(7) 配置 API Key、环境变量、PATH 等运行时配置，(8) 配置国内镜像源（Homebrew、npm、pip、Go proxy 等）。此 skill 为强制性入口，所有安装类操作必须遵循'先检测后安装'原则。"
+description: "OpenClaw skill 全链路环境诊断与安装工具。安装任何 CLI、命令行工具、包管理器、运行时环境时必须使用此 skill。使用场景包括但不限于：(1) 安装或配置任何命令行工具或 CLI（如 gh、ffmpeg、whisper 等），(2) 安装 OpenClaw skill 所需的依赖环境（包括底层运行时 node/npm、python3/pip3、go、uv），(3) 遇到 'command not found'、'未找到命令'、'不是内部或外部命令' 等错误，(4) 用户说'帮我装 xxx'、'安装 xxx'、'配置 xxx 环境'、'setup xxx'、'install xxx'，(5) 检测系统已安装哪些工具、检查环境、环境诊断，(6) 安装包管理器（brew、scoop、winget、choco、npm、pip 等），(7) 配置 API Key、环境变量、PATH 等运行时配置，(8) 配置国内镜像源（Homebrew、npm、pip、Go proxy 等）。此 skill 为强制性入口，所有安装类操作必须遵循'先检测后安装'原则。当用户说「帮我装 xxx」「配置 xxx 环境」、遇到「command not found」类报错，或任何 OpenClaw skill 需要安装 CLI/运行时/包管理器时使用；定时任务需求改用 qclaw-cron-skill。"
 metadata: {"openclaw": {"emoji": "⚙️"}}
 ---
 
