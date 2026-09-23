@@ -1,6 +1,6 @@
 ---
 name: agentic-loop
-description: 管理 Claude Code Agentic Loop 防护。控制每次对话的工具调用上限（默认25次）与连续重复命令检测（默认5次）。用户说"loop上限""循环次数""agentic loop""防止循环""重复调用"时使用。
+description: 管理 Claude Code Agentic Loop 防护。控制每次对话的工具调用上限（默认25次）与连续重复命令检测（默认5次）。当用户说"loop上限""循环次数""agentic loop""防止循环""重复调用"，或需要查看/调整 Claude Code 工具调用上限与重复命令防护阈值时使用。
 ---
 
 # Agentic Loop 防护管理

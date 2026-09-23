@@ -1,6 +1,6 @@
 ---
 name: study-habits
-description: Build effective study habits with spaced repetition, active recall, and session tracking
+description: Build effective study habits with spaced repetition, active recall, and session tracking. Use when the user wants to start or track a study session, build study habits, get spaced-repetition/active-recall review reminders, set a study timer, track learning progress, or prepare for exams.
 author: clawd-team
 version: 1.0.0
 triggers:

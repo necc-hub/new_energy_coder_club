@@ -1,6 +1,6 @@
 ---
 name: kimi-env-setup
-description: 一键初始化 Kimi CLI 运行环境。自动将 .kimi-code/bin 加入 PATH、检测并安装 Git for Windows（如缺失）、配置 KIMI_SHELL_PATH 环境变量，最终验证 kimi 命令可正常执行。适用于 Windows 新机首次使用 Kimi CLI 的场景。
+description: 一键初始化 Kimi CLI 运行环境。自动将 .kimi-code/bin 加入 PATH、检测并安装 Git for Windows（如缺失）、配置 KIMI_SHELL_PATH 环境变量，最终验证 kimi 命令可正常执行。适用于 Windows 新机首次使用 Kimi CLI 的场景。当用户在 Windows 新机上首次使用 Kimi CLI、遇到「kimi 不是内部或外部命令」「Git Bash not found」报错，或要求一键初始化/修复 Kimi CLI 运行环境（PATH、Git for Windows、KIMI_SHELL_PATH）时使用。
 ---
 
 # Kimi Env Setup — Kimi CLI 初始环境自动搭建

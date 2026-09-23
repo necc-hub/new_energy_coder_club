@@ -1,6 +1,6 @@
 ---
-name: WeChat Skill (wx-cli-wechat-local-data)
-description: 微信本地数据查询与导出 — WeChat local data CLI (messages, contacts, moments, favorites, images) with daemon architecture. Query and export from the command line without network calls.
+name: wx-cli-wechat-local-data
+description: 微信本地数据查询与导出 — WeChat local data CLI (messages, contacts, moments, favorites, images) with daemon architecture. Query and export from the command line without network calls. 当用户说‘查一下我的微信聊天记录’、‘导出和某人的微信对话’、‘有没有未读微信消息’、‘列出微信联系人/群聊’、‘找微信里的图片/收藏/朋友圈’等需要查询或导出本机微信数据时使用。
 triggers:
   - WeChat Skill
   - 微信本地数据

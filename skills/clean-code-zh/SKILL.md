@@ -1,6 +1,6 @@
 ---
 name: clean-code-zh
-description: 遵循 Robert C. Martin 的《代码整洁之道》原则，进行代码审查、重构和编写。涵盖命名、函数、注释和错误处理的最佳实践。
+description: 遵循 Robert C. Martin 的《代码整洁之道》原则，进行代码审查、重构和编写。涵盖命名、函数、注释和错误处理的最佳实践。当用户要求审查或重构代码、改善命名与函数设计、清理代码坏味道/技术债，或提到「整洁代码」「Clean Code」「代码评审」时使用。
 tags: [重构, 代码质量, 软件工程, 最佳实践, clean-code]
 risk: low
 source: Robert C. Martin (Clean Code)

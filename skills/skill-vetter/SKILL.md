@@ -1,7 +1,7 @@
 ---
 name: skill-vetter
 version: 1.0.0
-description: 面向 AI Agent 的安全优先技能审查工具。在从 ClawdHub、GitHub 或其他来源安装任何技能之前使用，检查危险标志、权限范围和可疑模式。
+description: 面向 AI Agent 的安全优先技能审查工具。在从 ClawdHub、GitHub 或其他来源安装任何技能之前使用，检查危险标志、权限范围和可疑模式。当用户准备安装陌生技能、要求审查某个 skill 是否安全，或提到「这个技能安不安全」「装之前检查一下」时使用。
 metadata:
   openclaw:
     emoji: "🔒"

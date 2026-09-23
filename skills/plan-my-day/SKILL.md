@@ -1,6 +1,6 @@
 ---
 name: plan-my-day
-description: Generate an energy-optimized, time-blocked daily plan
+description: Generate an energy-optimized, time-blocked daily plan. Use when the user says "plan my day", asks for a daily schedule, an hour-by-hour plan, time-blocking, or help organizing today's priorities by energy level.
 version: 1.0.0
 author: theflohart
 tags: [productivity, planning, time-blocking, energy-management]

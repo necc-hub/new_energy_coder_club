@@ -1,6 +1,6 @@
 ---
 name: find-skills
-description: 基于腾讯 SkillHub 搜索、安装和管理技能。用户提到“找技能”“安装 skill”“扩展功能”“启用/禁用 skill”“删除 skill”“安装 SkillHub CLI”时优先使用。
+description: 基于腾讯 SkillHub 搜索、安装和管理技能。用户提到“找技能”“安装 skill”“扩展功能”“启用/禁用 skill”“删除 skill”“安装 SkillHub CLI”时优先使用。当用户想搜索、安装、启用/禁用或删除技能（SkillHub），或要求安装 SkillHub CLI、扩展 Agent 能力时使用。
 homepage: https://github.com/countbot-ai/CountBot
 ---
 

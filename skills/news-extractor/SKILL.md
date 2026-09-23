@@ -1,6 +1,6 @@
 ---
 name: news-extractor
-description: 新闻站点内容提取。支持微信公众号、今日头条、网易新闻、搜狐新闻、腾讯新闻。当用户需要提取新闻内容、抓取公众号文章、爬取新闻、或获取新闻JSON/Markdown时激活。
+description: 新闻站点内容提取。支持微信公众号、今日头条、网易新闻、搜狐新闻、腾讯新闻。当用户已给出文章链接（微信公众号、今日头条、网易、搜狐、腾讯新闻），需要提取正文、抓取公众号文章、或获取新闻JSON/Markdown时激活。本技能只做内容提取不做新闻检索；找新闻用 news/tencent-news/tech-news-digest。
 ---
 
 # News Extractor Skill

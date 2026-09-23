@@ -1,6 +1,6 @@
 ---
 name: kimi-web-tunnel
-description: SolarGlyph 项目 Kimi Code Web UI 远程访问的一键启动/停止与排障。通过 kimi web（--public + token 认证）+ Cloudflare Tunnel 将本地 5490 端口暴露到公网固定域名 https://kimi.newenergycoder.club，实现跨局域网用浏览器/手机远程调试项目。用户说"启动远程访问""开启 kimi 隧道""kimi web 远程""一键启动远程调试""停止远程访问""kimi.newenergycoder.club 打不开"等时使用。
+description: SolarGlyph 项目 Kimi Code Web UI 远程访问的一键启动/停止与排障。通过 kimi web（--public + token 认证）+ Cloudflare Tunnel 将本地 5490 端口暴露到公网固定域名 https://kimi.newenergycoder.club，实现跨局域网用浏览器/手机远程调试项目。用户说"启动远程访问""开启 kimi 隧道""kimi web 远程""一键启动远程调试""停止远程访问""kimi.newenergycoder.club 打不开"等时使用。当用户需要从手机/外地电脑跨局域网访问本机 Kimi Code Web UI，或排查隧道公网域名打不开/403 时使用。
 ---
 
 # Kimi Web Tunnel — 远程访问一键管理

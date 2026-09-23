@@ -1,6 +1,6 @@
 ---
 name: paper-scaffold
-description: 论文项目目录标准化工具。对现有论文目录进行体检和整理，或从零创建新论文项目结构。支持三种模板：CIT毕业设计（ctexbook）、国际会议/期刊（ICML/IEEE/NeurIPS 等 article 类）、通用学术论文。用户提到"新建论文""论文目录整理""paper 结构""scaffold paper""初始化论文项目"时使用。
+description: 论文项目目录标准化工具。对现有论文目录进行体检和整理，或从零创建新论文项目结构。支持三种模板：CIT毕业设计（ctexbook）、国际会议/期刊（ICML/IEEE/NeurIPS 等 article 类）、通用学术论文。当用户提到"新建论文""论文目录整理""paper 结构""scaffold paper""初始化论文项目"，或需要体检/整理现有论文目录结构时使用。
 ---
 
 # paper-scaffold — 论文目录标准化

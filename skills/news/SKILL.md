@@ -1,6 +1,6 @@
 ---
 name: news
-description: 新闻与资讯查询。获取中文新闻和全球 AI 技术资讯，支持按分类查询（时政、财经、科技、社会、国际、体育、娱乐、AI 技术、AI 社区）。当用户询问最新新闻、AI 动态、行业资讯时使用。
+description: 新闻与资讯查询。获取中文新闻和全球 AI 技术资讯，支持按分类查询（时政、财经、科技、社会、国际、体育、娱乐、AI 技术、AI 社区）。当用户询问最新新闻、AI 动态、行业资讯并按分类浏览时使用。反触发：搜索特定新闻/热榜/早晚报/天气用 tencent-news；给定文章链接提取正文用 news-extractor；国际英文 RSS 日报摘要用 news-summary；科技新闻多源聚合用 tech-news-digest。
 homepage: https://github.com/countbot-ai/CountBot
 ---
 

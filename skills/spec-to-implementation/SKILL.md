@@ -1,6 +1,6 @@
 ---
-name: notion-spec-to-implementation
-description: Turns product or tech specs into concrete Notion tasks that Claude code can implement. Breaks down spec pages into detailed implementation plans with clear tasks, acceptance criteria, and progress tracking to guide development from requirements to completion.
+name: spec-to-implementation
+description: Turns product or tech specs into concrete Notion tasks that Claude code can implement. Breaks down spec pages into detailed implementation plans with clear tasks, acceptance criteria, and progress tracking to guide development from requirements to completion. Use when the user shares a product or tech spec (e.g. a Notion PRD/spec page) and asks to turn it into an implementation plan, break it down into actionable tasks with acceptance criteria, or track development progress in Notion.
 ---
 
 # Spec to Implementation

@@ -1,7 +1,7 @@
-﻿---
+---
 id: trae-assistant
-name: Trae IDE Assistant
-description: 当用户说“用 Trae 做...”或者暗示需要使用 Trae 进行开发时，自动接管并封装对 trae_delegate 的调用过程。
+name: trae-assistant
+description: 当用户说“用 Trae 做...”或者暗示需要使用 Trae 进行开发时，自动接管并封装对 trae_delegate 的调用过程。当用户说“用 Trae 写个页面”“让 Trae 帮我重构代码”“用 Trae 实现这个功能”或指定由 Trae IDE 完成开发任务时使用。
 version: 1.0.0
 ---
 

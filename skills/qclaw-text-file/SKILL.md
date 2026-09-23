@@ -1,56 +1,16 @@
 ---
 name: qclaw-text-file
 description: |
-  【强制触发·最高优先级·write 工具拦截】跨平台纯文本文件写入技能。
+  【强制触发·最高优先级·write 工具拦截】跨平台纯文本文件写入技能，唯一合规的文本写入入口。
 
-  ## ‼️ WRITE 工具拦截规则（最高优先级，无豁免）
+  ‼️ 拦截规则（无豁免）：准备用内置 write 工具写任何最终目标文本文件时，立即改用本技能的 scripts/write_file.py；仅写 /tmp/_tw_xxx.txt 临时文件可用 write。
 
-  当你准备调用内置 `write` 工具写任何文本文件时，必须先执行此检查：
+  ❌ 禁止 write 直写：代码/配置/脚本/数据/标记语言等一切纯文本最终文件。「内容简单」「没有中文」「快速修改」「小文件」均不豁免。
 
-  > 这个文件是最终目标文件吗？
-  > → 是 → 立即停止，改用此技能的 scripts/write_file.py 脚本写入，不得使用 write 工具
-  > → 否（是临时文件 /tmp/_tw_xxx.txt）→ 允许使用 write 工具写临时文件
+  ✅ 触发场景（满足任一即触发）：1. 写入/创建/保存/导出生成任意文本文件；2. write file / create file / save as / generate code / export data；3. 涉及编码、BOM、UTF-8、GBK、乱码、CRLF/LF 问题。不确定是否为文本文件时默认用本技能。
 
-  ## 决策规则（先看这里）
-
-  ❌ 禁止使用内置 write 工具直接写以下任何最终目标文件：
-  代码文件（.ts .js .jsx .tsx .vue .py .go .rs .java 等）、
-  配置文件（.json .yaml .yml .toml .ini .conf .env 等）、
-  脚本文件（.sh .bash .bat .cmd .ps1 等）、
-  数据文件（.csv .tsv .txt 等）、
-  标记语言（.md .html .xml .svg 等），
-  以及所有其他纯文本格式。
-
-  ❌ 以下理由不构成豁免：
-  - "内容很简单，只有几行" → 不豁免
-  - "没有中文，不涉及编码问题" → 不豁免
-  - "快速修改一下" → 不豁免
-  - "这只是个小文件" → 不豁免
-  - 任何其他理由 → 不豁免
-
-  ✅ 必须立即调用此技能的触发场景（满足任一即触发，无豁免）：
-  1. 写入、创建、保存、导出、生成任意文本文件（无论平台、无论内容简单与否）
-  2. 用户要求 write file / create file / save as / generate code / export data
-  3. 涉及编码、BOM、UTF-8、GBK、乱码、CRLF/LF 等问题
-
-  判断逻辑：
-  - 这是文本文件吗？→ 是 → 用此技能的脚本，不用内置 write 直接写目标文件
-  - 不确定？→ 默认用此技能
-
-  ## 为什么强制
-
-  内置 write 工具硬编码 utf-8 无 BOM，不支持跨平台编码适配：
-  - Windows Excel 打开 CSV → 中文 100% 乱码
-  - Windows .bat 含中文 → cmd.exe 乱码
-  - 换行符不适配 → 脚本执行失败
-
-  此技能是唯一合规的文本写入入口，自动推断编码（utf-8/utf-8-sig/gbk）、
-  自动处理 BOM、自动适配换行符（CRLF/LF），消除跨平台乱码。
-
-  ## 关键默认行为
-
-  不传 --platform 时脚本自动检测当前运行系统。
-  mac 上写 csv 默认无 BOM（utf-8），只有用户明确说"给 Windows 用"时才传 --platform windows。
+  原因：内置 write 硬编码 utf-8 无 BOM，Windows Excel 打开 CSV 中文必乱码、.bat 含中文乱码、换行符不适配。本脚本自动推断编码（utf-8/utf-8-sig/gbk）、处理 BOM、适配换行符。不传 --platform 时自动检测系统；mac 写 csv 默认无 BOM，仅用户明确「给 Windows 用」时传 --platform windows。
+  当用户要求写入、创建、保存或导出任意纯文本文件（代码、CSV、配置、脚本、标记语言等）时使用。
 metadata:
   openclaw:
     emoji: "📝"

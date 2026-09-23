@@ -1,6 +1,6 @@
 ---
 name: baidu-search
-description: 百度 AI 搜索。支持网页搜索、百度百科、秒懂百科、AI 智能生成四种模式。自动包含当前日期上下文。当用户要求搜索信息、查询百科、获取最新资讯、搜索新闻、查找资料时使用。
+description: 百度 AI 搜索。支持网页搜索、百度百科、秒懂百科、AI 智能生成四种模式。自动包含当前日期上下文。当用户要求搜索信息、查询百科（百度百科/秒懂百科）、获取最新资讯、查找资料时优先使用。反触发：需要腾讯系/政务权威中文来源用 online-search；需要多引擎聚合对比或高级搜索语法用 multi-search-engine。
 homepage: https://github.com/countbot-ai/CountBot
 ---
 

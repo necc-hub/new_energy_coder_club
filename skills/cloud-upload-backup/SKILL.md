@@ -1,6 +1,6 @@
 ---
 name: cloud-upload-backup
-description: "Cloud file upload and backup tool. Upload local files to Tencent SMH cloud storage, viewable in QClaw Mini Program."
+description: "Cloud file upload and backup tool. Upload local files to Tencent SMH cloud storage, viewable in QClaw Mini Program. Use when the user asks to upload local files to cloud storage, back up files, or view files in the QClaw Mini Program — e.g. “把这个文件上传到云端”、“备份一下这些文件”、“传到 SMH 云存储”、“在小程序里看上传的文件”."
 metadata:
   openclaw:
     emoji: "☁️"

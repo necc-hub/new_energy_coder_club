@@ -1,6 +1,6 @@
 ---
 name: xiaohongshu-images
-description: Transform markdown/HTML into styled 3:4 ratio images for Xiaohongshu
+description: Transform markdown/HTML into styled 3:4 ratio images for Xiaohongshu. Use when the user asks to turn an article, markdown, HTML or text into Xiaohongshu (小红书) post images with cover and styled pages — e.g. “把这篇文章做成小红书图文”、“生成小红书封面和配图”、“转成 3:4 的小红书发帖图片”.
 ---
 
 # Xiaohongshu Images Skill
