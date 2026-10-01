@@ -156,6 +156,7 @@ const MES_PROMO: Feed = {
 
 ## 变更记录
 
+- v1.3.0（2026-10-02）：科幻声景升级——`synth_bgm.py --lead`（theremin 式滑音主音，和弦内滑音+5.2Hz 颤音）；人声诗歌配方入档（macOS `say` 中文 TTS → 降调/频带/回声/镶边 FX → amix 闪避混音）。CAM-07/08 音轨已换版。
 - v1.2.0（2026-10-01）：1080p 原生输出——配置 `width/height: 1920×1080` 即 zoom 放大布局（字体矢量无损）；capture.py 新增 `--format jpeg`（1080p 建议，体积降 85%）；encode.sh 自动识别帧扩展名。MES/官网两篇宣传片已重渲 1080p。
 - v1.1.0（2026-10-01）：新增 `carousel` 照片轮播场景类型（横向滑切 + 字幕 + 进度点）。首发案例：《赛题三·官网运营篇》20s 轮播片（tower.newenergycoder.club 影像区 CAM-08）。
 - v1.0.0（2026-10-01）：首个发布。由 416 MES 20s 宣传片实战封装；修复首幕淡出缺失与短时长 BGM 的 ADSR 溢出问题。
@@ -177,4 +178,24 @@ promo-render/
 
 ## 案例
 
-- `tower.newenergycoder.club` 影像区 CAM-07《416 MES · 赛题二宣传片》：20s / 7 幕 / Am 80bpm，即由本管线出片；渲染演示页 `/tools/skill-demo/render.html` 为 example 配置实时产物。
+- `tower.newenergycoder.club` 影像区 CAM-07《416 MES · 赛题二宣传片》/ CAM-08《赛题三·官网运营篇》：20s / 1080p / 7 幕，Am/Em + `--lead` 滑音主音 + 双段人声诗歌（片头吟咏 + 收尾宣言），即由本管线出片；渲染演示页 `/tools/skill-demo/render.html` 为 example 配置实时产物。
+
+## 附：人声诗歌配方（v1.3.0 实战沉淀）
+
+零成本给宣传片加「科幻旁白」，macOS 离线 TTS + ffmpeg 三步：
+
+```bash
+# ① TTS 出干声（嗓音名用 say -v '?' | grep zh 查，括号要全名）
+say -v "Sandy (Chinese (China mainland))" -r 152 -o poem_a.aiff "硅与铜的旷野上，光开始排列成句。每一次寻址，都是向未来的一次致意。"
+say -v "Sandy (Chinese (China mainland))" -r 146 -o poem_b.aiff "我们不预测未来。我们把它，编译出来。"
+
+# ② 科幻 FX：降调重力 + 电台频带 + 空间回声 + 金属镶边
+ffmpeg -y -i poem_a.aiff -af "asetrate=44100*0.9,aresample=44100,highpass=f=100,lowpass=f=8500,aecho=0.7:0.55:90|180:0.32|0.18,flanger=delay=2:depth=2:regen=-8:width=1.5,acompressor=threshold=-18dB:ratio=3,volume=3" poem_a_fx.wav
+
+# ③ 闪避混音（人声段压 BGM，amix normalize=0 后接 limiter 防爆音）
+ffmpeg -y -i bgm_lead.wav -i poem_a_fx.wav -i poem_b_fx.wav -filter_complex \
+ "[0:a]atrim=0:20,volume=0.82[bg];[1:a]adelay=700|700,volume=1.45[va];[2:a]adelay=15800|15800,volume=1.5[vb];\
+  [bg][va][vb]amix=inputs=3:normalize=0,alimiter=limit=0.86[out]" -map "[out]" -c:a aac -b:a 192k final.m4a
+```
+
+时机参考：片头诗 0.7s 起（压标题幕），收尾宣言 15.8s 起（压 endcard），单段 ≤8s。
