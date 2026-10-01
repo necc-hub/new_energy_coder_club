@@ -5,7 +5,7 @@ description: 确定性宣传片渲染管线。把「截图素材 + JSON 配置�
 
 # promo-render · 确定性宣传片流水线
 
-版本：v1.0.0 ｜ 维护：NEC（new-energy-coder-club）｜ 案例：https://tower.newenergycoder.club（影像区 CAM-07）
+版本：v1.1.0 ｜ 维护：NEC（new-energy-coder-club）｜ 案例：https://tower.newenergycoder.club（影像区 CAM-07 / CAM-08）
 
 ## 核心思想
 
@@ -106,6 +106,7 @@ bash scripts/encode.sh /tmp/promo-frames ./promo.mp4 /tmp/bgm.wav 20 30
 | `phone_text` | `src`, `badge`, `headline`, `points[]` | — | 左侧编号要点（右滑入）+ 右侧 300×592 手机截图（带回旋入场） |
 | `split` | `left`, `right`, `caption`, `footnote` | — | 双 270×520 手机截图错峰升起，上下字幕条 |
 | `endcard` | `flow`, `url`, `tag` | — | 居中流程行 + 大网址 + 落款（全程无淡出，定格到片尾） |
+| `carousel` | `images[]`（`src`+`caption`） | `interval`（单张停留，默认自动均分）、`caption`（顶部 HUD 标题） | 900×540 画框照片轮播：横向滑切 + 底部说明字幕 + 右上角进度方块，适合官网运营篇/相册式回顾 |
 
 时长预算参考：片头 ≤2s / 单内容幕 3–3.5s / 收尾 2.5s。20s 视频 ≈ 7 幕。
 
@@ -155,6 +156,7 @@ const MES_PROMO: Feed = {
 
 ## 变更记录
 
+- v1.1.0（2026-10-01）：新增 `carousel` 照片轮播场景类型（横向滑切 + 字幕 + 进度点）。首发案例：《赛题三·官网运营篇》20s 轮播片（tower.newenergycoder.club 影像区 CAM-08）。
 - v1.0.0（2026-10-01）：首个发布。由 416 MES 20s 宣传片实战封装；修复首幕淡出缺失与短时长 BGM 的 ADSR 溢出问题。
 
 ## 文件结构
