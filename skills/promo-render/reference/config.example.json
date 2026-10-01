@@ -1,0 +1,63 @@
+{
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "accent": "#34d399",
+  "title": {
+    "kicker": "CHALLENGE 02 // NEC ROBOTICS",
+    "main": "416 MES",
+    "sub": "智能仓储中枢 · SMART WAREHOUSE",
+    "mini": "ARCHIVE → LABEL → INBOUND → INVENTORY · 20S WALKTHROUGH"
+  },
+  "scenes": [
+    { "type": "title", "at": 0.0, "out": 2.0 },
+    {
+      "type": "wide", "at": 1.8, "out": 5.2,
+      "src": "/images/mes/mes-query-page.png",
+      "caption": "SCR-00 // 查询主页 · QUERY DASHBOARD",
+      "kenburns": { "scale": [1.16, 1.0], "x": [-70, 70] },
+      "chips": ["<b>183</b> 启用库位", "<b>106</b> 在册容器", "<b>289</b> 档案待核验"],
+      "footnote": "微信扫一扫容器码 / 物品码 · 直达系统页面"
+    },
+    {
+      "type": "phone_text", "at": 4.9, "out": 8.3,
+      "src": "/images/mes/mes-archive-success.png",
+      "badge": "STEP-1 // ARCHIVING · 建档",
+      "headline": "一物一码 · 三类台账",
+      "points": [
+        "① 物品 / 库位 / 容器 分类建档",
+        "② 生成物品码 <b>WP-TS-005</b> · 关联物料台账",
+        "③ 8 位短码 <b>MZYMJ6VQ</b> + 二维码标签",
+        "④ 建档约 10s 完成 · 可直接去入库"
+      ]
+    },
+    {
+      "type": "split", "at": 8.0, "out": 11.4,
+      "left": "/images/mes/mes-label-export.png",
+      "right": "/images/mes/mes-lewrite-print.png",
+      "caption": "STEP-2 // LABEL · 标签打印",
+      "footnote": "系统导出 PDF（60×40mm / A4 整版）｜ 短链粘贴乐写 · 二维码填满 · 浓度较浓"
+    },
+    {
+      "type": "split", "at": 11.1, "out": 14.5,
+      "left": "/images/mes/mes-inbound-scan.png",
+      "right": "/images/mes/mes-batch-inbound.png",
+      "caption": "STEP-3 // INBOUND · 入库",
+      "footnote": "相机扫码 库位 LOC → 容器 CTN → 物品码 ｜ 容器首用标注子位 ｜ 批量入库逐件提交"
+    },
+    {
+      "type": "split", "at": 14.2, "out": 17.6,
+      "left": "/images/mes/mes-ctn-query.png",
+      "right": "/images/mes/mes-stocktake-scan.png",
+      "caption": "STEP-4 // INVENTORY · 查询盘库",
+      "footnote": "码 / 名称模糊查询 · 仅查询不提交 ｜ 容器反查物品清单 ｜ 扫码页盘点模式逐件扫过"
+    },
+    {
+      "type": "endcard", "at": 17.3, "out": 20.0,
+      "flow": "ARCHIVE → LABEL → INBOUND → INVENTORY",
+      "url": "MES.NEWENERGYCODER.CLUB",
+      "tag": "416 MES // 赛题二 · 智能仓储中枢 · 微信扫码即达"
+    }
+  ],
+  "bgm": { "enabled": true, "duration": 48, "bpm": 80, "key": "Am", "mux_seconds": 20 }
+}
