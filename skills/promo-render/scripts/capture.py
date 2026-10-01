@@ -19,6 +19,7 @@ def main():
     ap.add_argument("--width", type=int, default=1280)
     ap.add_argument("--height", type=int, default=720)
     ap.add_argument("--ready-timeout", type=int, default=60)
+    ap.add_argument("--format", choices=["png", "jpeg"], default="png", help="帧格式：1080p 建议 jpeg 控体积")
     args = ap.parse_args()
 
     os.makedirs(args.out, exist_ok=True)
@@ -35,7 +36,11 @@ def main():
         page.wait_for_function("window.__ready === true", timeout=args.ready_timeout * 1000)
         for i in range(n):
             page.evaluate(f"window.__seek({i / args.fps:.6f})")
-            page.screenshot(path=os.path.join(args.out, f"f_{i:04d}.png"))
+            path = os.path.join(args.out, f"f_{i:04d}.{args.format}")
+            if args.format == "jpeg":
+                page.screenshot(path=path, type="jpeg", quality=95)
+            else:
+                page.screenshot(path=path)
         browser.close()
     print(f"frames done: {n} -> {args.out}")
 

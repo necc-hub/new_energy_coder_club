@@ -1,11 +1,11 @@
 ---
 name: promo-render
-description: 确定性宣传片渲染管线。把「截图素材 + JSON 配置」变成 720p30 带 BGM 的 MP4 宣传片：渲染页生成 → __seek 逐帧采集 → ffmpeg 合成 → 程序化 BGM 灌轨。零剪辑软件、零外部素材、零版权风险，出片可复现。当用户说「做宣传片」「生成 promo 视频」「给系统/项目录一段介绍视频」「确定性渲染出片」「视频加 BGM」「批量出片」「渲染流水线」或要求「把截图变成视频」时使用。适合 10–40s 的产品演示/赛题展示/操作回顾短片。
+description: 确定性宣传片渲染管线。把「截图素材 + JSON 配置」变成 1080p30 带 BGM 的 MP4 宣传片：渲染页生成 → __seek 逐帧采集 → ffmpeg 合成 → 程序化 BGM 灌轨。零剪辑软件、零外部素材、零版权风险，出片可复现。当用户说「做宣传片」「生成 promo 视频」「给系统/项目录一段介绍视频」「确定性渲染出片」「视频加 BGM」「批量出片」「渲染流水线」或要求「把截图变成视频」时使用。适合 10–40s 的产品演示/赛题展示/操作回顾短片。
 ---
 
 # promo-render · 确定性宣传片流水线
 
-版本：v1.1.0 ｜ 维护：NEC（new-energy-coder-club）｜ 案例：https://tower.newenergycoder.club（影像区 CAM-07 / CAM-08）
+版本：v1.2.0 ｜ 维护：NEC（new-energy-coder-club）｜ 案例：https://tower.newenergycoder.club（影像区 CAM-07 / CAM-08）
 
 ## 核心思想
 
@@ -90,7 +90,7 @@ bash scripts/encode.sh /tmp/promo-frames ./promo.mp4 /tmp/bgm.wav 20 30
 
 | 字段 | 必填 | 默认 | 说明 |
 |---|---|---|---|
-| `width` / `height` | 否 | 1280×720 | 画布分辨率（站点影像区为 16:9） |
+| `width` / `height` | 否 | 1280×720（设计基座） | 输出分辨率，1080p 填 1920×1080（布局按 zoom 等比放大，字体矢量无损）；720p 可省略 |
 | `fps` | 否 | 30 | 采集帧率（影院长片感 24，电竞感 60） |
 | `accent` | 否 | `#34d399` | 全局主色（#RRGGBB），驱动 HUD 边框/字幕/光晕 |
 | `title{}` | 是* | — | *`title` 场景存在时必填：`kicker/main/sub/mini` |
@@ -156,6 +156,7 @@ const MES_PROMO: Feed = {
 
 ## 变更记录
 
+- v1.2.0（2026-10-01）：1080p 原生输出——配置 `width/height: 1920×1080` 即 zoom 放大布局（字体矢量无损）；capture.py 新增 `--format jpeg`（1080p 建议，体积降 85%）；encode.sh 自动识别帧扩展名。MES/官网两篇宣传片已重渲 1080p。
 - v1.1.0（2026-10-01）：新增 `carousel` 照片轮播场景类型（横向滑切 + 字幕 + 进度点）。首发案例：《赛题三·官网运营篇》20s 轮播片（tower.newenergycoder.club 影像区 CAM-08）。
 - v1.0.0（2026-10-01）：首个发布。由 416 MES 20s 宣传片实战封装；修复首幕淡出缺失与短时长 BGM 的 ADSR 溢出问题。
 
