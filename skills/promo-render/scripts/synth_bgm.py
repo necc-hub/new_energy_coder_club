@@ -20,6 +20,7 @@ def main():
     ap.add_argument("--bpm", type=int, default=80)
     ap.add_argument("--key", choices=list(KEYS), default="Am")
     ap.add_argument("--energy", type=float, default=0.5, help="0=纯氛围 1=鼓组加满")
+    ap.add_argument("--lead", action="store_true", help="加入 theremin 式滑音主音（科幻感）")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
@@ -97,6 +98,22 @@ def main():
         hat = np.diff(rng.standard_normal(mm + 1)) * np.exp(-np.arange(mm) / SR * 80) * 0.05 * (0.3 + 0.7 * args.energy)
         if j0 + mm < n_total:
             out[j0:j0 + mm] += hat
+
+    # theremin 式滑音主音（--lead）
+    if args.lead:
+        for ci, (shift, tones) in enumerate(CHORDS):
+            start = ci * chord_dur
+            seg = int(chord_dur * SR)
+            i0 = int(start * SR)
+            tt = np.arange(seg) / SR
+            f0 = semi(shift + 12)
+            f1 = semi(shift + tones[-1] + 12)
+            frac = np.clip(tt / (chord_dur * 0.7), 0, 1)
+            freq = f0 + (f1 - f0) * frac ** 2
+            vib = 1 + 0.006 * np.sin(2 * np.pi * 5.2 * tt)
+            phase = np.cumsum(2 * np.pi * freq * vib / SR)
+            env = np.sin(np.pi * np.clip(tt / chord_dur, 0, 1)) ** 2
+            out[i0:i0 + seg] += np.sin(phase) * env * 0.055
 
     fade = min(1.5, args.duration * 0.05)
     out[:int(fade * SR)] *= np.linspace(0, 1, int(fade * SR))
