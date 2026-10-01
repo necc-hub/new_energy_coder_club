@@ -5,7 +5,7 @@ description: 确定性宣传片渲染管线。把「截图素材 + JSON 配置�
 
 # promo-render · 确定性宣传片流水线
 
-版本：v1.2.0 ｜ 维护：NEC（new-energy-coder-club）｜ 案例：https://tower.newenergycoder.club（影像区 CAM-07 / CAM-08）
+版本：v1.4.0 ｜ 维护：NEC（new-energy-coder-club）｜ 案例：https://tower.newenergycoder.club（影像区 CAM-07 / CAM-08）
 
 ## 核心思想
 
@@ -156,6 +156,7 @@ const MES_PROMO: Feed = {
 
 ## 变更记录
 
+- v1.4.0（2026-10-02）：`--style soul` 灵魂乐 groove（Fmaj7→Em7→Dm7→C7、摇摆 8 分、Rhodes 刺和、放克贝斯、Hammond 风琴垫、swung 鼓组）；宣传片音轨换为纯灵魂乐（人声诗歌版配方保留在附章备查）。
 - v1.3.0（2026-10-02）：科幻声景升级——`synth_bgm.py --lead`（theremin 式滑音主音，和弦内滑音+5.2Hz 颤音）；人声诗歌配方入档（macOS `say` 中文 TTS → 降调/频带/回声/镶边 FX → amix 闪避混音）。CAM-07/08 音轨已换版。
 - v1.2.0（2026-10-01）：1080p 原生输出——配置 `width/height: 1920×1080` 即 zoom 放大布局（字体矢量无损）；capture.py 新增 `--format jpeg`（1080p 建议，体积降 85%）；encode.sh 自动识别帧扩展名。MES/官网两篇宣传片已重渲 1080p。
 - v1.1.0（2026-10-01）：新增 `carousel` 照片轮播场景类型（横向滑切 + 字幕 + 进度点）。首发案例：《赛题三·官网运营篇》20s 轮播片（tower.newenergycoder.club 影像区 CAM-08）。
