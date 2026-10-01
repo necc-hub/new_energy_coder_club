@@ -105,6 +105,28 @@ def scene_html(cfg, sc, idx):
     <div style="position:absolute;top:64px;left:0;width:100%;text-align:center"><span class="cap hud">{esc(sc["caption"])}</span></div>
     <div class="{sid}-foot" style="position:absolute;top:640px;left:0;width:100%;text-align:center;font-size:17px;letter-spacing:.2em;color:{cfg['accent']}CC">{esc(sc["footnote"])}</div>
   </div>'''
+    if t == "carousel":
+        imgs = sc["images"]
+        slides = []
+        caps = []
+        dots = []
+        for k, im in enumerate(imgs):
+            off = "transform:translateX(920px)" if k > 0 else ""
+            slides.append(f'    <div class="{sid}-slide" id="{sid}-slide-{k}" style="position:absolute;inset:0;{off}"><img src="{im["src"]}" style="width:100%;height:100%;object-fit:cover"></div>')
+            op = 1 if k == 0 else 0
+            caps.append(f'    <div class="{sid}-cap" id="{sid}-cap-{k}" style="position:absolute;bottom:14px;left:0;width:100%;text-align:center;font-size:17px;letter-spacing:.2em;color:{cfg["accent"]};opacity:{op};text-shadow:0 0 12px rgba(0,0,0,.9)">{im.get("caption","")}</div>')
+            bg = cfg["accent"] if k == 0 else "rgba(255,255,255,0.18)"
+            dots.append(f'    <span id="{sid}-dot-{k}" style="display:inline-block;width:10px;height:10px;margin-left:8px;background:{bg}"></span>')
+        return f'''  <div class="scene" id="{sid}">
+    <div style="position:absolute;top:40px;left:70px" class="cap hud">{esc(sc.get("caption",""))}</div>
+    <div id="{sid}-frame" style="position:absolute;top:96px;left:190px;width:900px;height:540px;overflow:hidden;border:2px solid {cfg['accent']}80;box-shadow:0 0 50px {cfg['accent']}2E">
+{chr(10).join(slides)}
+{chr(10).join(caps)}
+    </div>
+    <div style="position:absolute;top:56px;right:90px;text-align:right">
+{chr(10).join(dots)}
+    </div>
+  </div>'''
     if t == "endcard":
         return f'''  <div class="scene" id="{sid}">
     <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
@@ -154,6 +176,20 @@ def scene_tl(cfg, sc, idx, last):
             f"tl.fromTo('.{sid}-ph', {{y:200,opacity:0}}, {{y:0,opacity:1,duration:0.6,stagger:0.2,ease:'back.out(1.4)'}}, {a+0.15})",
             f"tl.fromTo('.{sid}-foot', {{opacity:0}}, {{opacity:1,duration:0.4}}, {a+0.7})",
         ]
+    elif t == "carousel":
+        imgs = sc["images"]
+        n_img = len(imgs)
+        iv = sc.get("interval") or (dur - 1.1) / n_img
+        for k in range(1, n_img):
+            tk = a + 0.5 + k * iv
+            L += [
+                f"tl.to('#{sid}-slide-{k-1}', {{x:-920,duration:0.55,ease:'power2.inOut'}}, {tk:.3f})",
+                f"tl.fromTo('#{sid}-slide-{k}', {{x:920}}, {{x:0,duration:0.55,ease:'power2.inOut'}}, {tk:.3f})",
+                f"tl.to('#{sid}-cap-{k-1}', {{opacity:0,duration:0.3}}, {tk:.3f})",
+                f"tl.fromTo('#{sid}-cap-{k}', {{opacity:0}}, {{opacity:1,duration:0.3}}, {tk+0.15:.3f})",
+                f"tl.to('#{sid}-dot-{k-1}', {{backgroundColor:'rgba(255,255,255,0.18)',duration:0.2}}, {tk:.3f})",
+                f"tl.to('#{sid}-dot-{k}', {{backgroundColor:'{cfg['accent']}',duration:0.2}}, {tk:.3f})",
+            ]
     elif t == "endcard":
         L += [
             f"tl.fromTo('#{sid}-flow', {{opacity:0,y:26}}, {{opacity:1,y:0,duration:0.55}}, {a+0.15})",

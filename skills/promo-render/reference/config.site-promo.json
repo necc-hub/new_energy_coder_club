@@ -1,0 +1,34 @@
+{
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "accent": "#ff4d6d",
+  "title": {
+    "kicker": "CHALLENGE 03 // NEC ROBOTICS",
+    "main": "一键出片",
+    "sub": "promo-render · 确定性宣传片流水线",
+    "mini": "官网运营篇 · SITE CAROUSEL · 20S"
+  },
+  "scenes": [
+    { "type": "title", "at": 0.0, "out": 2.2 },
+    {
+      "type": "carousel", "at": 2.0, "out": 17.2,
+      "caption": "SITE TOUR // 全站六段叙事 · 照片轮播",
+      "images": [
+        { "src": "/images/carousel/sec-hero.png", "caption": "赛博开场 · 擎天塔重建" },
+        { "src": "/images/carousel/sec-showcase.png", "caption": "影像档案 · 双风格 × 多机位 × 宣传片" },
+        { "src": "/images/carousel/sec-wiring.png", "caption": "电气档案 · 线束明细 / 公式 / 采购量" },
+        { "src": "/images/carousel/sec-sim.png", "caption": "布线沙盘 · DXF 交互推演" },
+        { "src": "/images/carousel/sec-mes.png", "caption": "赛题二 · 416 MES 智能仓储中枢" },
+        { "src": "/images/carousel/sec-skill.png", "caption": "赛题三 · 宣传片流水线 Skill" }
+      ]
+    },
+    {
+      "type": "endcard", "at": 17.0, "out": 20.0,
+      "flow": "CONFIG → RENDER → CAPTURE → ENCODE",
+      "url": "TOWER.NEWENERGYCODER.CLUB",
+      "tag": "promo-render v1.1 // 本视频由 Skill 自举生成 · 照片轮播首支"
+    }
+  ],
+  "bgm": { "enabled": true, "duration": 48, "bpm": 90, "key": "Em", "mux_seconds": 20 }
+}
