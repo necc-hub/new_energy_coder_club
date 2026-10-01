@@ -14,7 +14,8 @@ fi
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
-ffmpeg -y -loglevel error -framerate "$FPS" -i "$FRAMES/f_%04d.png" \
+EXT="$(ls "$FRAMES" | head -1 | sed 's/.*\.//')"
+ffmpeg -y -loglevel error -framerate "$FPS" -i "$FRAMES/f_%04d.$EXT" \
   -c:v libx264 -pix_fmt yuv420p -crf 18 -preset slow -movflags +faststart "$TMP/base.mp4"
 
 if [ -n "$BGM" ] && [ -f "$BGM" ]; then

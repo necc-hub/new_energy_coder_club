@@ -22,7 +22,7 @@ HTML = """<!doctype html>
 @font-face{{font-family:'Orbitron';font-weight:900;font-style:normal;font-display:swap;src:url('./fonts/orbitron-latin-900-normal.woff2') format('woff2')}}
 @font-face{{font-family:'Share Tech Mono';font-weight:400;font-style:normal;font-display:swap;src:url('./fonts/share-tech-mono-latin-400-normal.woff2') format('woff2')}}
 html,body{{margin:0;height:100%;background:#05010f;overflow:hidden}}
-#stage{{position:relative;width:{W}px;height:{H}px;overflow:hidden;background:#05010f;font-family:'Share Tech Mono','PingFang SC',monospace}}
+#stage{{zoom:{zoom};position:relative;width:{W}px;height:{H}px;overflow:hidden;background:#05010f;font-family:'Share Tech Mono','PingFang SC',monospace}}
 .grid{{position:absolute;inset:-60px;background-image:linear-gradient(rgba(0,240,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.16) 1px,transparent 1px);background-size:44px 44px;transform:perspective(700px) rotateX(56deg);transform-origin:center 70%;mask-image:radial-gradient(ellipse at center,#000 40%,transparent 78%)}}
 .scan{{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.04) 0 1px,transparent 1px 3px);mix-blend-mode:overlay}}
 .vig{{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 52%,rgba(2,0,10,.9) 100%)}}
@@ -219,7 +219,8 @@ def main():
     total = max(sc["out"] for sc in cfg["scenes"])
 
     html = HTML.format(
-        W=cfg.get("width", 1280), H=cfg.get("height", 720),
+        W=1280, H=720,
+        zoom=cfg.get("width", 1280) / 1280,
         doc_title=cfg.get("doc_title", cfg.get("title", {}).get("main", "promo")),
         accent=cfg.get("accent", "#34d399"),
         scenes=scenes_html, timeline=timeline,
