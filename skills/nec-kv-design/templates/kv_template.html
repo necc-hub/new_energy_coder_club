@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>常州工NEC · 主视觉 KV V2 — BUILT TO DAWN</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@500;700;900&display=swap');
+
+:root{
+  --navy:#141B5E;
+  --ink:#0B1033;
+  --cyan:#1FA9E8;
+  --cyan-lt:#4FC3F7;
+  --grid-maj:rgba(31,169,232,.14);
+  --grid-min:rgba(31,169,232,.055);
+  --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+  --disp:'Archivo','Arial Black','Microsoft YaHei',sans-serif;
+  --cjk:'Noto Sans SC','Microsoft YaHei',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#e8edf3;font-family:var(--cjk)}
+body{display:flex;flex-direction:column;align-items:center;gap:60px;padding:60px}
+
+/* ============ 画板通用 ============ */
+.board{
+  position:relative;background:#fff;overflow:hidden;flex-shrink:0;
+  box-shadow:0 30px 80px rgba(11,16,51,.18);
+  background-image:
+    linear-gradient(var(--grid-maj) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-maj) 1px,transparent 1px),
+    linear-gradient(var(--grid-min) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-min) 1px,transparent 1px);
+}
+.mono{font-family:var(--mono)}
+.c-cyan{color:var(--cyan)}
+.c-navy{color:var(--navy)}
+
+/* 四角套准十字 */
+.reg{position:absolute;width:26px;height:26px;z-index:40}
+.reg::before,.reg::after{content:"";position:absolute;background:var(--navy)}
+.reg::before{left:50%;top:0;width:1.5px;height:100%;transform:translateX(-50%)}
+.reg::after{top:50%;left:0;height:1.5px;width:100%;transform:translateY(-50%)}
+.reg.tl{top:26px;left:26px}.reg.tr{top:26px;right:26px}
+.reg.bl{bottom:26px;left:26px}.reg.br{bottom:26px;right:26px}
+
+/* 顶部信息行 */
+.topline{position:absolute;top:34px;left:64px;right:64px;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:15px;letter-spacing:.18em;color:var(--navy);opacity:.85;z-index:30}
+.topline b{font-weight:600}
+
+/* 底部品牌锁 */
+.lockup{position:absolute;left:64px;right:64px;bottom:0;z-index:30}
+.lockup .row{display:flex;align-items:flex-end;gap:22px;padding-bottom:18px}
+.kb{font-family:var(--disp);font-weight:800;font-size:30px;letter-spacing:.04em;color:var(--navy);line-height:1}
+.kb .sq{display:inline-block;width:.62em;height:.62em;background:var(--cyan);margin-left:6px;vertical-align:baseline}
+.designed{font-family:var(--mono);font-size:14px;color:var(--ink);opacity:.75;padding-bottom:4px}
+.brand{margin-left:auto;display:flex;align-items:center;gap:14px}
+.brand img{height:44px;width:auto;display:block}
+.brand .bt{line-height:1.15}
+.brand .bt .l1{font-family:var(--cjk);font-weight:900;font-size:26px;color:var(--navy);letter-spacing:.02em;white-space:nowrap}
+.brand .bt .l1 .incit{font-family:var(--disp);font-weight:800;color:var(--cyan);font-size:.78em;margin-left:6px}
+.brand .bt .l2{font-family:var(--mono);font-size:12.5px;color:var(--ink);opacity:.7;letter-spacing:.06em}
+.lockup .base{height:7px;background:linear-gradient(90deg,var(--cyan),var(--cyan-lt) 55%,rgba(79,195,247,0))}
+
+/* 大标题 */
+.title{font-family:var(--disp);font-weight:900;line-height:.92;letter-spacing:-.015em;color:var(--ink)}
+.title .to{color:var(--cyan)}
+.title .zh{font-family:var(--cjk);font-weight:900;color:var(--navy);letter-spacing:.3em}
+
+/* 破晓太阳（SVG 图形统一类名） */
+.sunwrap{position:absolute;z-index:10}
+.horizon{position:absolute;background:var(--cyan);z-index:15}
+.dimline{position:absolute;font-family:var(--mono);color:var(--navy);z-index:16;opacity:.9}
+
+/* ============================================================
+   H — 横版 1920×1080
+============================================================ */
+#board-h{width:1920px;height:1080px}
+#board-h{background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+#board-h .title{position:absolute;left:110px;top:185px;font-size:252px;z-index:20}
+#board-h .title .zh{display:block;font-size:40px;margin-top:30px;letter-spacing:.52em}
+#board-h .title .en-sub{display:block;font-family:var(--mono);font-weight:500;font-size:17px;
+  letter-spacing:.34em;color:var(--ink);opacity:.6;margin-top:14px}
+#board-h .sunwrap{right:120px;top:520px;width:560px;height:560px}
+#board-h .horizon{left:0;right:0;top:800px;height:4px}
+#board-h .dimline{top:822px;left:110px;font-size:15px;letter-spacing:.14em}
+#board-h .coord{position:absolute;right:120px;top:818px;text-align:right;font-family:var(--mono);font-size:15px;
+  letter-spacing:.16em;color:var(--navy);opacity:.8;z-index:16;line-height:1.9}
+#board-h .lockup{left:64px;right:64px}
+
+/* ============================================================
+   V — 竖版海报 1080×1920
+============================================================ */
+#board-v{width:1080px;height:1920px}
+#board-v{background-size:90px 90px,90px 90px,18px 18px,18px 18px}
+#board-v .topline{left:56px;right:56px;font-size:13px}
+#board-v .title{position:absolute;left:72px;top:170px;font-size:212px;z-index:20}
+#board-v .title .zh{display:block;font-size:34px;margin-top:30px;letter-spacing:.5em}
+#board-v .title .en-sub{display:block;font-family:var(--mono);font-weight:500;font-size:15px;
+  letter-spacing:.3em;color:var(--ink);opacity:.6;margin-top:14px}
+#board-v .sunwrap{left:50%;transform:translateX(-50%);top:1060px;width:880px;height:880px;z-index:10}
+#board-v .horizon{left:0;right:0;top:1494px;height:4px}
+#board-v .dimline{top:1516px;left:56px;font-size:13px;letter-spacing:.14em}
+#board-v .coord{position:absolute;right:56px;top:1512px;text-align:right;font-family:var(--mono);
+  font-size:13px;letter-spacing:.14em;color:var(--navy);opacity:.8;z-index:16;line-height:1.9}
+#board-v .lockup{left:56px;right:56px}
+#board-v .kb{font-size:26px}
+#board-v .brand img{height:40px}
+#board-v .brand .bt .l1{font-size:22px}
+#board-v .reg{transform:scale(.85)}
+
+/* ============================================================
+   S — 方版社媒 1080×1080
+============================================================ */
+#board-s{width:1080px;height:1080px}
+#board-s{background-size:90px 90px,90px 90px,18px 18px,18px 18px}
+#board-s .topline{left:52px;right:52px;font-size:12.5px}
+#board-s .sunwrap{left:50%;transform:translateX(-50%);top:120px;width:640px;height:640px;z-index:10}
+#board-s .horizon{left:0;right:0;top:440px;height:4px}
+#board-s .dimline{top:458px;right:52px;font-size:12px;letter-spacing:.12em}
+#board-s .title{position:absolute;left:52px;right:52px;top:520px;font-size:168px;text-align:left;z-index:20}
+#board-s .title .zh{display:block;font-size:30px;margin-top:24px;letter-spacing:.48em}
+#board-s .lockup{left:52px;right:52px}
+#board-s .kb{font-size:24px}
+#board-s .designed{display:none}
+#board-s .brand img{height:36px}
+#board-s .brand .bt .l1{font-size:20px}
+#board-s .reg{transform:scale(.8)}
+
+/* 浏览模式（网页查看时画板缩放） */
+body.view-all .board{transform-origin:top center}
+@media screen and (max-width:2000px){ body.view-all #board-h{zoom:.55} }
+@media screen and (max-width:1200px){ body.view-all #board-h{zoom:.34} body.view-all #board-v,body.view-all #board-s{zoom:.6} }
+</style>
+</head>
+<body>
+
+<!-- 共享 SVG：破晓太阳（描边圆 + 内虚线环 + 刻度 + 准星） -->
+<template id="sun-tpl">
+<svg viewBox="0 0 800 800" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="sunG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4FC3F7"/><stop offset="1" stop-color="#1FA9E8"/>
+    </linearGradient>
+  </defs>
+  <!-- 外刻度环：上半圆刻度 -->
+  <g stroke="#141B5E" stroke-width="2" opacity=".9">
+    <line x1="400" y1="18"  x2="400" y2="52"/>
+    <line x1="591" y1="68.7" x2="574" y2="98.2"/>
+    <line x1="731.3" y1="209" x2="701.8" y2="226"/>
+    <line x1="782" y1="400" x2="748" y2="400"/>
+    <line x1="731.3" y1="591" x2="701.8" y2="574"/>
+    <line x1="591" y1="731.3" x2="574" y2="701.8"/>
+    <line x1="209" y1="68.7" x2="226" y2="98.2"/>
+    <line x1="68.7" y1="209" x2="98.2" y2="226"/>
+    <line x1="18"  y1="400" x2="52"  y2="400"/>
+    <line x1="68.7" y1="591" x2="98.2" y2="574"/>
+    <line x1="209" y1="731.3" x2="226" y2="701.8"/>
+  </g>
+  <!-- 主圆：上实下虚（破晓前后） -->
+  <circle cx="400" cy="400" r="330" stroke="url(#sunG)" stroke-width="10"/>
+  <circle cx="400" cy="400" r="282" stroke="#1FA9E8" stroke-width="2.5" stroke-dasharray="3 14" opacity=".85"/>
+  <!-- 准星 -->
+  <g stroke="#141B5E" stroke-width="2">
+    <line x1="400" y1="368" x2="400" y2="432"/><line x1="368" y1="400" x2="432" y2="400"/>
+  </g>
+  <circle cx="400" cy="400" r="7" fill="#141B5E"/>
+  <!-- 圆心标注 -->
+  <text x="448" y="392" font-family="IBM Plex Mono,monospace" font-size="19" fill="#141B5E" letter-spacing="2">DAWN.ORIGIN</text>
+</svg>
+</template>
+
+<!-- ============ 横版 1920×1080 ============ -->
+<section class="board" id="board-h">
+  <span class="reg tl"></span><span class="reg tr"></span><span class="reg bl"></span><span class="reg br"></span>
+  <div class="topline">
+    <span><b>NEC-KV</b> / 2026 · REV.V2</span>
+    <span>CIT · CHANGZHOU — ROBOCON TEAM <b>NEC</b></span>
+  </div>
+
+  <div class="sunwrap" data-sun></div>
+  <div class="horizon"></div>
+  <div class="dimline">ALT +00°00′ — DAWN LINE ⌖</div>
+  <div class="coord">N 31.78° · E 119.95°<br>SCALE 1:1 — SHEET 01/03</div>
+
+  <h1 class="title">
+    BUILT<br><span class="to">TO</span> DAWN
+    <span class="zh">为黎明而造</span>
+    <span class="en-sub">KEEP BUILDING — NEW ENERGY CODER CLUB</span>
+  </h1>
+
+  <div class="lockup">
+    <div class="row">
+      <span class="kb">KEEP BUILDING<span class="sq"></span></span>
+      <span class="designed">Design by</span>
+      <span class="brand">
+        <img src="data:image/png;base64,__LOGO_B64__" alt="NEC">
+        <span class="bt">
+          <span class="l1">常州工NEC<span class="incit">in CIT</span></span><br>
+          <span class="l2">newenergycoder.club</span>
+        </span>
+      </span>
+    </div>
+    <div class="base"></div>
+  </div>
+</section>
+
+<!-- ============ 竖版 1080×1920 ============ -->
+<section class="board" id="board-v">
+  <span class="reg tl"></span><span class="reg tr"></span><span class="reg bl"></span><span class="reg br"></span>
+  <div class="topline">
+    <span><b>NEC-KV</b> / 2026</span>
+    <span>ROBOCON TEAM <b>NEC</b></span>
+  </div>
+
+  <h1 class="title">
+    BUILT<br><span class="to">TO</span><br>DAWN
+    <span class="zh">为黎明而造</span>
+    <span class="en-sub">KEEP BUILDING — NEW ENERGY CODER CLUB</span>
+  </h1>
+
+  <div class="sunwrap" data-sun></div>
+  <div class="horizon"></div>
+  <div class="dimline">ALT +00°00′ — DAWN LINE ⌖</div>
+  <div class="coord">N 31.78° · E 119.95°<br>SHEET 02/03</div>
+
+  <div class="lockup">
+    <div class="row">
+      <span class="kb">KEEP BUILDING<span class="sq"></span></span>
+      <span class="brand">
+        <img src="data:image/png;base64,__LOGO_B64__" alt="NEC">
+        <span class="bt">
+          <span class="l1">常州工NEC<span class="incit">in CIT</span></span><br>
+          <span class="l2">newenergycoder.club</span>
+        </span>
+      </span>
+    </div>
+    <div class="base"></div>
+  </div>
+</section>
+
+<!-- ============ 方版 1080×1080 ============ -->
+<section class="board" id="board-s">
+  <span class="reg tl"></span><span class="reg tr"></span><span class="reg bl"></span><span class="reg br"></span>
+  <div class="topline">
+    <span><b>NEC-KV</b> / 2026</span>
+    <span>TEAM <b>NEC</b></span>
+  </div>
+
+  <div class="sunwrap" data-sun></div>
+  <div class="horizon"></div>
+  <div class="dimline">DAWN LINE ⌖</div>
+
+  <h1 class="title">
+    BUILT <span class="to">TO</span><br>DAWN
+    <span class="zh">为黎明而造</span>
+  </h1>
+
+  <div class="lockup">
+    <div class="row">
+      <span class="kb">KEEP BUILDING<span class="sq"></span></span>
+      <span class="brand">
+        <img src="data:image/png;base64,__LOGO_B64__" alt="NEC">
+        <span class="bt">
+          <span class="l1">常州工NEC<span class="incit">in CIT</span></span><br>
+          <span class="l2">newenergycoder.club</span>
+        </span>
+      </span>
+    </div>
+    <div class="base"></div>
+  </div>
+</section>
+
+<script>
+// 注入太阳 SVG
+const tpl = document.getElementById('sun-tpl');
+document.querySelectorAll('[data-sun]').forEach(el=>{
+  el.appendChild(tpl.content.cloneNode(true));
+});
+// 画板切换：?board=h|v|s 只显示对应画板（供高清出图）；默认全部展示
+const q = new URLSearchParams(location.search).get('board');
+if(q){
+  document.querySelectorAll('.board').forEach(b=>{
+    b.style.display = b.id === 'board-'+q ? 'block' : 'none';
+  });
+  document.body.style.padding = '0';
+  document.body.style.gap = '0';
+  document.body.style.background = '#fff';
+}else{
+  document.body.classList.add('view-all');
+}
+</script>
+</body>
+</html>

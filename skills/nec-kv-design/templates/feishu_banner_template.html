@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>飞书工作台宣传栏 1380×450 — NEC 仓库作业台</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@500;700;900&display=swap');
+:root{
+  --navy:#141B5E; --ink:#0B1033; --cyan:#1FA9E8; --cyan-lt:#4FC3F7;
+  --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+  --disp:'Archivo','Arial Black','Microsoft YaHei',sans-serif;
+  --cjk:'Noto Sans SC','Microsoft YaHei',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#e8edf3;font-family:var(--cjk);display:flex;flex-direction:column;align-items:center;gap:48px;padding:48px}
+.board{position:relative;width:1380px;height:450px;overflow:hidden;flex-shrink:0;box-shadow:0 24px 60px rgba(11,16,51,.18)}
+.reg{position:absolute;width:20px;height:20px;z-index:40}
+.reg::before,.reg::after{content:"";position:absolute}
+.reg::before{left:50%;top:0;width:1.5px;height:100%;transform:translateX(-50%)}
+.reg::after{top:50%;left:0;height:1.5px;width:100%;transform:translateY(-50%)}
+.reg.tl{top:16px;left:16px}.reg.tr{top:16px;right:16px}.reg.bl{bottom:16px;left:16px}.reg.br{bottom:16px;right:16px}
+
+/* ============ F1 浅色蓝图版 ============ */
+#board-f1{background:#fff;background-image:
+  linear-gradient(rgba(31,169,232,.13) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(31,169,232,.13) 1px,transparent 1px),
+  linear-gradient(rgba(31,169,232,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(31,169,232,.05) 1px,transparent 1px);
+  background-size:92px 92px,92px 92px,23px 23px,23px 23px}
+#board-f1 .reg::before,#board-f1 .reg::after{background:var(--navy)}
+#board-f1 .tag{position:absolute;left:64px;top:52px;font-family:var(--mono);font-size:14px;
+  letter-spacing:.22em;color:var(--navy);opacity:.85;z-index:20}
+#board-f1 .tag b{font-weight:600}
+#board-f1 h1{position:absolute;left:64px;top:96px;z-index:20;line-height:1.06}
+#board-f1 h1 .en{display:block;font-family:var(--disp);font-weight:900;font-size:30px;
+  letter-spacing:.30em;color:var(--cyan)}
+#board-f1 h1 .zh{display:block;font-weight:900;font-size:96px;color:var(--ink);letter-spacing:.02em;margin-top:6px}
+#board-f1 .chips{position:absolute;left:64px;top:282px;display:flex;gap:14px;z-index:20}
+#board-f1 .chips span{font-family:var(--mono);font-size:16px;letter-spacing:.12em;color:var(--navy);
+  border:1.5px solid var(--navy);padding:7px 16px;border-radius:2px;background:#fff}
+#board-f1 .chips span i{font-style:normal;color:var(--cyan);margin-right:8px}
+#board-f1 .url{position:absolute;left:64px;top:348px;font-family:var(--mono);font-size:15px;
+  letter-spacing:.14em;color:var(--ink);opacity:.6;z-index:20}
+#board-f1 .horizon{position:absolute;left:0;right:0;top:330px;height:3px;background:var(--cyan);z-index:10}
+#board-f1 .sun{position:absolute;right:96px;top:120px;width:420px;height:420px;z-index:5}
+#board-f1 .dim{position:absolute;top:344px;right:96px;font-family:var(--mono);font-size:13px;
+  letter-spacing:.14em;color:var(--navy);opacity:.85;z-index:11}
+#board-f1 .lockup{position:absolute;left:64px;right:64px;bottom:0;z-index:30}
+#board-f1 .lockup .row{display:flex;align-items:flex-end;gap:18px;padding-bottom:12px}
+#board-f1 .kb{font-family:var(--disp);font-weight:800;font-size:20px;color:var(--navy)}
+#board-f1 .kb .sq{display:inline-block;width:.6em;height:.6em;background:var(--cyan);margin-left:5px}
+#board-f1 .brand{display:flex;align-items:center;gap:10px}
+#board-f1 .brand img{height:30px}
+#board-f1 .brand .l1{font-weight:900;font-size:18px;color:var(--navy);white-space:nowrap;line-height:1.1}
+#board-f1 .brand .l1 .incit{font-family:var(--disp);font-weight:800;color:var(--cyan);font-size:.8em;margin-left:4px}
+#board-f1 .brand .l2{font-family:var(--mono);font-size:10.5px;color:var(--ink);opacity:.65;letter-spacing:.05em}
+#board-f1 .base{height:5px;background:linear-gradient(90deg,var(--cyan),var(--cyan-lt) 55%,rgba(79,195,247,0))}
+
+/* ============ F2 深色科技版 ============ */
+#board-f2{background:linear-gradient(115deg,#0B1033 0%,#141B5E 55%,#0d1a4a 100%);color:#EAF6FF}
+#board-f2::before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(79,195,247,.10) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(79,195,247,.10) 1px,transparent 1px);
+  background-size:92px 92px}
+#board-f2::after{content:"";position:absolute;right:-160px;top:-160px;width:560px;height:560px;
+  background:radial-gradient(circle,rgba(31,169,232,.28),transparent 65%)}
+#board-f2 .reg::before,#board-f2 .reg::after{background:var(--cyan-lt)}
+#board-f2 .tag{position:absolute;left:64px;top:52px;font-family:var(--mono);font-size:14px;
+  letter-spacing:.22em;color:var(--cyan-lt);z-index:20}
+#board-f2 h1{position:absolute;left:64px;top:96px;z-index:20;line-height:1.06}
+#board-f2 h1 .en{display:block;font-family:var(--disp);font-weight:900;font-size:30px;
+  letter-spacing:.30em;color:#fff;opacity:.92}
+#board-f2 h1 .zh{display:block;font-weight:900;font-size:96px;margin-top:6px;
+  background:linear-gradient(90deg,#fff 30%,var(--cyan-lt));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.02em}
+#board-f2 .chips{position:absolute;left:64px;top:282px;display:flex;gap:14px;z-index:20}
+#board-f2 .chips span{font-family:var(--mono);font-size:16px;letter-spacing:.12em;color:#DFF3FF;
+  border:1.5px solid rgba(79,195,247,.75);padding:7px 16px;border-radius:2px;background:rgba(31,169,232,.10)}
+#board-f2 .chips span i{font-style:normal;color:var(--cyan-lt);margin-right:8px}
+#board-f2 .url{position:absolute;left:64px;top:348px;font-family:var(--mono);font-size:15px;
+  letter-spacing:.14em;color:#9fd8f5;opacity:.85;z-index:20}
+#board-f2 .horizon{position:absolute;left:0;right:0;top:330px;height:3px;background:var(--cyan-lt);
+  box-shadow:0 0 18px rgba(79,195,247,.9);z-index:10}
+#board-f2 .sun{position:absolute;right:96px;top:120px;width:420px;height:420px;z-index:5;filter:drop-shadow(0 0 14px rgba(79,195,247,.45))}
+#board-f2 .dim{position:absolute;top:344px;right:96px;font-family:var(--mono);font-size:13px;
+  letter-spacing:.14em;color:var(--cyan-lt);z-index:11}
+#board-f2 .lockup{position:absolute;left:64px;right:64px;bottom:0;z-index:30}
+#board-f2 .lockup .row{display:flex;align-items:flex-end;gap:18px;padding-bottom:12px}
+#board-f2 .kb{font-family:var(--disp);font-weight:800;font-size:20px;color:#fff}
+#board-f2 .kb .sq{display:inline-block;width:.6em;height:.6em;background:var(--cyan-lt);margin-left:5px}
+#board-f2 .brand{display:flex;align-items:center;gap:10px}
+#board-f2 .brand img{filter:brightness(0) invert(1);opacity:.95}
+#board-f2 .brand img{height:30px}
+#board-f2 .brand .l1{font-weight:900;font-size:18px;color:#fff;white-space:nowrap;line-height:1.1}
+#board-f2 .brand .l1 .incit{font-family:var(--disp);font-weight:800;color:var(--cyan-lt);font-size:.8em;margin-left:4px}
+#board-f2 .brand .l2{font-family:var(--mono);font-size:10.5px;color:#9fd8f5;letter-spacing:.05em}
+#board-f2 .base{height:5px;background:linear-gradient(90deg,var(--cyan-lt),rgba(79,195,247,0))}
+
+/* ============ F3 极简功能版 ============ */
+#board-f3{background:#fff}
+#board-f3::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;
+  background:linear-gradient(180deg,var(--cyan),var(--cyan-lt))}
+#board-f3 .reg{display:none}
+#board-f3 .tag{position:absolute;left:72px;top:56px;font-family:var(--mono);font-size:14px;
+  letter-spacing:.22em;color:var(--navy);opacity:.85;z-index:20}
+#board-f3 .tag b{font-weight:600}
+#board-f3 h1{position:absolute;left:72px;top:104px;z-index:20;line-height:1.05}
+#board-f3 h1 .zh{display:block;font-weight:900;font-size:88px;color:var(--ink);letter-spacing:.02em}
+#board-f3 h1 .zh em{font-style:normal;color:var(--cyan)}
+#board-f3 h1 .en{display:block;font-family:var(--disp);font-weight:800;font-size:22px;
+  letter-spacing:.26em;color:var(--navy);opacity:.75;margin-top:14px}
+#board-f3 .url{position:absolute;left:72px;top:330px;font-family:var(--mono);font-size:15px;
+  letter-spacing:.14em;color:var(--ink);opacity:.6;z-index:20}
+#board-f3 .feats{position:absolute;right:72px;top:74px;z-index:20;display:flex;flex-direction:column;gap:26px}
+#board-f3 .feats .f{display:flex;align-items:baseline;gap:18px;border-bottom:1.5px solid rgba(20,27,94,.18);padding-bottom:20px;min-width:380px}
+#board-f3 .feats .no{font-family:var(--disp);font-weight:900;font-size:34px;color:var(--cyan)}
+#board-f3 .feats .nm{font-weight:900;font-size:34px;color:var(--ink)}
+#board-f3 .feats .ds{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--navy);opacity:.7;letter-spacing:.08em}
+#board-f3 .lockup{position:absolute;left:72px;right:72px;bottom:0;z-index:30}
+#board-f3 .lockup .row{display:flex;align-items:flex-end;gap:18px;padding-bottom:12px}
+#board-f3 .kb{font-family:var(--disp);font-weight:800;font-size:20px;color:var(--navy)}
+#board-f3 .kb .sq{display:inline-block;width:.6em;height:.6em;background:var(--cyan);margin-left:5px}
+#board-f3 .brand{margin-left:auto;display:flex;align-items:center;gap:10px}
+#board-f3 .brand img{height:30px}
+#board-f3 .brand .l1{font-weight:900;font-size:18px;color:var(--navy);white-space:nowrap;line-height:1.1}
+#board-f3 .brand .l1 .incit{font-family:var(--disp);font-weight:800;color:var(--cyan);font-size:.8em;margin-left:4px}
+#board-f3 .brand .l2{font-family:var(--mono);font-size:10.5px;color:var(--ink);opacity:.65;letter-spacing:.05em}
+#board-f3 .base{height:5px;background:linear-gradient(90deg,var(--cyan),var(--cyan-lt) 55%,rgba(79,195,247,0))}
+</style>
+</head>
+<body>
+
+<template id="sun-tpl">
+<svg viewBox="0 0 800 800" width="100%" height="100%" fill="none">
+  <defs><linearGradient id="sunG2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#4FC3F7"/><stop offset="1" stop-color="#1FA9E8"/></linearGradient></defs>
+  <g stroke="#141B5E" stroke-width="2" opacity=".9">
+    <line x1="400" y1="18" x2="400" y2="52"/><line x1="591" y1="68.7" x2="574" y2="98.2"/>
+    <line x1="731.3" y1="209" x2="701.8" y2="226"/><line x1="782" y1="400" x2="748" y2="400"/>
+    <line x1="731.3" y1="591" x2="701.8" y2="574"/><line x1="591" y1="731.3" x2="574" y2="701.8"/>
+    <line x1="209" y1="68.7" x2="226" y2="98.2"/><line x1="68.7" y1="209" x2="98.2" y2="226"/>
+    <line x1="18" y1="400" x2="52" y2="400"/><line x1="68.7" y1="591" x2="98.2" y2="574"/>
+    <line x1="209" y1="731.3" x2="226" y2="701.8"/>
+  </g>
+  <circle cx="400" cy="400" r="330" stroke="url(#sunG2)" stroke-width="10"/>
+  <circle cx="400" cy="400" r="282" stroke="#1FA9E8" stroke-width="2.5" stroke-dasharray="3 14" opacity=".85"/>
+  <g stroke="#141B5E" stroke-width="2"><line x1="400" y1="368" x2="400" y2="432"/><line x1="368" y1="400" x2="432" y2="400"/></g>
+  <circle cx="400" cy="400" r="7" fill="#141B5E"/>
+</svg>
+</template>
+<template id="sun-tpl-dark">
+<svg viewBox="0 0 800 800" width="100%" height="100%" fill="none">
+  <g stroke="#4FC3F7" stroke-width="2" opacity=".9">
+    <line x1="400" y1="18" x2="400" y2="52"/><line x1="591" y1="68.7" x2="574" y2="98.2"/>
+    <line x1="731.3" y1="209" x2="701.8" y2="226"/><line x1="782" y1="400" x2="748" y2="400"/>
+    <line x1="731.3" y1="591" x2="701.8" y2="574"/><line x1="591" y1="731.3" x2="574" y2="701.8"/>
+    <line x1="209" y1="68.7" x2="226" y2="98.2"/><line x1="68.7" y1="209" x2="98.2" y2="226"/>
+    <line x1="18" y1="400" x2="52" y2="400"/><line x1="68.7" y1="591" x2="98.2" y2="574"/>
+    <line x1="209" y1="731.3" x2="226" y2="701.8"/>
+  </g>
+  <circle cx="400" cy="400" r="330" stroke="#4FC3F7" stroke-width="8"/>
+  <circle cx="400" cy="400" r="282" stroke="#4FC3F7" stroke-width="2.5" stroke-dasharray="3 14" opacity=".7"/>
+  <g stroke="#EAF6FF" stroke-width="2"><line x1="400" y1="368" x2="400" y2="432"/><line x1="368" y1="400" x2="432" y2="400"/></g>
+  <circle cx="400" cy="400" r="7" fill="#EAF6FF"/>
+</svg>
+</template>
+
+<!-- F1 浅色蓝图版 -->
+<section class="board" id="board-f1">
+  <span class="reg tl"></span><span class="reg tr"></span><span class="reg bl"></span><span class="reg br"></span>
+  <div class="tag"><b>FEISHU WORKBENCH</b> · 飞书工作台 1380×450</div>
+  <h1><span class="en">WAREHOUSE OPS</span><span class="zh">NEC 仓库作业台</span></h1>
+  <div class="chips"><span><i>01</i>找物品</span><span><i>02</i>扫标签</span><span><i>03</i>办工单</span></div>
+  <div class="url">mes.newenergycoder.club</div>
+  <div class="sun" data-sun></div>
+  <div class="horizon"></div>
+  <div class="dim">DAWN LINE ⌖</div>
+  <div class="lockup">
+    <div class="row">
+      <span class="kb">KEEP BUILDING<span class="sq"></span></span>
+      <span class="brand"><img src="__LOGO_B64__" alt="NEC">
+        <span><span class="l1">常州工NEC<span class="incit">in CIT</span></span><br><span class="l2">newenergycoder.club</span></span>
+      </span>
+    </div>
+    <div class="base"></div>
+  </div>
+</section>
+
+<!-- F2 深色科技版 -->
+<section class="board" id="board-f2">
+  <span class="reg tl"></span><span class="reg tr"></span><span class="reg bl"></span><span class="reg br"></span>
+  <div class="tag"><b>FEISHU WORKBENCH</b> · 飞书工作台 1380×450</div>
+  <h1><span class="en">WAREHOUSE OPS</span><span class="zh">NEC 仓库作业台</span></h1>
+  <div class="chips"><span><i>01</i>找物品</span><span><i>02</i>扫标签</span><span><i>03</i>办工单</span></div>
+  <div class="url">mes.newenergycoder.club</div>
+  <div class="sun" data-sun-dark></div>
+  <div class="horizon"></div>
+  <div class="dim">DAWN LINE ⌖</div>
+  <div class="lockup">
+    <div class="row">
+      <span class="kb">KEEP BUILDING<span class="sq"></span></span>
+      <span class="brand"><img src="__LOGO_B64__" alt="NEC">
+        <span><span class="l1">常州工NEC<span class="incit">in CIT</span></span><br><span class="l2">newenergycoder.club</span></span>
+      </span>
+    </div>
+    <div class="base"></div>
+  </div>
+</section>
+
+<!-- F3 极简功能版 -->
+<section class="board" id="board-f3">
+  <span class="reg tl"></span><span class="reg tr"></span><span class="reg bl"></span><span class="reg br"></span>
+  <div class="tag"><b>NEC</b> · 飞书工作台推荐应用</div>
+  <h1><span class="zh">NEC <em>仓库作业台</em></span><span class="en">WAREHOUSE OPS CONSOLE</span></h1>
+  <div class="url">mes.newenergycoder.club — 打开飞书工作台即可使用</div>
+  <div class="feats">
+    <div class="f"><span class="no">01</span><span class="nm">找物品</span><span class="ds">LOCATE / 货架定位</span></div>
+    <div class="f"><span class="no">02</span><span class="nm">扫标签</span><span class="ds">SCAN / 一物一码</span></div>
+    <div class="f"><span class="no">03</span><span class="nm">办工单</span><span class="ds">TICKET / 领借还报</span></div>
+  </div>
+  <div class="lockup">
+    <div class="row">
+      <span class="kb">KEEP BUILDING<span class="sq"></span></span>
+      <span class="brand"><img src="__LOGO_B64__" alt="NEC">
+        <span><span class="l1">常州工NEC<span class="incit">in CIT</span></span><br><span class="l2">newenergycoder.club</span></span>
+      </span>
+    </div>
+    <div class="base"></div>
+  </div>
+</section>
+
+<script>
+const t1=document.getElementById('sun-tpl'),t2=document.getElementById('sun-tpl-dark');
+document.querySelectorAll('[data-sun]').forEach(e=>e.appendChild(t1.content.cloneNode(true)));
+document.querySelectorAll('[data-sun-dark]').forEach(e=>e.appendChild(t2.content.cloneNode(true)));
+const q=new URLSearchParams(location.search).get('board');
+if(q){document.querySelectorAll('.board').forEach(b=>{b.style.display=b.id==='board-'+q?'block':'none'});
+document.body.style.padding='0';document.body.style.gap='0';document.body.style.background='#fff'}
+</script>
+</body>
+</html>
