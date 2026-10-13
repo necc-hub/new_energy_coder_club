@@ -1,10 +1,10 @@
 # HXC ESP A Board — AI 增强核心设备仓库 🚀
 
-> HXC 战队 ESP32-S3 主控板（Board A）| 150 个 AI Coding Skills | 多工具链配置
+> HXC 战队 ESP32-S3 主控板（Board A）| 161 个 AI Coding Skills | 多工具链配置
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-150-blue)](skills/)
-[![Last Updated](https://img.shields.io/badge/updated-2026.06.14-green)]()
+[![Skills](https://img.shields.io/badge/skills-161-blue)](skills/)
+[![Last Updated](https://img.shields.io/badge/updated-2026.09.24-green)]()
 
 ---
 
@@ -15,7 +15,7 @@
 - [🚀 快速开始](#-快速开始)
 - [🔌 硬件与命令](#-硬件与命令)
 - [🤖 AI 工具配置](#-ai-工具配置) — AtomCode · Kimi CLI · Claude Code · Trae · Kimi Code
-- [📚 Skills 技能库](#-skills-技能库) — 150 个技能完整索引
+- [📚 Skills 技能库](#-skills-技能库) — 161 个技能完整索引
 - [🛡️ 安全说明](#️-安全说明)
 - [👥 团队与贡献](#-团队与贡献)
 
@@ -31,14 +31,14 @@
 | 🔧 **固件开发与调试** | 基于上游模板进行位控/电流/位置控制开发 | [HXC_A 使用说明](projects/embedded/HXC_A_Usage_Guide.md) |
 | 🔄 **跨工作区协作** | Vibe Coding 多机调试、代码同步 | [调试工作流](docs/vibe-coding-debug.md) |
 | 📚 **设备文档维护** | 板级使用说明、硬件参数、调试技巧 | [嵌入式项目](projects/embedded/) |
-| 🤖 **AI Skills 托管** | **150 个** AI Coding Skills，跨 Claude Code / Trae / QClaw / Kimi | [Skills 目录](skills/) |
+| 🤖 **AI Skills 托管** | **161 个** AI Coding Skills，跨 Claude Code / Trae / QClaw / Kimi | [Skills 目录](skills/) |
 | 🛠️ **AI 工具配置** | AtomCode / Kimi CLI / Claude CLI / Trae / Kimi Code 项目级配置 | [AI 工具配置](#-ai-工具配置) |
 
 ### 📊 仓库统计
 
 | 指标 | 数值 |
 |------|------|
-| Skills 总数 | **150** |
+| Skills 总数 | **163** |
 | Skill 文件 | 1,954 |
 | 有效数据来源 | 6 个平台（Claude / QClaw / Trae / OpenClaw / Agents / Kimi） |
 | Skills 体积 | ~44 MB |
@@ -56,7 +56,7 @@
 │   ├── 📄 HXC_A_Usage_Guide.md                 ← 板级开发使用说明（必读）
 │   └── 📁 ESP32_platformio_temple_project/     ← ⬆️ 上游子模块 (CQUPTHXC)
 │
-├── 📁 skills/                                  ← 🤖 150 个 AI Coding Skills (44 MB)
+├── 📁 skills/                                  ← 🤖 161 个 AI Coding Skills (44 MB)
 │   ├── lark-*/                                 (飞书办公 ×25)
 │   ├── qclaw-*/                                (QClaw 平台 ×6)
 │   ├── tencent-*/                              (腾讯生态 ×4)
@@ -149,7 +149,7 @@ python send_cmd.py "s"        # 停止
 | 第一次搭建环境 | [环境搭建指南](docs/development-setup.md) | 前置依赖、安装步骤、验证清单 |
 | 快速调试电机 | [Vibe Coding 调试](docs/vibe-coding-debug.md) | 调试工作流、命令速查、故障处理 |
 | 理解板级设计 | [HXC_A 使用说明](projects/embedded/HXC_A_Usage_Guide.md) | 硬件参数、CAN/串口约定、三类工程用法 |
-| 浏览全部技能 | [Skills 目录](skills/) | 150 个 AI Coding Skills |
+| 浏览全部技能 | [Skills 目录](skills/) | 161 个 AI Coding Skills |
 
 ---
 
@@ -223,40 +223,40 @@ Trae IDE 支持 Skill 市场（marketplace），已安装 60+ Skills，包括 `l
 
 ### 概览
 
-本仓库收录了 **150 个** AI Coding Skills，整合自 6 个平台的本地 Skill 生态：
+本仓库收录了 **161 个** AI Coding Skills，整合自多个平台的本地 Skill 生态：
 
-| 来源 | Skills | 代表性技能 |
-|------|--------|-----------|
-| **Claude Code** (`~/.claude/skills/`) | 50 | lark-*, pv-*, latex-win, agent-browser |
-| **QClaw/OpenClaw** (`~/.qclaw/skills/` + Program Files) | 60 | kimi-cli, claude-cli, docx/pdf/pptx/xlsx, qclaw-*, tencent-* |
-| **Trae IDE** (`~/.trae/skills/` + builtin) | 34 | react-*, shadcn, git-commit, canvas-design, TRAE-* |
-| **Agents** (`~/.agents/skills/`) | 5 | cit-thesis-writer, gradpilot, wechat-cli-export |
+| 来源 | 代表性技能 |
+|------|-----------|
+| **Claude Code** (`~/.claude/skills/`) | lark-*, pv-*, latex-win, agent-browser |
+| **QClaw/OpenClaw** (`~/.qclaw/skills/` + Program Files) | kimi-cli, claude-cli, docx/pdf/pptx/xlsx, qclaw-*, tencent-* |
+| **Trae IDE** (`~/.trae/skills/` + builtin) | react-*, shadcn, git-commit, canvas-design, trae-* |
+| **Agents / Kimi** (`~/.agents/skills/`, `~/.kimi/skills/`) | cit-thesis-writer, gradpilot, wechat-cli-export, 3d-print-quote |
 
-### 📊 13 大类完整索引
+### 📊 14 大类完整索引
 
-#### 🏢 飞书/Lark 办公套件 (25)
+#### 🏢 飞书/Lark 办公套件 (27)
 
 > 飞书生态全流程覆盖：通讯录→即时通讯→日历→文档→表格→任务→审批→邮件→会议→知识库。
 
-`lark-shared` `lark-contact` `lark-im` `lark-calendar` `lark-doc` `lark-sheets` `lark-base` `lark-task` `lark-approval` `lark-mail` `lark-drive` `lark-wiki` `lark-minutes` `lark-vc` `lark-vc-agent` `lark-okr` `lark-slides` `lark-whiteboard` `lark-markdown` `lark-event` `lark-attendance` `lark-openapi-explorer` `lark-skill-maker` `lark-workflow-meeting-summary` `lark-workflow-standup-report`
+`lark-shared` `lark-contact` `lark-im` `lark-calendar` `lark-doc` `lark-sheets` `lark-base` `lark-task` `lark-approval` `lark-mail` `lark-drive` `lark-wiki` `lark-minutes` `lark-vc` `lark-vc-agent` `lark-okr` `lark-slides` `lark-whiteboard` `lark-markdown` `lark-event` `lark-attendance` `lark-openapi-explorer` `lark-skill-maker` `lark-workflow-meeting-summary` `lark-workflow-standup-report` `feishu-multi-tenant` `feishu-to-nec-mdx`
 
-#### 🤖 AI CLI 调用器 (6)
+#### 🤖 AI CLI 调用器 (7)
 
 > 实现 Claude ⇄ Kimi ⇄ Gemini ⇄ AI Code With 互调，不同模型按需调度。
 
-`kimi-cli` `claude-cli` `gemini-cli` `aicodewith` `trae-assistant` `persona-switch`
+`kimi-cli` `claude-cli` `gemini-cli` `aicodewith` `trae-assistant` `persona-switch` `kimi-env-setup`
 
-#### 🌐 前端 & 设计开发 (14)
+#### 🌐 前端 & 设计开发 (17)
 
 > React 生态、UI 组件库、Canvas、Web 设计全栈能力。
 
-`react-best-practices` `react-native-skills` `shadcn` `frontend-design` `frontend-skill` `web-design-guidelines` `web-artifacts-builder` `webapp-testing` `web-design` `canvas-design` `algorithmic-art` `brand-guidelines` `theme-factory` `chart-visualization`
+`react-best-practices` `react-native-skills` `shadcn` `frontend-design` `frontend-skill` `web-design-guidelines` `web-artifacts-builder` `webapp-testing` `web-design` `canvas-design` `algorithmic-art` `brand-guidelines` `theme-factory` `chart-visualization` `gsap-hero-section` `nec-vi` `nec-ppt`
 
-#### 🔧 开发工程 & 工作流 (18)
+#### 🔧 开发工程 & 工作流 (20)
 
 > 从代码规范到 CI/CD、从规划到执行的完整工程链路。
 
-`clean-code-zh` `security-best-practices` `git-commit` `gh-cli` `github-skill` `test-driven-development` `spec-to-implementation` `composition-patterns` `hook-analyzer-skill` `screenshot` `writing-plans` `executing-plans` `defuddle` `planning-with-files` `harness` `agentic-loop` `agent-browser` `kimi-web-tunnel`
+`clean-code-zh` `security-best-practices` `git-commit` `gh-cli` `github-skill` `test-driven-development` `spec-to-implementation` `composition-patterns` `hook-analyzer-skill` `screenshot` `writing-plans` `executing-plans` `defuddle` `planning-with-files` `harness` `agentic-loop` `agent-browser` `kimi-web-tunnel` `mintlify` `nec-docs-maintainer`
 
 #### 🔍 搜索 & 资讯聚合 (8)
 
@@ -270,11 +270,11 @@ Trae IDE 支持 Skill 市场（marketplace），已安装 60+ Skills，包括 `l
 
 `docx` `pdf` `pptx` `xlsx` `doc-coauthoring` `file-skill` `email-skill`
 
-#### 📡 集成 & 平台连接 (14)
+#### 📡 集成 & 平台连接 (15)
 
 > 腾讯文档、企微、金山、Notion、有道笔记等主流平台集成。
 
-`tencent-docs` `tencent-meeting-mcp` `tencent-survey` `tencent-news` `wecomcli-setup` `wecom-weisheng-scrm` `weiyun` `youdaonote` `notion` `ima` `kdocs` `imap-smtp-email` `tme-openapi` `flyai`
+`tencent-docs` `tencent-meeting-mcp` `tencent-survey` `tencent-news` `wecomcli-setup` `wecom-weisheng-scrm` `weiyun` `youdaonote` `notion` `ima` `kdocs` `imap-smtp-email` `tme-openapi` `flyai` `ark-plan-auth-doctor`
 
 #### 🎓 学术 & 论文 (6)
 
@@ -282,11 +282,11 @@ Trae IDE 支持 Skill 市场（marketplace），已安装 60+ Skills，包括 `l
 
 `acad-paper-prompter` `paper-scaffold` `latex-win` `cit-thesis-writer` `gradpilot` `patent-application-cn`
 
-#### ☀️ 新能源 & 光伏 (2)
+#### ☀️ 新能源 & 光伏 (5)
 
 > 光伏电站评估 + 储能 BOM 生成，新能源领域核心工具。
 
-`pv-station-rating` `pv-storage-bom`
+`pv-station-rating` `pv-storage-bom` `build-suntank-pdf` `pv-patent-drafting` `redline-credit-excel`
 
 #### 🏗️ QClaw/OpenClaw 平台 (15)
 
@@ -306,11 +306,17 @@ Trae IDE 支持 Skill 市场（marketplace），已安装 60+ Skills，包括 `l
 
 `wx-cli-wechat-local-data` `wechat-cli-export` `nec-wechat-sync` `corporate-deep-query` `xiaohongshu-images` `xiaohongshu-skills` `kimi-webbridge` `xbrowser`
 
+#### 🖨️ 3D 打印 & 制造 (1)
+
+> 3D 打印代工报价：解析切片数据，核算成本，输出三档报价。
+
+`3d-print-quote`
+
 #### 🛠️ TRAE 内置 & 独立工具 (18)
 
 > TRAE IDE 内置审查/调试/生成能力 + 各类独立辅助工具。
 
-`TRAE-code-review` `TRAE-debugger` `TRAE-generate-mini-app` `data-analysis` `redis-development` `find-skills` `dogfood` `aippt` `weather-advisor` `slack-gif-creator` `fbs_bookwriter` `wendao-partner-qclaw-skill` `chuangye` `bdpan-storage` `kc-gui` `github-skill` `resume-builder` `resume-optimizer`
+`trae-code-review` `trae-debugger` `trae-generate-mini-app` `data-analysis` `redis-development` `find-skills` `dogfood` `aippt` `weather-advisor` `slack-gif-creator` `fbs-bookwriter` `wendao-partner-qclaw-skill` `chuangye` `bdpan-storage` `kc-gui` `ak10-motor-debug` `resume-builder` `resume-optimizer`
 
 ### 📁 Skill 文件结构
 
@@ -334,6 +340,16 @@ skill-name/
 | QClaw/OpenClaw | `~/.qclaw/skills/` | `cp -r skills/* ~/.qclaw/skills/` |
 
 更多 Skill 开发与使用指南，参见 [Claude Code Skills 文档](https://docs.anthropic.com/en/docs/claude-code/skills)。
+
+### 📝 Skill 贡献规范
+
+新增/修改 Skill 必须遵守：
+
+1. **命名**：目录名与 frontmatter `name` 一致，仅用小写字母、数字、连字符（如 `my-skill`）
+2. **必备文件**：每个 Skill 目录必须包含 `SKILL.md`，且 frontmatter 含 `name` 和 `description`
+3. **description 路由**：触发域与其他 Skill 重叠时，必须在 description 中写明边界/反触发（参考 `news` / `baidu-search` / `resume-builder` 的写法）
+4. **索引同步**：新增 Skill 后同步更新本 README 的分类索引与总数；提交前运行 `python scripts/validate_skills.py` 自检（或执行 `bash scripts/install-hooks.sh` 安装 pre-commit 钩子自动校验）
+5. **大二进制**：单个文件 >5MB 不得直接入库（现有例外：`kc-gui/kc.exe` 14MB，因 skill 运行依赖而保留）。新增大二进制请使用 Gitee Release 资产或 Git LFS，并在 SKILL.md 中写明下载方式
 
 ---
 
@@ -396,7 +412,7 @@ skill-name/
 
 <div align="center">
   <strong>HXC ESP A Board — AI 增强核心设备仓库</strong><br>
-  <sub>SKill 分支 · 150 Skills · 5 AI 工具链 · ESP32-S3</sub><br><br>
+  <sub>SKill 分支 · 161 Skills · 5 AI 工具链 · ESP32-S3</sub><br><br>
   <em>Innovation · Technology · Sustainability</em><br><br>
   <img src="https://img.shields.io/badge/Made%20with-❤️-red.svg" alt="Made with Love">
 </div>
