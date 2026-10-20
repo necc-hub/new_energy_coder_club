@@ -119,6 +119,7 @@ B站自行找课
 260801-260806     @洪嘉悦 【大国工匠插件使用】(https://www.bilibili.com/video/BV1kjKn6CEWu?t=72.3)
                            sw建模十五例
                          【工程图出图一到三课】(https://www.bilibili.com/video/BV1vi421h7AV?t=15.6&p=5)
-
+#### 夏俊熙
+261020    @夏俊熙 学习了[华科大机械组培训第一讲](https://www.bilibili.com/video/BV1DgnHzmEXK?t=9.0)
 
 
