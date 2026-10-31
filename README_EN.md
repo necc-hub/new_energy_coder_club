@@ -9,7 +9,7 @@
 This repository contains the official website of New Energy Coder Club. It is built for new energy, embedded systems, robotics, and open-source collaboration scenarios, and provides club presentation, event publishing, project showcases, learning resources, technical documentation, and a membership application entry point.
 
 - Live site: [https://newenergycoder.club](https://newenergycoder.club)
-- Main repository: [https://github.com/new-energy-coder-club/newenergycoder.club](https://github.com/new-energy-coder-club/newenergycoder.club)
+- Main repository: [https://github.com/necc-hub/newenergycoder.club](https://github.com/necc-hub/newenergycoder.club)
 - Historical archive repository: [https://gitee.com/darrenpig/new_energy_coder_club](https://gitee.com/darrenpig/new_energy_coder_club)
 
 ## Overview
@@ -48,7 +48,7 @@ Core capabilities of the site include:
 ### Install Dependencies
 
 ```bash
-git clone https://github.com/new-energy-coder-club/newenergycoder.club.git
+git clone https://github.com/necc-hub/newenergycoder.club.git
 cd newenergycoder.club
 pnpm install
 ```
