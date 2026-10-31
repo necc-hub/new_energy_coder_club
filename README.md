@@ -9,7 +9,7 @@
 新能源编程俱乐部官网项目，面向新能源、嵌入式、机器人和开源协作场景，提供俱乐部展示、活动发布、项目介绍、学习资源、技术文档和成员加入入口。
 
 - 线上地址: [https://newenergycoder.club](https://newenergycoder.club)
-- 主仓库: [https://github.com/new-energy-coder-club/newenergycoder.club](https://github.com/new-energy-coder-club/newenergycoder.club)
+- 主仓库: [https://github.com/necc-hub/newenergycoder.club](https://github.com/necc-hub/newenergycoder.club)
 - 历史归档仓库: [https://gitee.com/darrenpig/new_energy_coder_club](https://gitee.com/darrenpig/new_energy_coder_club)
 
 ## 项目概览
@@ -48,7 +48,7 @@
 ### 安装依赖
 
 ```bash
-git clone https://github.com/new-energy-coder-club/newenergycoder.club.git
+git clone https://github.com/necc-hub/newenergycoder.club.git
 cd newenergycoder.club
 pnpm install
 ```

@@ -30,7 +30,7 @@ const GITEE_OWNER = 'Darrenpig'
 const GITEE_REPO = 'new_energy_coder_club'
 
 // NEC mirror repository on GitHub
-const GITHUB_OWNER = 'new-energy-coder-club'
+const GITHUB_OWNER = 'necc-hub'
 const GITHUB_REPO = 'new_energy_coder_club'
 const GITHUB_REMOTE = 'github-project'
 
