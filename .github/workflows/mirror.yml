@@ -1,0 +1,31 @@
+name: Mirror to Gitee & AtomGit
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["**"]
+  workflow_dispatch:
+
+concurrency:
+  group: mirror-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    env:
+      GIT_LFS_SKIP_PUSH: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to Gitee (new_energy_coder_club)
+        run: |
+          REMOTE="https://darrenpig:${{ secrets.GITEE_TOKEN }}@gitee.com/darrenpig/new_energy_coder_club.git"
+          git push --force "$REMOTE" "refs/remotes/origin/*:refs/heads/*" "refs/tags/*:refs/tags/*"
+
+      - name: Push to AtomGit (newenergycoder.club)
+        run: |
+          REMOTE="https://Darrenpig:${{ secrets.ATOMGIT_TOKEN }}@atomgit.com/cnec/newenergycoder.club.git"
+          git push --force "$REMOTE" "refs/remotes/origin/*:refs/heads/*" "refs/tags/*:refs/tags/*"

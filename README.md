@@ -45,7 +45,7 @@ pio run
 
 | 分支 | 内容 |
 |---|---|
-| [`SKill`](https://github.com/new-energy-coder-club/new_energy_coder_club/tree/SKill) | 全量 160+ Agent Skills |
+| [`SKill`](https://github.com/necc-hub/new_energy_coder_club/tree/SKill) | 全量 160+ Agent Skills |
 | `motor-control`（本分支） | 电机控制专项合集 |
 
 ## 🤝 贡献
