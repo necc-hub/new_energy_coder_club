@@ -1,0 +1,6 @@
+kc.exe（13.7MB Windows GUI 自动化 agent）已从 git 历史剥离，改由 CDN 分发。
+
+下载地址：
+https://cdn.newenergycoder.club/repo-archive/skills/kc-gui/kc.exe
+
+使用方法：下载后保存为本目录下的 kc.exe 即可（与本文件同级）。

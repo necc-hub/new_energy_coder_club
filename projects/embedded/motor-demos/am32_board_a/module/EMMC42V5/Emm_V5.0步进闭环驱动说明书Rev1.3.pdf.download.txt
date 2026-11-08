@@ -1,0 +1,4 @@
+Emm_V5.0步进闭环驱动说明书Rev1.3.pdf（3.7MB）已从 git 历史剥离，改由 CDN 分发。
+
+下载地址：
+https://cdn.newenergycoder.club/repo-archive/projects/embedded/motor-demos/am32_board_a/module/EMMC42V5/Emm_V5.0%E6%AD%A5%E8%BF%9B%E9%97%AD%E7%8E%AF%E9%A9%B1%E5%8A%A8%E8%AF%B4%E6%98%8E%E4%B9%A6Rev1.3.pdf
