@@ -122,4 +122,5 @@ B站自行找课
 #### 夏俊熙
 261020    @夏俊熙 学习了[华科大机械组培训第一讲](https://www.bilibili.com/video/BV1DgnHzmEXK?t=9.0)
 
-
+####蒋骋娇
+261114      @蒋骋娇 学习了【2027机械组竞培营】https://b23.tv/uC2se3F
