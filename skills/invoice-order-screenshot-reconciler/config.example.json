@@ -1,0 +1,78 @@
+{
+  "root": "D:/path/to/invoice_classification",
+  "normal_dir": "01_正常报销_票款一致_付款齐全",
+  "master_workbook": "10月票款核对总表_20261115.xlsx",
+  "master_sheet": "全部83笔",
+  "overview_sheet": "总览",
+  "normal_category": "正常报销（票款一致、付款资料齐全）",
+  "report_date": "20261115",
+  "expected_totals": {
+    "all_count": 83,
+    "all_amount": 18459.25,
+    "normal_count": 58,
+    "normal_amount": 10421.36
+  },
+  "main_dashboard": "10月票款核对总体看板.html",
+  "category_dirs": {
+    "正常报销（票款一致、付款资料齐全）": "01_正常报销_票款一致_付款齐全",
+    "票款差异常": "02_票款差异常_勿提交",
+    "缺少付款记录": "03_缺少付款记录_勿提交",
+    "合并付款待确认": "04_合并付款待确认_勿提交",
+    "待补充付款截图": "05_待补充付款截图_勿提交",
+    "勿报或个人抬头待换开": "90_勿报及个人抬头待换开"
+  },
+  "columns": {
+    "seq": 1,
+    "category": 2,
+    "invoice_amount": 10,
+    "status": 15,
+    "review": 16,
+    "invoice_file": 17,
+    "evidence": 18
+  },
+  "screenshots": [
+    {
+      "source": "微信图片_001.jpg",
+      "source_tag": "微信001",
+      "status": "matched",
+      "invoice_seq": 4,
+      "amount": 23.72,
+      "screenshot_amount": 23.72,
+      "product": "示例研发图书",
+      "match_basis": "订单品名和金额与发票一致",
+      "advice": "人工打开新截图与发票复核后，再自行处理带待审核删除标记的原图"
+    },
+    {
+      "source": "微信图片_002.jpg",
+      "source_tag": "微信002",
+      "status": "review_product",
+      "invoice_seq": 22,
+      "amount": 67.90,
+      "screenshot_amount": 67.90,
+      "product": "示例读卡器",
+      "match_basis": "金额和付款时间一致，截图未显示具体品名",
+      "advice": "先确认商品名称，未确认前不要删除原付款截图"
+    },
+    {
+      "source": "微信图片_003.jpg",
+      "source_tag": "微信003",
+      "status": "unmatched_combined",
+      "possible_invoices": [14, 19],
+      "screenshot_amount": 143.20,
+      "label": "合并图书付款143.20元",
+      "match_basis": "多本图书合并付款，无法与单张发票一一对应",
+      "advice": "查看完整订单拆分，关联发票原图均保留"
+    },
+    {
+      "source": "微信图片_004.jpg",
+      "source_tag": "微信004",
+      "status": "unmatched_conflict",
+      "invoice_seq": 19,
+      "amount": 53.80,
+      "screenshot_amount": 53.80,
+      "label": "53.80元品名冲突",
+      "match_basis": "截图品名与发票品名不同，虽金额相同也不能确认",
+      "advice": "另找正确订单，关联发票原图保留"
+    }
+  ]
+}
