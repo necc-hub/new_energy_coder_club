@@ -1,0 +1,94 @@
+name: Docs Check
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  # 1. 检查不应入库的文件：macOS AppleDouble (._*)、冲突残留等
+  hygiene:
+    name: File hygiene
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject AppleDouble / OS junk files
+        run: |
+          set -e
+          # actions/checkout 不含 .gitignore 里的未跟踪文件，但仓库历史中曾混入 ._* 文件
+          # 检查已跟踪文件中是否存在垃圾文件
+          junk=$(git ls-files | grep -E '^(\._|.*[/]\._|\.DS_Store|Thumbs\.db)$' || true)
+          if [ -n "$junk" ]; then
+            echo "::error::发现不应入库的系统垃圾文件："
+            echo "$junk"
+            exit 1
+          fi
+          echo "✅ 无垃圾文件"
+
+  # 2. Markdown 格式检查
+  lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run markdownlint
+        run: |
+          # 逐文件检查，任一文件失败即报告（不做全量聚合，避免大仓库超时）
+          find . -name '*.md' -not -path './.git/*' -print0 \
+            | xargs -0 -n1 npx -y markdownlint-cli@0.41.0 --config .github/markdownlint.json -- || \
+            { echo "::error::存在不符合 Markdown 规范的文件，详见上方输出"; exit 1; }
+
+  # 3. Markdown 内链接检查（只检查 PR 改动的文件，防止新增死链；外链不在范围内）
+  links:
+    name: Link check (changed files)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Determine changed markdown files
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="origin/${{ github.base_ref }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          git diff --name-only --diff-filter=ACMR "$BASE"...HEAD -- '*.md' > changed.txt || true
+          # 去除空行；若无改动文件则输出空串
+          CHANGED=$(grep -v '^$' changed.txt 2>/dev/null | tr '\n' ' ' || true)
+          echo "files=$CHANGED" >> "$GITHUB_OUTPUT"
+          echo "待检查文件: ${CHANGED:-（无）}"
+      - name: Check internal links
+        run: |
+          set -e
+          FILES="${{ steps.changed.outputs.files }}"
+          if [ -z "$FILES" ]; then
+            echo "✅ 本次没有 Markdown 改动"
+            exit 0
+          fi
+          python3 .github/scripts/check_links.py $FILES
+
+  # 4. 全量死链报告（仅报告不阻断，供维护者修复存量问题）
+  link-report:
+    name: Broken link report (non-blocking)
+    runs-on: ubuntu-latest
+    # 只在手动触发或 push 到 master 时跑，PR 不跑全量
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Full scan (non-blocking)
+        run: |
+          python3 .github/scripts/check_links.py || {
+            echo "::warning::存在存量死链，详见上方输出（不阻断本次提交）"
+          }
+      - name: Upload report
+        if: always()
+        run: |
+          python3 .github/scripts/check_links.py > broken-links.txt || true
+          echo "报告已生成: broken-links.txt（可在 Actions 日志中查看）"

@@ -1,3 +1,7 @@
+# macOS metadata (AppleDouble files created on non-native filesystems)
+._*
+.DS_Store
+
 # Altium Designer
 *.SchDoc
 *.PcbDoc

@@ -84,5 +84,5 @@ docs/onboarding/
 ## 相关链接
 
 - [CURC2027ROBOCON 赛季总入口](../../README.md)
-- [通用学习资源](../../../docs/learn/)
+- [通用学习资源](./resources.md)
 - [社区贡献指南](../../../../CONTRIBUTING.md)

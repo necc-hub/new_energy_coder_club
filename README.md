@@ -84,7 +84,7 @@ NEC 诞生于自由的开源文化之上，立足新能源与机器人技术浪�
       <h4> 📚 更多信息</h4>
       <ul style="text-align:left">
         <li>详细的贡献指南请参考：[CONTRIBUTING.md](./CONTRIBUTING.md)</li>
-        <li>代码规范请参考：[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)</li>
+        <li>代码规范请参考：[CODE_OF_CONDUCT.md](./docs/CODE_OF_CONDUCT.md)</li>
       </ul>
     </td>
     <td valign="top" width="50%">
@@ -179,8 +179,8 @@ new_energy_coder_club/
       <h4>🔥 热门项目快速入口</h4>
       <ul>
         <li><a href="./projects/README.md">📁 项目总览</a> - 查看所有项目分类和导航</li>
-        <li><a href="./competitions/2025robocon/">🤖 2025 ROBOCON</a> - 全国大学生机器人竞赛</li>
-        <li><a href="./projects/robotics/humanoid-robot/">🦾 人形机器人</a> - Duma小型人形机器人项目</li>
+        <li><a href="./competitions/2025-robocon/">🤖 2025 ROBOCON</a> - 全国大学生机器人竞赛</li>
+        <li><a href="./projects/robotics/人形机器人/">🦾 人形机器人</a> - Duma小型人形机器人项目</li>
         <li><a href="./projects/embedded/20250426星闪手柄/">⚡ 星闪技术</a> - 新一代无线通信技术</li>
         <li><a href="./projects/ai/5axis-fluid-workstation/">🧠 5轴流体工作站</a> - 智能能源管理系统 · <a href="https://github.com/Darrenpig/5-axis-fluid-workstation">GitHub</a></li>
         <li><a href="./projects/robotics/mechdog-k230-kfs/">🐶 轮腿机器狗 K230 KFS</a> - 基于K230/KFS的轮腿机器狗工程</li>
@@ -196,21 +196,21 @@ new_energy_coder_club/
 ## 📊 项目快览（Project Overview）
 | 项目名称 | 分类 | 状态 | 快速通道 |
 |---|---|---|---|
-| 🤖 2025 ROBOCON | 竞赛 | 🟢 开发中 | [赛季仓](./competitions/2025robocon/) / [竞赛索引](./docs/build/competition_index.md) |
-| 🦾 Duma 人形机器人 | 项目 | 🟡 维护中 | [项目主页](./projects/robotics/humanoid-robot/) / [岗位路线图](./docs/learn/roles.md) |
+| 🤖 2025 ROBOCON | 竞赛 | 🟢 开发中 | [赛季仓](./competitions/2025-robocon/) / [项目索引](./projects/README.md) |
+| 🦾 Duma 人形机器人 | 项目 | 🟡 维护中 | [项目主页](./projects/robotics/人形机器人/) / [岗位路线图](./docs/learn/roles.md) |
 
 <table>
   <tr>
     <td valign="top" width="50%">
       <h4>2025 ROBOCON 组别快速入口</h4>
       <ul>
-        <li><a href="./competitions/2025robocon/上位机组.md">📄 上位机组</a></li>
-        <li><a href="./competitions/2025robocon/上位机组_运球机构.md">📄 上位机组_运球机构</a></li>
-        <li><a href="./competitions/2025robocon/算法组.md">📄 算法组</a></li>
-        <li><a href="./competitions/2025robocon/硬件组.md">📄 硬件组</a></li>
-        <li><a href="./competitions/2025robocon/运营组.md">📄 运营组</a></li>
-        <li><a href="./competitions/2025robocon/采购组.md">📄 采购组</a></li>
-        <li><a href="./competitions/2025robocon/队伍结构.md">📄 队伍结构</a></li>
+        <li><a href="./competitions/2025-robocon/上位机组.md">📄 上位机组</a></li>
+        <li><a href="./competitions/2025-robocon/上位机组_运球机构.md">📄 上位机组_运球机构</a></li>
+        <li><a href="./competitions/2025-robocon/算法组.md">📄 算法组</a></li>
+        <li><a href="./competitions/2025-robocon/硬件组.md">📄 硬件组</a></li>
+        <li><a href="./competitions/2025-robocon/运营组.md">📄 运营组</a></li>
+        <li><a href="./competitions/2025-robocon/采购组.md">📄 采购组</a></li>
+        <li><a href="./competitions/2025-robocon/队伍结构.md">📄 队伍结构</a></li>
       </ul>
     </td>
     <td valign="top" width="50%">
@@ -308,7 +308,7 @@ new_energy_coder_club/
 - 行为准则与治理: 见 [Code of Conduct](./docs/CODE_OF_CONDUCT.md) 与 [Governance](./docs/GOVERNANCE.md)
 ## 🙋 新人任务看板（Help Wanted）
 - [Docs] 完善 2025 赛季运球机构文档  
-  - 链接: ./competitions/2025robocon/  
+  - 链接: ./competitions/2025-robocon/  
   - 验收: 文档结构规范、含图片/步骤、可复现  
   - 预计: 2–3 小时  
   - Owner: RC-SIG
@@ -318,7 +318,7 @@ new_energy_coder_club/
   - 预计: 半天  
   - Owner: Embedded-SIG
 - [Code] 为 Duma 机器人增加一个控制 Demo  
-  - 链接: ./projects/robotics/humanoid-robot/  
+  - 链接: ./projects/robotics/人形机器人/  
   - 验收: README 说明、可运行脚本、演示视频/截图  
   - 预计: 1 天  
   - Owner: Robotics-SIG
@@ -332,7 +332,7 @@ new_energy_coder_club/
 3. 机械智库. SolidWorks标准零件库. https://shop128404759.taobao.com/ (2024).
 4. 远景资源网. 工程技术资源共享平台. https://yuanjingziyuan.com/ (2024).
 5. CSDN博主. GitHub Badge制作教程指南. https://blog.csdn.net/m0_74037814/article/details/139511804 (2024).
-6. NEC新能源开发者社区. 2025全国机器人竞赛ROBOCON项目文档. ./competitions/2025robocon/ (2025).
+6. NEC新能源开发者社区. 2025全国机器人竞赛ROBOCON项目文档. ./competitions/2025-robocon/ (2025).
 7. ROBOCON组委会. 全国大学生机器人大赛ROBOCON技术论坛. https://ask.cnrobocon.net/ (2024).
 8. DJI大疆创新. RoboMaster机甲大师赛官方技术论坛. https://bbs.robomaster.com/ (2024).
 9. 立创EDA. 开源硬件平台OSHW HUB技术社区. https://oshwhub.com/explore (2024).
@@ -351,9 +351,6 @@ new_energy_coder_club/
 
 ![UR机器人路径规划演示](./projects/research-horizontal/image/UR5路径规划.gif)
 *UR机器人路径规划演示 - 展示机器人运动控制能力*
-
-![百度网盘加速演示](./shared/images/technical/百度网盘加速.gif)  
-*百度网盘加速功能演示 - 展示文件传输优化效果*
 
 ### 快速开始步骤：
 1. **克隆仓库**: `git clone https://gitee.com/darrenpig/new_energy_coder_club`
