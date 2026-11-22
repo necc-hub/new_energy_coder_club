@@ -1,0 +1,8 @@
+{
+  "name": "nec-docs-check",
+  "private": true,
+  "description": "Pinned documentation CI tools for NEC.",
+  "devDependencies": {
+    "markdownlint-cli": "0.41.0"
+  }
+}
