@@ -27,6 +27,7 @@
 [![Version](https://img.shields.io/github/v/tag/darrenpig/new_energy_coder_club?label=Version)](https://github.com/darrenpig/new_energy_coder_club/releases)[![Project Status](https://img.shields.io/badge/Project%20Status-Active-green)](https://github.com/darrenpig/new_energy_coder_club)[![Website](https://img.shields.io/badge/Website-newenergycoder.club-orange?style=flat-square)](https://www.newenergycoder.club/)[![Knowledge Base](https://img.shields.io/badge/Knowledge%20Base-Feishu-blue?style=flat-square)](https://scn0bdoc8zxg.feishu.cn/wiki/S10LwzVZdiWLwxkEnEqcTcmEn6e)
 
 ## About NEC
+
 NEC 是面向新能源与机器人竞赛的开源工程社区，提供模块化工程基线与赛季全周期资产，支持线上协作与 A416 线下实验室联动。
 
 ### ⚡ 为什么选择 NEC？（Community Features）
@@ -70,6 +71,7 @@ NEC 诞生于自由的开源文化之上，立足新能源与机器人技术浪�
 </table>
 
 ## 🤝 贡献与规范
+
 <table>
   <tr>
     <td valign="top" width="50%">
@@ -111,18 +113,18 @@ NEC 诞生于自由的开源文化之上，立足新能源与机器人技术浪�
 
 ---
 
-
 ## 关于本仓库（What / Why / Who）
+
 - What it is? 双驱动型开源仓库：竞赛（ROBOCON 等）+ 项目（Duma 人形、NearLink 等）
 - Why use it? 大规模资料库与基线工程，项目模板与最小 Demo，路径统一（短标签）
 - Who is it for? 机械 / 硬件 / 软件 / 运营（新人可从文档与最小 Demo 开始）
 
 ## 🧭 Start Here（导航）
+
 - 快速上手: [60min](./docs/start-here/60min.md) · [First Good Issue](./docs/start-here/first-good-issue.md)
 - 学习路线: [岗位路线图](./docs/learn/roles.md)
 - 竞赛与项目: [竞赛](./competitions/README.md) · [项目](./projects/README.md)
 - 社区与团队: [维护者/SIG](./docs/community/maintainers.md) · [团队与致谢](./docs/community/TEAM.md)
-
 
 # 📁 仓库结构
 
@@ -130,7 +132,7 @@ NEC 诞生于自由的开源文化之上，立足新能源与机器人技术浪�
 
 ## 📁 仓库架构（Architecture）
 
-```
+```text
 new_energy_coder_club/
 ├── 🏆 competitions/      # 竞赛驱动：Robocon/智能车等历年备赛资源
 ├── 🚀 projects/          # 项目驱动：人形机器人/AI算法/嵌入式开发
@@ -154,6 +156,7 @@ new_energy_coder_club/
   - 电机、轮毂、联轴器等标准件模型
 
 ## 🧭 快速导航指南
+
 <table>
   <tr>
     <td valign="top" width="50%">
@@ -194,6 +197,7 @@ new_energy_coder_club/
 </table>
 
 ## 📊 项目快览（Project Overview）
+
 | 项目名称 | 分类 | 状态 | 快速通道 |
 |---|---|---|---|
 | 🤖 2025 ROBOCON | 竞赛 | 🟢 开发中 | [赛季仓](./competitions/2025-robocon/) / [项目索引](./projects/README.md) |
@@ -228,6 +232,7 @@ new_energy_coder_club/
 </table>
 
 ### 📊 项目状态概览
+
 | 类别 | 活跃项目数 | 状态 | 最近更新 |
 |------|-----------|------|----------|
 | 🏆 竞赛项目 | 9个 | 🟢 活跃 | 2025-11 |
@@ -239,43 +244,41 @@ new_energy_coder_club/
 ![NEC 团队成员们](https://darrenpig.github.io/files/news10.jpg)
 > NEC 团队成员们的合照
 
-
-
-
 <!-- Follow is usage -->
 <!-- TABLE OF CONTENTS -->
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project 关于项目
-#### **「DarrenPig新能源开发者社区」** 是一个以 **技术共享与实践成长为核心** 的开源协作平台，适合以下人群加入：  
+
+### **「DarrenPig新能源开发者社区」** 是一个以 **技术共享与实践成长为核心** 的开源协作平台，适合以下人群加入  
 
 1. **竞赛科研小白**：提供 **全国大学生机器人大赛** 全周期备赛资源ROBOCON，包括FRC图纸、硬件设计模板、嵌入式开发案例，助力从理论到落地的完整闭环。  
 2. **新能源与机器人爱好者**：聚焦新能源技术、IOT与自动化控制，结合openEuler等开源生态，探索智能硬件与可持续能源的交叉创新。  
 3. **全栈开发者训练营**：通过实际项目（如机器人BSP开发、MayCAD设计）积累经验，社区成员协作解决真实问题，打造可复用的技术案例。  
 4. **开源贡献者孵化地**：参与社区文档维护、代码提交，与40+开发者共同成长，你的每一次都可能成为他人眼中的「闪光之处」。  
-### 一句话灵魂总结：  
+
+### 一句话灵魂总结  
 
 这里是 **「技术宅的游乐场」** + **「竞赛党的弹药库」**，用开源精神点燃新能源与机器人的未来！🚀  
 （想一起造轮子or抱团打比赛？速戳：[仓库传送门](https://gitee.com/darrenpig/new_energy_coder_club)）
 
-
-![alt](https://img.shields.io/badge/license-CIT-green?logo=dark-green) ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success) ![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github) [![GitHub contributors](https://img.shields.io/github/contributors/shravan20/github-readme-quotes.svg)](https://github.com/Darrenpig/new_energy_coder_club/graphs/contributors) 
+![alt](https://img.shields.io/badge/license-CIT-green?logo=dark-green) ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success) ![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github) [![GitHub contributors](https://img.shields.io/github/contributors/shravan20/github-readme-quotes.svg)](https://github.com/Darrenpig/new_energy_coder_club/graphs/contributors)
 [![Pull Request Counts](https://img.shields.io/bitbucket/pr/darrenpig/new_energy_coder_club)](https://github.com/Darrenpig/new_energy_coder_club/pulls)
-![last commit](https://img.shields.io/github/last-commit/Darrenpig/new_energy_coder_club) 
+![last commit](https://img.shields.io/github/last-commit/Darrenpig/new_energy_coder_club)
 [![Project](https://img.shields.io/badge/project-new_energy_coder_club-violet)](https://github.com/users/Darrenpig/projects/3)
 
-
-
 ### Roadmap 项目探索地图
-![2025Roadmap](./shared/images/Roadmap.png)                      
+
+![2025Roadmap](./shared/images/Roadmap.png)
+
 ---
 
 <!-- CONTACT -->
 ## 📬 **Contact 联系我们**  
+
 想和我们快速搭上线？看这里！  
 
-- **💡 建议 & 合作**：欢迎来 [Gitee Issues 区](https://gitee.com/darrenpig/new_energy_coder_club/issues ) 提需求！无论是项目合作还是功能建议，我们都会仔细阅读并标记为 `讨论中`/`已采纳`   
+- **💡 建议 & 合作**：欢迎来 [Gitee Issues 区](https://gitee.com/darrenpig/new_energy_coder_club/issues ) 提需求！无论是项目合作还是功能建议，我们都会仔细阅读并标记为 `讨论中`/`已采纳`
 - **🌐 社交阵地**：  
   - **Gitee 动态**：[项目主页](https://gitee.com/darrenpig/new_energy_coder_club) 实时更新代码与公告  
   - **官方网站**：[newenergycoder.club](https://www.newenergycoder.club) 获取最新活动、文档与社区介绍  
@@ -284,9 +287,9 @@ new_energy_coder_club/
 
 **🚀 小贴士**  
 
-- **项目双平台同步**：代码仓库同时在 [GitHub](https://github.com/Darrenpig/new_energy_coder_club ) 和 [Gitee](https://gitee.com/darrenpig/new_energy_coder_club) 维护，国内推荐用 [Gitee](https://gitee.com/darrenpig/new_energy_coder_club) 加速访问   
+- **项目双平台同步**：代码仓库同时在 [GitHub](https://github.com/Darrenpig/new_energy_coder_club ) 和 [Gitee](https://gitee.com/darrenpig/new_energy_coder_club) 维护，国内推荐用 [Gitee](https://gitee.com/darrenpig/new_energy_coder_club) 加速访问
 <a id="ack-list"></a>
-- **赞助与合作**：企业级合作请联系邮箱22230635@czu.cn，开源贡献者请直接提 PR，你的名字将闪耀在**致谢名单** 🌟  
+- **赞助与合作**：企业级合作请联系邮箱<22230635@czu.cn>，开源贡献者请直接提 PR，你的名字将闪耀在**致谢名单** 🌟  
 - **紧急问题**：邮件标题加注【紧急】，我们会优先处理！  
 
 **🙌 期待你的加入**  
@@ -295,18 +298,21 @@ new_energy_coder_club/
 ---
 
 ### 📚 更多信息
+
 详细的贡献指南请参考：[CONTRIBUTING.md](./CONTRIBUTING.md)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- ACKNOWLEDGMENTS -->
 ## 许可与合规（License & Compliance）
+
 - 主许可证: MIT（代码与文档遵循 MIT，见 [LICENSE](./LICENSE.md)）
 - 资料与第三方声明: README/Docs 中的外部链接、赛季资料索引仅作导航，版权归原作者/主办方所有
 - 安全与联系方式: 见 [SECURITY](./docs/SECURITY.md)，建议通过 Issues 报告安全问题
 - 行为准则与治理: 见 [Code of Conduct](./docs/CODE_OF_CONDUCT.md) 与 [Governance](./docs/GOVERNANCE.md)
+
 ## 🙋 新人任务看板（Help Wanted）
+
 - [Docs] 完善 2025 赛季运球机构文档  
   - 链接: ./competitions/2025-robocon/  
   - 验收: 文档结构规范、含图片/步骤、可复现  
@@ -323,25 +329,26 @@ new_energy_coder_club/
   - 预计: 1 天  
   - Owner: Robotics-SIG
 → 认领方式：在 Issue 评论 “I’d like to work on this” 或 `/assign me`，按 PR 模板提交
+
 ---
 
 ### References 参考文献
 
-1.  React Icons Development Team. React Icons Search Interface. https://react-icons.github.io/react-icons/search (2024).
-2.  远景资源团队. FRC机器人竞赛技术图纸资源库. http://pan.baidu.com/s/1zgAP8AmdhWhqjbqm_c0mog?pwd=v72M (2024).
-3. 机械智库. SolidWorks标准零件库. https://shop128404759.taobao.com/ (2024).
-4. 远景资源网. 工程技术资源共享平台. https://yuanjingziyuan.com/ (2024).
-5. CSDN博主. GitHub Badge制作教程指南. https://blog.csdn.net/m0_74037814/article/details/139511804 (2024).
+1. React Icons Development Team. React Icons Search Interface. <https://react-icons.github.io/react-icons/search> (2024).
+2. 远景资源团队. FRC机器人竞赛技术图纸资源库. <http://pan.baidu.com/s/1zgAP8AmdhWhqjbqm_c0mog?pwd=v72M> (2024).
+3. 机械智库. SolidWorks标准零件库. <https://shop128404759.taobao.com/> (2024).
+4. 远景资源网. 工程技术资源共享平台. <https://yuanjingziyuan.com/> (2024).
+5. CSDN博主. GitHub Badge制作教程指南. <https://blog.csdn.net/m0_74037814/article/details/139511804> (2024).
 6. NEC新能源开发者社区. 2025全国机器人竞赛ROBOCON项目文档. ./competitions/2025-robocon/ (2025).
-7. ROBOCON组委会. 全国大学生机器人大赛ROBOCON技术论坛. https://ask.cnrobocon.net/ (2024).
-8. DJI大疆创新. RoboMaster机甲大师赛官方技术论坛. https://bbs.robomaster.com/ (2024).
-9. 立创EDA. 开源硬件平台OSHW HUB技术社区. https://oshwhub.com/explore (2024).
-10. openEuler社区. 嵌入式SIG雪球计划南向BSP支持项目. https://gitee.com/openeuler/yocto-meta-openeuler/issues/I90DOU#comment-loadder (2024).
-11. 中科院软件研究所. 开源之夏AGL智能汽车项目. https://gitee.com/openeuler/open-source-summer/issues/IC3VLM#note_43627656 (2024).
-12. 深圳北理莫斯科大学. RoboMaster北极熊战队开源项目. https://gitee.com/SMBU-POLARBEAR (2024).
-13. 湖南大学跃鹿战队. RoboMaster电控通用嵌入式框架. https://gitee.com/hnuyuelurm/basic_framework (2024).
-14. UC Berkeley. Berkeley Humanoid Lite开源人形机器人项目. https://lite.berkeley-humanoid.org/ (2025).
-15. 重庆邮电大学HXC团队. ESP32开发板套件开源硬件设计. https://oshwhub.com/qingmeijiupiao/esp32robo (2024).
+7. ROBOCON组委会. 全国大学生机器人大赛ROBOCON技术论坛. <https://ask.cnrobocon.net/> (2024).
+8. DJI大疆创新. RoboMaster机甲大师赛官方技术论坛. <https://bbs.robomaster.com/> (2024).
+9. 立创EDA. 开源硬件平台OSHW HUB技术社区. <https://oshwhub.com/explore> (2024).
+10. openEuler社区. 嵌入式SIG雪球计划南向BSP支持项目. <https://gitee.com/openeuler/yocto-meta-openeuler/issues/I90DOU#comment-loadder> (2024).
+11. 中科院软件研究所. 开源之夏AGL智能汽车项目. <https://gitee.com/openeuler/open-source-summer/issues/IC3VLM#note_43627656> (2024).
+12. 深圳北理莫斯科大学. RoboMaster北极熊战队开源项目. <https://gitee.com/SMBU-POLARBEAR> (2024).
+13. 湖南大学跃鹿战队. RoboMaster电控通用嵌入式框架. <https://gitee.com/hnuyuelurm/basic_framework> (2024).
+14. UC Berkeley. Berkeley Humanoid Lite开源人形机器人项目. <https://lite.berkeley-humanoid.org/> (2025).
+15. 重庆邮电大学HXC团队. ESP32开发板套件开源硬件设计. <https://oshwhub.com/qingmeijiupiao/esp32robo> (2024).
 
 ---
 
@@ -352,7 +359,8 @@ new_energy_coder_club/
 ![UR机器人路径规划演示](./projects/research-horizontal/image/UR5路径规划.gif)
 *UR机器人路径规划演示 - 展示机器人运动控制能力*
 
-### 快速开始步骤：
+### 快速开始步骤
+
 1. **克隆仓库**: `git clone https://gitee.com/darrenpig/new_energy_coder_club`
 2. **查看项目**: 浏览 `projects/` 目录选择感兴趣的项目
 3. **环境配置**: 参考各项目的 `README.md` 进行环境搭建
@@ -362,9 +370,9 @@ new_energy_coder_club/
 
 仓库：new_energy_coder_club 开源人形仓库 Gitee X Github 双向
 地址：江苏省常州市新北区辽河路666号 玉衡A416仓库
-网址：https://gitee.com/darrenpig/new_energy_coder_club
+网址：<https://gitee.com/darrenpig/new_energy_coder_club>
 
- **前沿技术机器人No.24**
+### 前沿技术机器人No.24
 
 ---
 

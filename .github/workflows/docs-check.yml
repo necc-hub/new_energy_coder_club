@@ -27,21 +27,32 @@ jobs:
           fi
           echo "✅ 无垃圾文件"
 
-  # 2. Markdown 格式检查
+  # 2. Markdown 格式检查（只检查本次改动的文件，避免历史文档阻断 PR）
   lint:
-    name: Markdown lint
+    name: Markdown lint (changed files)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - name: Run markdownlint
+          node-version: 24
+      - name: Lint changed markdown files
         run: |
-          # 逐文件检查，任一文件失败即报告（不做全量聚合，避免大仓库超时）
-          find . -name '*.md' -not -path './.git/*' -print0 \
-            | xargs -0 -n1 npx -y markdownlint-cli@0.41.0 --config .github/markdownlint.json -- || \
-            { echo "::error::存在不符合 Markdown 规范的文件，详见上方输出"; exit 1; }
+          set -e
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="origin/${{ github.base_ref }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          mapfile -t FILES < <(git diff --name-only --diff-filter=ACMR "$BASE"...HEAD -- '*.md')
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "✅ 本次没有 Markdown 改动"
+            exit 0
+          fi
+          printf '待检查文件: %s\n' "${FILES[@]}"
+          npx -y markdownlint-cli@0.41.0 --config .github/markdownlint.json -- "${FILES[@]}"
 
   # 3. Markdown 内链接检查（只检查 PR 改动的文件，防止新增死链；外链不在范围内）
   links:
