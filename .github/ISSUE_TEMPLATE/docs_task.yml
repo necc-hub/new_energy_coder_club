@@ -1,7 +1,7 @@
 name: "📝 Docs task"
 description: "文档改进/新增页面/修订路线"
 title: "[docs] "
-labels: ["type:docs"]
+labels: ["documentation"]
 body:
   - type: textarea
     id: goal

@@ -1,0 +1,148 @@
+name: Docs Check
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # 1. 检查不应入库的文件：macOS AppleDouble (._*)、冲突残留等
+  hygiene:
+    name: File hygiene
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject AppleDouble / OS junk files
+        run: |
+          set -e
+          # actions/checkout 不含 .gitignore 里的未跟踪文件，但仓库历史中曾混入 ._* 文件
+          # 检查已跟踪文件中是否存在垃圾文件
+          junk=$(git ls-files | grep -E '(^|/)(\._.*|\.DS_Store|Thumbs\.db)$' || true)
+          if [ -n "$junk" ]; then
+            echo "::error::发现不应入库的系统垃圾文件："
+            echo "$junk"
+            exit 1
+          fi
+          echo "✅ 无垃圾文件"
+
+  # 2. Markdown 格式检查（只检查本次改动的文件，避免历史文档阻断 PR）
+  lint:
+    name: Markdown lint (changed files)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install pinned lint tools
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Lint changed markdown files
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="origin/${{ github.base_ref }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          mapfile -t FILES < <(git diff --name-only --diff-filter=ACMR "$BASE"...HEAD -- '*.md')
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "✅ 本次没有 Markdown 改动"
+            exit 0
+          fi
+          printf '待检查文件: %s\n' "${FILES[@]}"
+          npx --no-install markdownlint --config .github/markdownlint.json -- "${FILES[@]}"
+
+  # 3. Markdown 内链接检查（只检查 PR 改动的文件，防止新增死链；外链不在范围内）
+  links:
+    name: Link check (changed files)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check internal links
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="origin/${{ github.base_ref }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          mapfile -t FILES < <(git diff --name-only --diff-filter=ACMR "$BASE"...HEAD -- '*.md')
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "✅ 本次没有 Markdown 改动"
+            exit 0
+          fi
+          printf '待检查文件: %s\n' "${FILES[@]}"
+          python3 .github/scripts/check_links.py "${FILES[@]}"
+
+  # 4. 核心入口始终严格检查，避免被“只检查改动文件”的策略放过
+  core-links:
+    name: Core navigation links
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check core entry points
+        run: |
+          python3 .github/scripts/check_links.py \
+            README.md \
+            CONTRIBUTING.md \
+            projects/README.md \
+            competitions/README.md \
+            competitions/CURC2027ROBOCON/README.md \
+            docs/start-here/60min.md
+
+  # 5. 无硬件最小 Demo 冒烟测试
+  quickstart:
+    name: Quickstart smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run demo and verify output
+        run: |
+          python3 docs/nec-quickstart/hello_nec.py --seconds 2
+          test -s docs/nec-quickstart/out/run_log.csv
+          echo "✅ 最小 Demo 已运行并在文档所述路径生成 run_log.csv"
+
+  # 6. 全量死链报告（仅报告不阻断，供维护者修复存量问题）
+  link-report:
+    name: Broken link report (non-blocking)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # 只在手动触发或 push 到 master 时跑，PR 不跑全量
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Full scan (non-blocking)
+        run: |
+          python3 .github/scripts/check_links.py | tee broken-links.txt || {
+            echo "::warning::存在存量死链，报告已上传为 Artifact（不阻断本次提交）"
+          }
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: broken-links-${{ github.run_number }}
+          path: broken-links.txt
+          if-no-files-found: error
+          retention-days: 30

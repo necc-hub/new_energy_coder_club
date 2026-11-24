@@ -1,106 +1,53 @@
-# First Good Issue：小白看这里（NEC 任务系统）
+# Good First Issue：新人任务指南
 
-> 你不需要“很强”才能贡献。你只需要 **从一个标准的小任务**开始。
+> 你不需要“很强”才能贡献。你只需要从一个有明确验收标准的小任务开始。
 
----
+## 找到真实任务
 
-## 什么是 `good first issue`
+在 GitHub 查看[所有带 `good first issue` 标签的开放任务](https://github.com/necc-hub/new_energy_coder_club/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)。
 
-满足以下条件的任务，才配叫 `good first issue`：
+文档任务通常还带有 `documentation` 标签；代码缺陷使用 `bug`，新功能使用 `enhancement`。难度、预计耗时、涉及方向和带教人写在 Issue 正文，不依赖尚未创建的标签。
 
-- ✅ 2 小时以内可完成（新人）
-- ✅ 交付标准明确（做完什么算完成）
-- ✅ 不需要深上下文（不懂也能按步骤做）
-- ✅ 有参考路径（链接到相关文档/文件位置）
-- ✅ 不依赖昂贵硬件（最好能本地/仿真完成）
+一个合格的新人任务必须包含：
 
----
+- 2 小时以内可完成，不依赖昂贵硬件
+- 具体的修改文件路径
+- 可勾选的交付标准
+- 可复制的验证命令或检查方法
+- 带教人，或“维护者认领后指定”的明确说明
 
-## 新人领取任务的标准流程（必看）
+## 认领与提交
 
-### 1) 在 Issues 里筛选
-优先找带这些标签的：
-- `good first issue`
-- `mentor available`（有带教）
-- `type:docs`（最稳）
+1. 在 Issue 下评论：“我想认领这个任务，预计在 X 天内提交 PR。”等待维护者确认，避免重复劳动。
+2. 创建分支：`gfi/<issue-id>-<short-title>`。
+3. 尽早提交 Draft PR，描述中写 `Fix #<issue-id>`，并列出已完成与待确认项。
+4. 在本地执行 Issue 给出的验证命令；不要只写“已检查”而没有实际输出。
+5. Review 通过后由维护者合并。若无法继续，请在 Issue 中说明并释放任务。
 
-### 2) 认领（避免重复劳动）
-在 Issue 下评论一句：
-> 我想认领这个任务，我预计在 X 天内提交 PR。
+## 统一验收口径
 
-维护者会：
-- 给你 `status:in progress`
-- 或把你 assign（如平台支持）
+### 文档任务
 
-### 3) 开分支
-分支建议命名：
-- `gfi/<issue-id>-short-title`
+- 内部链接有效，关键步骤和路径可复制。
+- 结构清晰，包含必要的环境、输出与至少一条常见问题。
+- 对未实际运行的硬件流程明确标注“未验证”，不能伪造结果。
 
-### 4) 提早开 PR（推荐 Draft PR）
-你可以先开一个 Draft PR，把进度贴上来，维护者更容易带你。
+### 代码任务
 
-### 5) PR 必须包含什么
-- 关联 Issue（写 “Fix #xxx” 或者贴链接）
-- 简短说明你做了什么
-- 本地验证说明（至少写：我跑通了哪个 Demo/检查了哪些文档链接）
+- 提供最小复现或最小验证，默认行为不被意外改变。
+- 跑通 `python3 docs/nec-quickstart/hello_nec.py --seconds 2`（与任务无关的硬件项目可在 PR 中说明替代验证）。
+- PR 描述写清修改内容、验证命令和实际结果。
 
----
+## 维护者发布任务
 
-## NEC 的 `good first issue` 交付标准（统一验收口径）
+使用 Issue 模板 **Good first issue**。模板会强制填写背景、文件、完成标准、验证方法、耗时和带教人。不要把“学习某技术”“优化项目”“完善文档”这类没有交付物的条目直接标为新人任务。
 
-### 文档类（type:docs）
-- ✅ 链接可用（不要 404）
-- ✅ 结构清晰（标题/步骤/下一步）
-- ✅ 关键步骤可复制运行（命令、路径、输出）
-- ✅ 增加了 FAQ/排查（至少 1 条）
+首批任务已经发布，见[首批 Good First Issue 任务及 Issue 链接](../contribute/good-first-issue-backlog.md)。后续新增任务也应在此登记，完成时补充交付 PR 链接。
 
-### 代码类（type:feature/type:bug）
-- ✅ 有最小复现/最小验证
-- ✅ 不破坏现有 Demo（至少跑通 `docs/nec-quickstart`）
-- ✅ PR 描述里写清楚“怎么验证”
+## 提问格式
 
----
-
-## 新手任务清单（你们可以立刻发成 Issues）
-
-> 下面这些建议你们直接复制成 Issue 标题发出去，并打标 `good first issue`。
-
-### A. 文档类（最推荐）
-1. **docs：修正文档常见拼写**（Linux / Founder / EDA / maintainer 等）
-   - 标签：`good first issue` `type:docs` `difficulty:1` `area:repo`
-   - 验收：全文搜索替换并确认语义正确
-
-2. **docs：把“资料链接表格”整理成 Reference 页面**
-   - 标签：`good first issue` `type:docs` `difficulty:2` `area:community`
-   - 验收：按“机械/硬件/软件/运营”分类；保留提取码/解压码；加“版权与合规声明”
-
-3. **docs：补齐《新人 60 分钟上手》的 Windows/macOS 指南**
-   - 标签：`good first issue` `type:docs` `difficulty:1` `area:repo`
-   - 验收：每个平台至少一套可复制命令
-
-4. **docs：为 MicroROS(ESP32)Robot 写 1 页“快速开始索引”**
-   - 标签：`good first issue` `type:docs` `difficulty:2` `area:ros`
-   - 验收：写清楚“需要什么硬件/软件/预估时间/常见坑”
-
-### B. 仓库维护类（适合愿意学 Git 的新人）
-5. **repo：为 docs/nec-quickstart 增加一个 `--help` 示例截图**
-   - 标签：`good first issue` `type:docs` `difficulty:1` `area:repo`
-
-6. **repo：补一个 PR 模板里的检查项（比如运行 demo 的 checkbox）**
-   - 标签：`good first issue` `type:ops` `difficulty:1` `area:repo`
-
-### C. 轻量代码类（新人可尝试）
-7. **demo：给 hello_nec.py 增加 `--plot ascii`/`--plot off` 开关**
-   - 标签：`good first issue` `type:feature` `difficulty:2` `area:repo`
-   - 验收：默认行为不变；新增参数可用
-
----
-
-## 新人提问方式（能加速解决问题）
-
-复制这个模板发群里/发 Issue：
-
-- 我在跑：`xxx`（贴命令）
-- 我的环境：Windows/macOS/Linux + Python 版本
-- 我看到的报错：粘贴完整报错（不要只截一行）
-- 我已经尝试过：1) xxx 2) xxx
+- 我在运行：完整命令
+- 我的环境：Windows/macOS/Linux、Python/编译器版本
+- 实际结果：完整报错或截图
+- 我已尝试：步骤与结果
+- 相关文件：仓库内路径或 Issue/PR 链接

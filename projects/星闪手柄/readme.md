@@ -1,12 +1,10 @@
-# 资料https://www.bearpi.cn/core_board/bearpi/bm/h63/
+# 星闪手柄与 fbb_ws63 开发指南
+
+## 参考资料
+
+<https://www.bearpi.cn/core_board/bearpi/bm/h63/>
+
 [EB25](https://lierda.feishu.cn/wiki/X360wInOjihWzukypNzc0Df5nHf?from=from_copylink)
-
-
-
-
-# fbb_ws63开发指南
-
-
 
 ## 介绍
 
@@ -389,31 +387,33 @@ BearPi-Pico H3863提供了以下Demo供开发参考：
 
 | 序号 | 参考仓库                               | 网址                                                                                               |
 |----|------------------------------------|--------------------------------------------------------------------------------------------------|
-| 1  | eulercar_controller                | https://gitee.com/HiEuler/eulercar_controller                                                    |
-| 2  | SolarA2_1.1.0.1                    | https://gitee.com/Solarec/open_solarec#application                                               |
-| 3  | Vm-Ubuntu22.04-ROSSDK.md           | https://gitee.com/HiEuler/doc/blob/master/Vm-Ubuntu22.04-ROSSDK.md                               |
-| 4  | 基于openEuler Embedded的星闪开源应用案例开发 | https://gitee.com/openeuler/yocto-embedded-tools/tree/hieuler/hi-sle                             |
-| 5  | hi-sle/Autodesk_Fusion_360_Designs | https://gitee.com/openeuler/yocto-embedded-tools/tree/hieuler/hi-sle/Autodesk_Fusion_360_Designs |
-| 6  | hi-sle/Bill_of_Materials | https://gitee.com/openeuler/yocto-embedded-tools/blob/hieuler/hi-sle/Bill_of_Materials/material_description.txt |
-| 7  | ws63_ws73_ros2.c | https://gitee.com/openeuler/yocto-embedded-tools/blob/hieuler/hi-sle/EulerCar_Host_Computer_EulerPi_Source_Code/ws63_ws73_ros2.c |
-| 8  | fbb_ws63开发指南 | https://gitee.com/wu-luobin/fbb_ws63#https://gitee.com/link?target=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D892481769813 |
+| 1  | eulercar_controller                | <https://gitee.com/HiEuler/eulercar_controller>                                                    |
+| 2  | SolarA2_1.1.0.1                    | <https://gitee.com/Solarec/open_solarec#application>                                               |
+| 3  | Vm-Ubuntu22.04-ROSSDK.md           | <https://gitee.com/HiEuler/doc/blob/master/Vm-Ubuntu22.04-ROSSDK.md>                               |
+| 4  | 基于openEuler Embedded的星闪开源应用案例开发 | <https://gitee.com/openeuler/yocto-embedded-tools/tree/hieuler/hi-sle>                             |
+| 5  | hi-sle/Autodesk_Fusion_360_Designs | <https://gitee.com/openeuler/yocto-embedded-tools/tree/hieuler/hi-sle/Autodesk_Fusion_360_Designs> |
+| 6  | hi-sle/Bill_of_Materials | <https://gitee.com/openeuler/yocto-embedded-tools/blob/hieuler/hi-sle/Bill_of_Materials/material_description.txt> |
+| 7  | ws63_ws73_ros2.c | <https://gitee.com/openeuler/yocto-embedded-tools/blob/hieuler/hi-sle/EulerCar_Host_Computer_EulerPi_Source_Code/ws63_ws73_ros2.c> |
+| 8  | fbb_ws63开发指南 | <https://gitee.com/wu-luobin/fbb_ws63#https://gitee.com/link?target=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D892481769813> |
 
 ---
+
 @吴洛斌 25.3.10 测试验证开源之夏文件
+
 ---
-# 基于openEuler Embedded的星闪开源应用案例开发
+
+## 基于openEuler Embedded的星闪开源应用案例开发
 
 本开源项目是一款「基于NearLink_DK_WS63星闪开发板制作的遥控手柄」,无缝互联并操作「集成星闪WS73的智能小车」(小车可兼容Open Euler与Ros2系统)
 
 > 星光熠熠，科技浪潮涌动！"Euler星闪耀·万物智联" —— 星闪+OpenEuler Embedded，一场关于智能交互的盛宴，让未来触手可及！
 
-
 <div style="font-size:2.0em" >
   <p align="center">
     <img src="https://img.shields.io/badge/梅科尔工作室-blue?style=for-the-badge&logo=&logoColor=white" alt="梅科尔">
   </a>
-  <a href="https://gitee.com/AbrillantLee/yocto-embedded-tools/stargazers"><img src="https://img.shields.io/badge/Stars-Click%20me-%23293241?style=flat-square&labelColor=%23293241&color=%23E0FBFC"></a>
-  <a href="https://gitee.com/AbrillantLee/yocto-embedded-tools/contributors"><img src="https://img.shields.io/badge/Members-Click%20me-%23293241?style=flat-square&labelColor=%23293241&color=%2398C1D9"></a>
+  <a href="https://gitee.com/AbrillantLee/yocto-embedded-tools/stargazers"><img src="https://img.shields.io/badge/Stars-Click%20me-%23293241?style=flat-square&labelColor=%23293241&color=%23E0FBFC" alt="Stars"></a>
+  <a href="https://gitee.com/AbrillantLee/yocto-embedded-tools/contributors"><img src="https://img.shields.io/badge/Members-Click%20me-%23293241?style=flat-square&labelColor=%23293241&color=%2398C1D9" alt="Members"></a>
   </p>
 </div>
 
@@ -424,7 +424,7 @@ BearPi-Pico H3863提供了以下Demo供开发参考：
 
   <h3 align="center" >「星闪 · 遥控手柄」</h3>
   <p align="center">
-    「星闪：短距新赛道」: 不止于控，更在于“速” 
+    「星闪：短距新赛道」: 不止于控，更在于“速”
     <br />
     <br />
     <a href="https://github.com/李浩楠/yocto-embedded-tools">查看Demo</a>
@@ -461,9 +461,7 @@ BearPi-Pico H3863提供了以下Demo供开发参考：
       - [遥控器整体调试](#遥控器整体调试)
       - [控制第二辆小车（Hihope Car）](#控制第二辆小车hihope-car)
   - [星闪手柄实操展示](#星闪手柄实操展示)
-  - [作者](#作者)
-  - [特别鸣谢 「梅科尔工作室」](#特别鸣谢-梅科尔工作室)
-
+  - [个人进度](#个人进度)
 
 ## 项目介绍
 
@@ -482,7 +480,8 @@ BearPi-Pico H3863提供了以下Demo供开发参考：
 ### 目录结构
 
 如果刚刚开始接触这个项目，那么您可以看看本项目的文件结构，这样您可以更好的理解这个项目。
-```
+
+```text
 hi-sle 
 ├── Autodesk_Fusion_360_Designs/                  # Autodesk Fusion 360 模型设计文件夹
 ├── Bill_of_Materials/                            # 物料清单
@@ -553,7 +552,7 @@ hi-sle
 
 2. 在xxx\src\application\samples\peripheral\CMakeLists.txt文件中新增编译案例（如果不知道在哪个地方加的，可以在“set(SOURCES "${SOURCES}" PARENT_SCOPE)”上面一行添加）。
 
-    ```
+    ```cmake
     if(DEFINED CONFIG_SAMPLE_SUPPORT_SLE_OSPP)
         add_subdirectory_if_exist(sle_ospp)
     endif()
@@ -561,7 +560,7 @@ hi-sle
   
 3. 在xxx\src\application\samples\peripheral\Kconfig文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加，可以在最后一行添加）。
 
-    ```
+    ```text
     config SAMPLE_SUPPORT_SLE_OSPP
         bool
         prompt "使能星闪遥控器"
@@ -583,11 +582,11 @@ hi-sle
 
 #### 2.2 EulerPi
 
-- EulerPi官方Gitee仓库提供教程，可以参考[EulerPi Gitee仓库 教程 ](https://gitee.com/HiEuler/doc/blob/master/Vm-Ubuntu22.04-ROSSDK.md)。
+- EulerPi官方Gitee仓库提供教程，可以参考[EulerPi Gitee仓库 教程](https://gitee.com/HiEuler/doc/blob/master/Vm-Ubuntu22.04-ROSSDK.md)。
 
 - 注意在在`先从gitee网站上，将项目代码下载到到ubuntu环境，普通目录/home/robot下` 这一步时:
 
-- 将`xxx/eulercar/sle_control/src/bs21_ws73_ros2.c`文件替换为本目录下的`EulerCar_Host_Computer_EulerPi_Source_Code\ws63_ws73_ros2.c`文件 
+- 将`xxx/eulercar/sle_control/src/bs21_ws73_ros2.c`文件替换为本目录下的`EulerCar_Host_Computer_EulerPi_Source_Code\ws63_ws73_ros2.c`文件
 
 #### 2.3 Hi3061M
 
@@ -600,7 +599,7 @@ hi-sle
 
 ### ws63代码文件详解
 
-```
+```text
 │  ├── /SLE_OSPP_SERVER/
 │  │  ├── inc/
 │  │  │  │  ├── button.h               # 按钮模块的头文件
@@ -617,9 +616,10 @@ hi-sle
 │  │  │  ├── Kconfig                   # Kconfig 配置文件
 
 ```
-#### EulerCar控制核心代码 
 
-```
+#### EulerCar控制核心代码
+
+```c
 // 键盘报告结构体定义
 typedef struct
 {
@@ -676,8 +676,8 @@ void eulercar_control_forward(void)
 
 ```
 
-
 ## 硬件指南
+
 硬件主要由底板，PCB主板和亚克力板组成
 <p align="center">
 </p>
@@ -688,18 +688,21 @@ void eulercar_control_forward(void)
 <p align="center">
 </p>
 
+<!-- 历史文档在列表项之间插入 HTML 图片，保留原编号并仅在本节关闭列表连续检查。 -->
+<!-- markdownlint-disable MD029 -->
 ### 1. 电路设计
 
 > 本硬件电路主要分为电源管理电路，震动马达驱动电路和控制模块电路构成
 <p align="center">
 </p>
 
-1. 电源管理电路以IP5306（<a  href="hi-sle\RelevantDetails\IP5306_datasheet_v1.01.pdf" alt="链接">产品资料🔗</a>）为核心。IP5306是一款集成升压转换器、锂电池充电管理、电池电量指示的多功能电源管理 SOC，为移动电源提供完整的电源解决方案。
+1. 电源管理电路以IP5306（`IP5306_datasheet_v1.01.pdf`（原文件未随本仓库归档））为核心。IP5306是一款集成升压转换器、锂电池充电管理、电池电量指示的多功能电源管理 SOC，为移动电源提供完整的电源解决方案。
     - 可同步开关充放电，支持4LED电量显示
     - 自动检测充电器插拔，自适应充电电流调节
     - 按键功能：
       - 短按（持续时间长于 50ms，但小于 2s）会打开电量显示灯和升压输出。
       - 连续两次短按键（ 1s 内），会关闭电量显示和升压输出
+
 <p align="center">
 </p>
 <p align="center">
@@ -714,17 +717,16 @@ void eulercar_control_forward(void)
 
 ### 2. PCBlayout
 
-
-以下是<a href="JLCPCB_Files\Gerber_eulercar_2024-09-15.zip" alt="链接">PCB设计🔗</a>
+以下是<a href="相关资料/Gerber_PCB1_2025-04-09.zip" alt="链接">PCB设计🔗</a>
 <p align="center">
 </p>
 
-
-为了方便硬件焊接测试与软件调试，我们将各个摇杆等主要功能按键导出为<a href="JLCPCB_Files\Gerber_eulercar_2024-09-15.zip" alt="链接">markdown文件🔗</a>
+为了方便硬件焊接测试与软件调试，我们将各个摇杆等主要功能按键导出为<a href="相关资料/Gerber_PCB1_2025-04-09.zip" alt="链接">markdown文件🔗</a>
 以供快速参考
 
 ### 3. 主体建模
-1. 遥控器<a href="hi-sle\Autodesk_Fusion_360_Designs\remote_controller_model.dxf" alt="链接">底板模型🔗</a>总体按照PCB轮廓构建，使用Autodesk Fusion进行建模。
+
+1. 遥控器`remote_controller_model.dxf`（原文件未随本仓库归档）总体按照PCB轮廓构建，使用Autodesk Fusion进行建模。
     - 整体参考游戏手柄与遥控手柄设计
     - 底板前端突起为外置天线座，可以搭载外设SLE天线
     - 预留四个M3空位，用于与PCB和顶板的连接固定
@@ -732,8 +734,7 @@ void eulercar_control_forward(void)
 <p align="center">
 </p>
 
-
-2. 顶层<a href="hi-sle\Autodesk_Fusion_360_Designs\remote_controller_model.f3d" alt="链接">亚克力板轮廓🔗</a>由底板模型轮廓构建，使用Fusion进行导出
+2. 顶层`remote_controller_model.f3d`（原文件未随本仓库归档）由底板模型轮廓构建，使用Fusion进行导出
     - 顶板设计需要考虑按键与摇杆等传感器加上键帽配件等的总体高度
     - 预留四个M3空位，用于与PCB和顶板的连接固定
     - 六角铜柱需要的最小高度为：PCB插排高度+WS63E最大高度 = 16mm
@@ -744,18 +745,16 @@ void eulercar_control_forward(void)
 ### 4. 物料购买
 
 PDB电子元器件物料可直接由嘉立创EDA导出
-<a href="hi-sle\JLCPCB_Files\BOM_Board1_EulerCar.xlsx" alt="链接">BOM表单🔗</a>，交由专业配件商家购买。
+`BOM_Board1_EulerCar.xlsx`（原文件未随本仓库归档），交由专业配件商家购买。
 
-除此之外，完成总体装配还需要<a  href="hi-sle\Bill_of_Materials\material_purchase.xlsx" alt="链接">其他配件或耗材🔗</a>。
-
+除此之外，完成总体装配还需要`material_purchase.xlsx`（原文件未随本仓库归档）。
 
 1. 摇杆帽：用于摇杆操控（注意底孔是小孔型号哦）
-2. 亚克力板：用于遥控器整体面板（<a href="hi-sle\Autodesk_Fusion_360_Designs\remote_controller_model.dxf" alt="链接">dxf亚克力轮廓图🔗</a>）
+2. 亚克力板：用于遥控器整体面板（`remote_controller_model.dxf`（原文件未随本仓库归档））
 3. 焊锡膏：用于贴片原件焊料
 4. 704硅橡胶：用于PCB电池盒固定
 5. 18650电池：用于遥控板供电
 6. 六角铜柱：用于整体连接
-
 
 ### 5. 焊接说明
 
@@ -772,18 +771,20 @@ PDB电子元器件物料可直接由嘉立创EDA导出
 
 4. 每个模块焊接完成后，可以对照PCB工程图，用万用表逐个检查是否存在焊错、短路、虚焊、脱焊等情况。
 5. 按上述的步骤，完成所有元器件的焊接即可。也可使用洗板水确保焊后的美观。
-<p align="center">
-</p>
 
 <p align="center">
 </p>
 
+<p align="center">
+</p>
 
+<!-- markdownlint-enable MD029 -->
 ### 6. 测试说明
 
 > 焊接完成后，要先目测、用万用表检测下，有没有焊接错的地方。尤其确保没有短路。第一次上电时也要第一时间观察下有没有异常，有异常迅速拔掉电源。
 
 可能遇到的问题：
+
 1. IP5306相关问题
     - [x] 1. 输出电压很低，只有2-3V，没有了升压。<br>
         - 原因
@@ -818,7 +819,9 @@ PDB电子元器件物料可直接由嘉立创EDA导出
         - 检查元器件是否脱焊、虚焊，重新焊接。
 
 ### 7. 硬件总装
+
 注意三个组件从底部往上装配。
+
 1. 从底版底部拧入螺丝，在底版上部放入垫片与螺帽。在确保与PCB孔位对齐的情况下固定好底板与螺丝。
 2. 在底板上部侧放入PCB，注意对准螺孔，在上侧放入垫片与六角铜柱拧紧。
 3. 在螺柱顶部放入亚克力板，对齐后加上垫片拧入螺丝
@@ -829,58 +832,73 @@ PDB电子元器件物料可直接由嘉立创EDA导出
 
 ### 8. 软硬件调试
 
-
-
 #### ws63主控调试
 
-- 程序：[RemoteController_WS63E_Source_Code_one](RemoteController_WS63E_Source_Code_one)
+- 程序目录：`RemoteController_WS63E_Source_Code_one`（源码未随本仓库归档，复现前需补充）
 - 调试现象：ws63遥控小车前进、后退、左转、右转，每个控制指令中间间隔100ms；
 - 如需调整控制时间，可在`eulercar_control.h`中修改宏定义`PRESS_RELEASE_INTERVAL`即可
+
 <p align="center">
 </p>
 
-
 #### 遥控器整体调试
 
-- 程序：[RemoteController_WS63E_Source_Code_two](RemoteController_WS63E_Source_Code_two)
+- 程序目录：`RemoteController_WS63E_Source_Code_two`（源码未随本仓库归档，复现前需补充）
 - 调试现象：左摇杆x轴控制小车左转、右转，右摇杆y轴控制小车前进、后退;
 - usb连接遥控器上的主控ws63, 同时启动EulerCar小车sle和ros节点即可。
+
 <p align="center">
 </p>
 
 #### 控制第二辆小车（Hihope Car）
+
 <p align="center">
 </p>
-
 
 ## 星闪手柄实操展示
 
 手柄操作方法：
+
 1. 左摇杆：控制EulerCar前进、后退、左转、右转
 2. 右摇杆：控制EulerCar夹爪：张开、闭合
 3. 左右扭子开关：切换不同EulerCar小车
 4. ...持续更新中
 
+## 个人进度
 
+### 杨力滔
 
-
-# 个人进度
-## 杨力滔
 #### 4.20正式开始安装相关环境，WSL子系统开发环境搭建，一开始没找到下载的fbb_ws63_wsl，最后将它拖到桌面上，找到了文件路径，在poweshell中要更新wsl子系统不然不能使用
-#### 4.26星闪代码下载，将星闪代码导入到VSCode，对星闪代码编译。
-#### 4.27进行镜像烧录，Typec线将板端与PC端连接，安装驱动“CH341SER驱动”下载烧录工具进行烧录，发现总是失败。
+
+#### 4.26星闪代码下载，将星闪代码导入到VSCode，对星闪代码编译
+
+#### 4.27进行镜像烧录，Typec线将板端与PC端连接，安装驱动“CH341SER驱动”下载烧录工具进行烧录，发现总是失败
+
 #### 4.28解决不能烧录问题，有的板子需要插拔后才可以烧录成功，进行虚拟机开发环境部署，下载项目代码和安装SDK，然后进行项目代码编译
-#### 4.29进行小车端组网配置和域id配置。
-#### 4.30对海鸥派进行开发和使用，进行EulerPi镜像下载，镜像文件包括Uboot、kernel和rootfs，需要拷贝到SD卡给海鸥派升级，过程中遇到了问题，发现可能是拷贝镜像文件到 SD 卡可能未正确创建分区表或文件系统，我们直接使用 dd 写入完整镜像：sudo dd if=image.img of=/dev/sdX bs=4M status=progress。
+
+#### 4.29进行小车端组网配置和域id配置
+
+#### 4.30对海鸥派进行开发和使用，进行EulerPi镜像下载，镜像文件包括Uboot、kernel和rootfs，需要拷贝到SD卡给海鸥派升级，过程中遇到了问题，发现可能是拷贝镜像文件到 SD 卡可能未正确创建分区表或文件系统，我们直接使用 dd 写入完整镜像：sudo dd if=image.img of=/dev/sdX bs=4M status=progress
+
 #### 5.1 下载Uboot二进制包，然后下载海鸥派普通版本镜像![输入图片说明](image/1747832651740.png)
-#### 5.2 对海鸥派进行镜像烧录，我们先快速构建出一个openEuler Embedded镜像，需要在构建主机上安装必要的主机包，初始化oebuild构建环境，然后执行命令进行 ARM64 QEMU 镜像的构建，build_arm64 为该镜像的构建目录，在主机上通过命令安装QEMU。
+
+#### 5.2 对海鸥派进行镜像烧录，我们先快速构建出一个openEuler Embedded镜像，需要在构建主机上安装必要的主机包，初始化oebuild构建环境，然后执行命令进行 ARM64 QEMU 镜像的构建，build_arm64 为该镜像的构建目录，在主机上通过命令安装QEMU
+
 #### 5.3 完成基于SDK的应用开发，进入到镜像构建目录 build_arm64，执行命令构建SDK卡，安装依赖软件包，执行SDK自解压安装脚本，然后设置SDK环境变量，并检查是否安装成功如图所示![输入图片说明](image/1747833318080.png)
-#### 5.6了解手柄电路的设计，遥控器底板模型总体按照PCB轮廓构建，使用Autodesk Fusion进行建模，顶层亚克力板轮廓，由底板模型轮廓构建，使用Fusion进行导出。
-#### 5.7购买PDB电子元器件物料。
-#### 5.8先试着调试1.0星闪手柄。今日无事，早点回去休息。
-#### 5.9所有材料到齐，准备进行焊接，从贴片元器件开始，找到要焊接的元器件型号。
-#### 5.10用万用表检查有没有焊接错误的地方，遇到问题开机后休眠，检查后发现又虚焊的情况。
-#### 5.11将硬件总装，对软硬件进行调试，完成任务。以下是完成的手柄图片。
-## 图片：
+
+#### 5.6了解手柄电路的设计，遥控器底板模型总体按照PCB轮廓构建，使用Autodesk Fusion进行建模，顶层亚克力板轮廓，由底板模型轮廓构建，使用Fusion进行导出
+
+#### 5.7购买PDB电子元器件物料
+
+#### 5.8先试着调试1.0星闪手柄。今日无事，早点回去休息
+
+#### 5.9所有材料到齐，准备进行焊接，从贴片元器件开始，找到要焊接的元器件型号
+
+#### 5.10用万用表检查有没有焊接错误的地方，遇到问题开机后休眠，检查后发现又虚焊的情况
+
+#### 5.11将硬件总装，对软硬件进行调试，完成任务。以下是完成的手柄图片
+
+## 图片
+
 ![输入图片说明](https://gitee.com/ylt123456789/new_energy_coder_club/raw/master/%E7%A7%91%E7%A0%94%E3%80%8C%E6%A8%AA%E5%90%91%E9%A1%B9%E7%9B%AE%E3%80%8D/20250426%E6%98%9F%E9%97%AA%E6%89%8B%E6%9F%84/image/1f93acac9135ea619e2737446bac10f.jpg)
 ![输入图片说明](image/26a7f4dbece3034dc0a8081bc154da9.jpg)
