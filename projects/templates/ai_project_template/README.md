@@ -386,7 +386,7 @@ def preprocess_data(
 
 ### 提交信息规范
 
-```
+```text
 类型(范围): 简短描述
 
 详细描述（可选）
@@ -415,12 +415,12 @@ def preprocess_data(
 ### 社区资源
 
 - **技术论坛**: [NEC技术社区](https://gitee.com/darrenpig/new_energy_coder_club)
-- **学习资源**: [AI项目组文档](../ai/README.md)
-- **培训材料**: [项目模板指南](./docs/)
+- **学习资源**: [AI 项目组资料（Gitee 镜像）](https://gitee.com/darrenpig/new_energy_coder_club)
+- **培训材料**: [通用项目 README 模板](../../../docs/templates/README_PROJECT_TEMPLATE.md)
 
 ---
 
-**许可证**: MIT License  
+**许可证**: 在 NEC 主仓库中默认采用[木兰宽松许可证第 2 版](../../../LICENSE.md)；独立项目应按实际情况选择许可证  
 **版本**: v1.0.0  
 **维护团队**: AI项目组 - NEC新能源开发者社区
 

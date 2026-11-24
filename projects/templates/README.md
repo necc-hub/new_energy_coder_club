@@ -1,122 +1,54 @@
-# 项目模板 (Project Templates)
+# 项目模板（Project Templates）
 
-本目录提供了 NEC新能源开发者社区 各类项目的标准化模板，帮助开发者快速创建规范的项目结构。
+模板用于统一项目信息和最小验证方式，不要求每个项目都创建一套庞大目录。
 
-## 📁 模板类型
+## 可用模板
 
-### [AI项目模板](./ai_project_template/)
-适用于机器学习、深度学习、数据分析等人工智能项目。
+| 模板 | 适用场景 | 说明 |
+|---|---|---|
+| [通用项目 README](../../docs/templates/README_PROJECT_TEMPLATE.md) | 所有新项目 | 首选；包含状态、负责人、验证、Roadmap 和许可证字段 |
+| [AI 项目模板](./ai_project_template/README.md) | 数据分析、模型训练 | 提供 Python 项目结构示例；部分源码和文档需按项目补充 |
+| [嵌入式项目模板](./embedded_project_template/README.md) | MCU、智能硬件、通信 | 提供硬件、构建、烧录和测试章节示例 |
 
-### [嵌入式项目模板](./embedded_project_template/)
-适用于物联网设备、智能硬件、通信协议等嵌入式项目。
+机器人项目使用通用项目 README，并按实际需要添加 ROS 包、固件、硬件和模型目录。目前没有独立的机器人或通用目录模板，请不要再引用不存在的路径。
 
-### [机器人项目模板](./robotics_project_template/)
-适用于ROS机器人、飞控系统、运动控制等机器人技术项目。
+## 使用方法
 
-### [通用项目模板](./general_project_template/)
-适用于其他类型的软件开发项目。
+### 1. 从仓库根目录复制模板
 
-## 🚀 使用方法
-
-### 1. 选择合适的模板
-根据项目类型选择对应的模板目录。
-
-### 2. 复制模板
 ```bash
-# 复制AI项目模板
-cp -r templates/ai_project_template/ ../ai/your_project_name/
-
-# 复制嵌入式项目模板
-cp -r templates/embedded_project_template/ ../embedded/category/your_project_name/
-
-# 复制机器人项目模板
-cp -r templates/robotics_project_template/ ../robotics/category/your_project_name/
+cp docs/templates/README_PROJECT_TEMPLATE.md projects/your-project/README.md
 ```
 
-### 3. 自定义项目
-- 修改README.md中的项目信息
-- 更新配置文件中的项目名称
-- 根据需要添加或删除目录
-- 安装项目依赖
+AI 或嵌入式项目可参考相应目录中的详细章节，但只复制实际需要的文件。模板中的 `your-project`、`<项目名称>`、`@xxx` 等占位符必须替换。
 
-### 4. 提交到版本控制
+### 2. 先写最小验证
+
+README 顶部至少填写：
+
+- 状态：`active` / `maintenance` / `archived` / `待复核`
+- 负责人：GitHub ID 或“待认领”
+- 最后验证：实际日期；未运行则写“未记录”
+- 复现入口：一条实际可运行命令，或明确标注“待补最小 Demo”
+- 下一步：一个可交付任务或 Issue
+
+不要把示例命令、规划中的目录或硬件指标写成已经实现的功能。
+
+### 3. 提交前检查
+
 ```bash
-cd your_project_name
-git add .
-git commit -m "Initial project setup from template"
+git status --short
+python3 .github/scripts/check_links.py projects/your-project/README.md projects/README.md
+npx --no-install markdownlint --config .github/markdownlint.json -- projects/your-project/README.md projects/README.md
 ```
 
-## 📋 模板规范
+新项目还需更新[项目总索引](../README.md)。图片、图纸、PDF 和数据集遵循[仓库资产规范](../../docs/contribute/repository-assets.md)。
 
-### 目录结构
-每个模板都包含以下标准结构：
-- `README.md`: 项目说明文档模板
-- `src/`: 源代码目录
-- `docs/`: 文档目录
-- `tests/`: 测试代码目录
-- `config/`: 配置文件目录
-- 相关的构建和依赖管理文件
+## 模板维护
 
-### 文档模板
-- 项目简介和目标
-- 技术栈和依赖
-- 安装和运行说明
-- API文档和使用示例
-- 贡献指南
-- 许可证信息
+- 模板应与当前贡献流程、主许可证和 GitHub 组织保持一致。
+- 新增模板必须提供自身可访问的 README，不能只在索引里创建空链接。
+- 删除模板示例中的失效相对链接；指向真实参考资料时使用完整 URL。
+- 示例配置和示例代码要注明“示例”，不能替代实际运行验证。
 
-### 配置文件
-- 依赖管理文件（requirements.txt, package.json等）
-- 构建配置文件（CMakeLists.txt, Makefile等）
-- 环境配置文件（.env.example等）
-- CI/CD配置文件（.github/workflows/等）
-
-## 🔧 自定义模板
-
-### 创建新模板
-1. 在templates目录下创建新的模板目录
-2. 按照标准结构组织文件
-3. 编写详细的README文档
-4. 提供示例代码和配置
-5. 更新本文档的模板列表
-
-### 模板维护
-- 定期更新依赖版本
-- 根据最佳实践调整结构
-- 收集用户反馈并改进
-- 保持文档的准确性
-
-## 📚 最佳实践
-
-### 项目命名
-- 使用有意义的项目名称
-- 遵循命名规范（日期前缀 + 描述）
-- 避免使用特殊字符和空格
-
-### 文档编写
-- 使用清晰的标题结构
-- 提供详细的安装说明
-- 包含使用示例和截图
-- 定期更新文档内容
-
-### 代码组织
-- 遵循相应语言的编码规范
-- 使用有意义的函数和变量名
-- 添加必要的注释和文档字符串
-- 编写单元测试和集成测试
-
-## 🤝 贡献指南
-
-### 如何贡献模板
-1. Fork本仓库
-2. 创建新的模板分支
-3. 按照规范创建模板
-4. 提交Pull Request
-5. 等待代码审查和合并
-
-
-
----
-
-*最后更新: 2025年1月*
-*维护者: 项目模板维护组*
+最后复核：2026-11-25。
