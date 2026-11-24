@@ -23,8 +23,8 @@
 
 # NEC · New Energy Coder Club
 
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)[![Chat](https://img.shields.io/badge/Chat-QQ-blue?style=flat-square)](https://gitee.com/darrenpig/new_energy_coder_club/issues/IDATOS)[![Open Issues](https://img.shields.io/github/issues/darrenpig/new_energy_coder_club?label=open%20issues)](https://github.com/darrenpig/new_energy_coder_club/issues)[![Open PRs](https://img.shields.io/github/issues-pr/darrenpig/new_energy_coder_club?label=open%20PRs)](https://github.com/darrenpig/new_energy_coder_club/pulls)[![Docs](https://img.shields.io/badge/docs-%E2%9C%94%20complete-brightgreen)](docs/)
-[![Version](https://img.shields.io/github/v/tag/darrenpig/new_energy_coder_club?label=Version)](https://github.com/darrenpig/new_energy_coder_club/releases)[![Project Status](https://img.shields.io/badge/Project%20Status-Active-green)](https://github.com/darrenpig/new_energy_coder_club)[![Website](https://img.shields.io/badge/Website-newenergycoder.club-orange?style=flat-square)](https://www.newenergycoder.club/)[![Knowledge Base](https://img.shields.io/badge/Knowledge%20Base-Feishu-blue?style=flat-square)](https://scn0bdoc8zxg.feishu.cn/wiki/S10LwzVZdiWLwxkEnEqcTcmEn6e)
+[![License](https://img.shields.io/badge/License-Mulan_PSL_v2-green)](LICENSE.md)[![Chat](https://img.shields.io/badge/Chat-QQ-blue?style=flat-square)](https://gitee.com/darrenpig/new_energy_coder_club/issues/IDATOS)[![Open Issues](https://img.shields.io/github/issues/darrenpig/new_energy_coder_club?label=open%20issues)](https://github.com/necc-hub/new_energy_coder_club/issues)[![Open PRs](https://img.shields.io/github/issues-pr/darrenpig/new_energy_coder_club?label=open%20PRs)](https://github.com/necc-hub/new_energy_coder_club/pulls)[![Docs](https://img.shields.io/badge/docs-%E2%9C%94%20complete-brightgreen)](docs/)
+[![Version](https://img.shields.io/github/v/tag/darrenpig/new_energy_coder_club?label=Version)](https://github.com/necc-hub/new_energy_coder_club/releases)[![Project Status](https://img.shields.io/badge/Project%20Status-Active-green)](https://github.com/necc-hub/new_energy_coder_club)[![Website](https://img.shields.io/badge/Website-newenergycoder.club-orange?style=flat-square)](https://www.newenergycoder.club/)[![Knowledge Base](https://img.shields.io/badge/Knowledge%20Base-Feishu-blue?style=flat-square)](https://scn0bdoc8zxg.feishu.cn/wiki/S10LwzVZdiWLwxkEnEqcTcmEn6e)
 
 ## About NEC
 
@@ -184,9 +184,9 @@ new_energy_coder_club/
         <li><a href="./projects/README.md">📁 项目总览</a> - 查看所有项目分类和导航</li>
         <li><a href="./competitions/2025-robocon/">🤖 2025 ROBOCON</a> - 全国大学生机器人竞赛</li>
         <li><a href="./projects/robotics/人形机器人/">🦾 人形机器人</a> - Duma小型人形机器人项目</li>
-        <li><a href="./projects/embedded/20250426星闪手柄/">⚡ 星闪技术</a> - 新一代无线通信技术</li>
-        <li><a href="./projects/ai/5axis-fluid-workstation/">🧠 5轴流体工作站</a> - 智能能源管理系统 · <a href="https://github.com/Darrenpig/5-axis-fluid-workstation">GitHub</a></li>
-        <li><a href="./projects/robotics/mechdog-k230-kfs/">🐶 轮腿机器狗 K230 KFS</a> - 基于K230/KFS的轮腿机器狗工程</li>
+        <li><a href="./projects/星闪手柄/">⚡ 星闪技术</a> - 新一代无线通信技术</li>
+        <li><a href="./projects/5axis-fluid-workstation/">🧠 5轴流体工作站</a> - 智能能源管理系统 · <a href="https://github.com/Darrenpig/5-axis-fluid-workstation">GitHub</a></li>
+        <li><a href="./projects/robotics/机器狗-k230/">🐶 轮腿机器狗 K230 KFS</a> - 基于K230/KFS的轮腿机器狗工程</li>
         <li><a href="./docs/start-here/60min.md">🚀 Quickstart（新人上手）</a> · <a href="./docs/start-here/first-good-issue.md">First Good Issue</a> · <a href="https://gitee.com/darrenpig/new_energy_coder_club/issues">Join</a></li>
         <li><a href="./projects/research-horizontal/README.md">🔬 科研横向项目</a> - 产学研合作项目总览</li>
         <li><a href="./projects/research-horizontal/mica-validation/README.md">🎯 MICA验证项目</a> - 关键性验证与文档系统</li>
@@ -224,8 +224,8 @@ new_energy_coder_club/
         <li><a href="./projects/research-horizontal/AGL-openEuler.md">📄 AGL-openEuler</a></li>
         <li><a href="./projects/research-horizontal/dexterous-hand.md">📄 dexterous-hand</a></li>
         <li><a href="./projects/research-horizontal/pneumatic-system.md">📄 pneumatic-system</a></li>
-        <li><a href="./projects/robotics/mechdog-k230-kfs/">📄 K230-KFS</a></li>
-        <li><a href="./projects/ai/5axis-fluid-workstation/">📄 5轴流体工作站</a></li>
+        <li><a href="./projects/robotics/机器狗-k230/">📄 K230-KFS</a></li>
+        <li><a href="./projects/5axis-fluid-workstation/">📄 5轴流体工作站</a></li>
       </ul>
     </td>
   </tr>
@@ -262,8 +262,8 @@ new_energy_coder_club/
 这里是 **「技术宅的游乐场」** + **「竞赛党的弹药库」**，用开源精神点燃新能源与机器人的未来！🚀  
 （想一起造轮子or抱团打比赛？速戳：[仓库传送门](https://gitee.com/darrenpig/new_energy_coder_club)）
 
-![alt](https://img.shields.io/badge/license-CIT-green?logo=dark-green) ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success) ![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github) [![GitHub contributors](https://img.shields.io/github/contributors/shravan20/github-readme-quotes.svg)](https://github.com/Darrenpig/new_energy_coder_club/graphs/contributors)
-[![Pull Request Counts](https://img.shields.io/bitbucket/pr/darrenpig/new_energy_coder_club)](https://github.com/Darrenpig/new_energy_coder_club/pulls)
+![alt](https://img.shields.io/badge/license-Mulan_PSL_v2-green) ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success) ![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github) [![GitHub contributors](https://img.shields.io/github/contributors/shravan20/github-readme-quotes.svg)](https://github.com/necc-hub/new_energy_coder_club/graphs/contributors)
+[![Pull Request Counts](https://img.shields.io/bitbucket/pr/darrenpig/new_energy_coder_club)](https://github.com/necc-hub/new_energy_coder_club/pulls)
 ![last commit](https://img.shields.io/github/last-commit/Darrenpig/new_energy_coder_club)
 [![Project](https://img.shields.io/badge/project-new_energy_coder_club-violet)](https://github.com/users/Darrenpig/projects/3)
 
@@ -278,7 +278,7 @@ new_energy_coder_club/
 
 想和我们快速搭上线？看这里！  
 
-- **💡 建议 & 合作**：欢迎来 [Gitee Issues 区](https://gitee.com/darrenpig/new_energy_coder_club/issues ) 提需求！无论是项目合作还是功能建议，我们都会仔细阅读并标记为 `讨论中`/`已采纳`
+- **💡 建议 & 合作**：欢迎来 [GitHub Issues](https://github.com/necc-hub/new_energy_coder_club/issues) 提需求！Issue、PR 与 CI 以 GitHub 为准，Gitee 用于国内访问镜像
 - **🌐 社交阵地**：  
   - **Gitee 动态**：[项目主页](https://gitee.com/darrenpig/new_energy_coder_club) 实时更新代码与公告  
   - **官方网站**：[newenergycoder.club](https://www.newenergycoder.club) 获取最新活动、文档与社区介绍  
@@ -287,7 +287,7 @@ new_energy_coder_club/
 
 **🚀 小贴士**  
 
-- **项目双平台同步**：代码仓库同时在 [GitHub](https://github.com/Darrenpig/new_energy_coder_club ) 和 [Gitee](https://gitee.com/darrenpig/new_energy_coder_club) 维护，国内推荐用 [Gitee](https://gitee.com/darrenpig/new_energy_coder_club) 加速访问
+- **平台分工**：[GitHub](https://github.com/necc-hub/new_energy_coder_club) 是 Issue、PR、CI 与正式规范的主入口；[Gitee](https://gitee.com/darrenpig/new_energy_coder_club) 提供国内访问镜像；飞书承载课程和社区知识库。内容冲突时，流程规范以本仓库为准
 <a id="ack-list"></a>
 - **赞助与合作**：企业级合作请联系邮箱<22230635@czu.cn>，开源贡献者请直接提 PR，你的名字将闪耀在**致谢名单** 🌟  
 - **紧急问题**：邮件标题加注【紧急】，我们会优先处理！  
@@ -306,29 +306,18 @@ new_energy_coder_club/
 <!-- ACKNOWLEDGMENTS -->
 ## 许可与合规（License & Compliance）
 
-- 主许可证: MIT（代码与文档遵循 MIT，见 [LICENSE](./LICENSE.md)）
-- 资料与第三方声明: README/Docs 中的外部链接、赛季资料索引仅作导航，版权归原作者/主办方所有
+- 主许可证: 木兰宽松许可证第 2 版（Mulan PSL v2，见 [LICENSE](./LICENSE.md)）
+- 资料与第三方声明: 第三方图纸、竞赛规则、厂商文档及外部资料仍归原作者/主办方所有，不随主许可证重新授权；引用时保留来源与授权说明
 - 安全与联系方式: 见 [SECURITY](./docs/SECURITY.md)，建议通过 Issues 报告安全问题
 - 行为准则与治理: 见 [Code of Conduct](./docs/CODE_OF_CONDUCT.md) 与 [Governance](./docs/GOVERNANCE.md)
 
 ## 🙋 新人任务看板（Help Wanted）
 
-- [Docs] 完善 2025 赛季运球机构文档  
-  - 链接: ./competitions/2025-robocon/  
-  - 验收: 文档结构规范、含图片/步骤、可复现  
-  - 预计: 2–3 小时  
-  - Owner: RC-SIG
-- [Hardware] 优化 ESP32 最小系统 PCB 丝印  
-  - 链接: ./projects/embedded/  
-  - 验收: 丝印清晰、针脚标注一致、Gerber 可导出  
-  - 预计: 半天  
-  - Owner: Embedded-SIG
-- [Code] 为 Duma 机器人增加一个控制 Demo  
-  - 链接: ./projects/robotics/人形机器人/  
-  - 验收: README 说明、可运行脚本、演示视频/截图  
-  - 预计: 1 天  
-  - Owner: Robotics-SIG
-→ 认领方式：在 Issue 评论 “I’d like to work on this” 或 `/assign me`，按 PR 模板提交
+- [查找 GitHub 上可领取的 `good first issue`](https://github.com/necc-hub/new_energy_coder_club/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+- [阅读新人任务与认领流程](./docs/start-here/first-good-issue.md)
+- [查看已设计的首批候选任务](./docs/contribute/good-first-issue-backlog.md)
+
+认领前请在 Issue 下说明预计完成时间；PR 中关联 Issue，并附上实际验证命令与结果。
 
 ---
 

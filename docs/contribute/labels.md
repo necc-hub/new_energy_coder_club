@@ -1,38 +1,29 @@
-# Labels 标签体系（NEC 标准）
+# Labels 标签体系
 
-> 目的：让新人能“看标签就知道我能不能做”，让维护者能“按标签快速分流”。
+> 只使用 GitHub 仓库中实际存在的标签，避免文档里写了标签、新人却筛不到任务。
 
-## 新人入口标签
-- `good first issue`：新人可做（<= 2 小时，几乎不需要上下文）
-- `help wanted`：需要帮助（>= 2 小时，可能需要一定上下文）
-- `mentor available`：有维护者愿意带（建议给新人更多打标）
+## 新人入口
 
-## 类型（Type）
-- `type:docs` 文档
-- `type:bug` 缺陷
-- `type:feature` 新功能
-- `type:refactor` 重构
-- `type:research` 调研/资料整理
-- `type:ops` 运营/流程/项目管理
+- `good first issue`：2 小时以内、有明确文件与验收标准的新人任务。
+- `help wanted`：需要社区帮助，可能需要更多上下文。
+- `documentation`：文档、教程、资料索引改进，适合多数首次贡献。
 
-## 技术域（Area）
-- `area:embedded` 嵌入式/单片机/RTOS
-- `area:ros` ROS/ROS2/micro-ROS
-- `area:vision` 视觉/SLAM
-- `area:hardware` 嵌硬件/EDA/焊接/驱动
-- `area:mechanical` 机械/CAD/3D打印/CNC
-- `area:pm` 项管/流程
-- `area:community` 社区/内容/宣传
-- `area:repo` 仓库结构/CI/模板
+## 通用类型
 
-## 难度（Difficulty）
-- `difficulty:1` 纯新手（可跟着文档做）
-- `difficulty:2` 入门（会一点点基础）
-- `difficulty:3` 需要一定项目经验
-- `difficulty:4` 核心模块（建议维护者带）
+- `bug`：可复现的缺陷。
+- `enhancement`：新功能或改进建议。
+- `question`：需要补充上下文的问题。
+- `duplicate` / `invalid` / `wontfix`：维护者分流时使用。
 
-## 状态（Status）
-- `status:ready` 可以开始
-- `status:blocked` 被阻塞（缺信息/等硬件/等人）
-- `status:in progress` 正在做（避免重复劳动）
-- `status:needs review` 等待评审
+## 难度、方向与状态
+
+难度、技术方向、预计耗时和带教人写在 Issue 模板的结构化字段中，不额外维护一套容易与 GitHub 实际配置脱节的标签。
+
+任务状态按以下方式表达：
+
+- **可认领**：Issue 开放且没有人认领。
+- **进行中**：维护者 assign 给贡献者，或在 Issue 中明确确认认领。
+- **等待评审**：关联 PR，并在 Issue 中保留链接。
+- **阻塞**：在 Issue 中说明缺少的信息、硬件或决策，解除阻塞后再更新。
+
+维护者新增标签时，应同步更新本页和相关 Issue 模板；不要让标签成为唯一的信息载体。

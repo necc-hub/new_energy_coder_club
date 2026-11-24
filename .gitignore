@@ -73,7 +73,9 @@ coverage/
 *.env
 .venv/
 venv/
-docs/nec_quickstart/out/
+docs/nec-quickstart/out/
+# 兼容旧版 Demo 的默认输出目录
+demos/nec_quickstart/out/
 .trae/
 _build/
 *.orig

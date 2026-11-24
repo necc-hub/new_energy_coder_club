@@ -17,6 +17,8 @@ REPO = Path(__file__).resolve().parents[2]
 EXCLUDE_DIRS = {".git", "node_modules", "_build", ".claude"}
 
 LINK_RE = re.compile(r"\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
+HTML_LINK_RE = re.compile(r"(?:href|src)=[\"']([^\"']+)[\"']", re.IGNORECASE)
+HTML_ANCHOR_RE = re.compile(r"\b(?:id|name)=[\"']([^\"']+)[\"']", re.IGNORECASE)
 
 
 def slugify(heading: str) -> str:
@@ -45,6 +47,8 @@ def heading_anchors(md_text: str) -> set:
         m = re.match(r"^(#{1,6})\s+(.*)", line)
         if m:
             anchors.add(slugify(m.group(2)))
+    # GitHub 也允许通过 HTML id/name 显式定义锚点，例如 <a id="readme-top">。
+    anchors.update(HTML_ANCHOR_RE.findall(md_text))
     return anchors
 
 
@@ -82,8 +86,9 @@ def main() -> int:
             filtered_lines.append("" if in_code else line)
         filtered = "\n".join(filtered_lines)
 
-        for m in LINK_RE.finditer(filtered):
-            target = m.group(2)
+        targets = [m.group(2) for m in LINK_RE.finditer(filtered)]
+        targets.extend(HTML_LINK_RE.findall(filtered))
+        for target in targets:
             if target.startswith(("http://", "https://", "mailto:", "tel:")):
                 continue
             # 剥离锚点

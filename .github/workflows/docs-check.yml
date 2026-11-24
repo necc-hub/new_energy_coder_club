@@ -27,7 +27,7 @@ jobs:
           set -e
           # actions/checkout 不含 .gitignore 里的未跟踪文件，但仓库历史中曾混入 ._* 文件
           # 检查已跟踪文件中是否存在垃圾文件
-          junk=$(git ls-files | grep -E '^(\._|.*[/]\._|\.DS_Store|Thumbs\.db)$' || true)
+          junk=$(git ls-files | grep -E '(^|/)(\._.*|\.DS_Store|Thumbs\.db)$' || true)
           if [ -n "$junk" ]; then
             echo "::error::发现不应入库的系统垃圾文件："
             echo "$junk"
@@ -91,7 +91,40 @@ jobs:
           printf '待检查文件: %s\n' "${FILES[@]}"
           python3 .github/scripts/check_links.py "${FILES[@]}"
 
-  # 4. 全量死链报告（仅报告不阻断，供维护者修复存量问题）
+  # 4. 核心入口始终严格检查，避免被“只检查改动文件”的策略放过
+  core-links:
+    name: Core navigation links
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check core entry points
+        run: |
+          python3 .github/scripts/check_links.py \
+            README.md \
+            CONTRIBUTING.md \
+            projects/README.md \
+            competitions/README.md \
+            competitions/CURC2027ROBOCON/README.md \
+            docs/start-here/60min.md
+
+  # 5. 无硬件最小 Demo 冒烟测试
+  quickstart:
+    name: Quickstart smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run demo and verify output
+        run: |
+          python3 docs/nec-quickstart/hello_nec.py --seconds 2
+          test -s docs/nec-quickstart/out/run_log.csv
+          echo "✅ 最小 Demo 已运行并在文档所述路径生成 run_log.csv"
+
+  # 6. 全量死链报告（仅报告不阻断，供维护者修复存量问题）
   link-report:
     name: Broken link report (non-blocking)
     runs-on: ubuntu-latest

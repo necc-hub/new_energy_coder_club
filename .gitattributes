@@ -1,5 +1,11 @@
-*.png filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.svg filter=lfs diff=lfs merge=lfs -text
+# 当前仓库没有使用 Git LFS；仅声明二进制文件，避免文本换行转换。
+# 启用 LFS 或迁移历史前，先阅读 docs/contribute/repository-assets.md。
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.step binary
+*.stp binary
+*.vsdx binary

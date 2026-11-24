@@ -11,7 +11,7 @@ Requirements:
 - Python 3.8+ (standard library only)
 
 Usage:
-    python demos/nec_quickstart/hello_nec.py --seconds 20
+    python docs/nec-quickstart/hello_nec.py --seconds 20
 """
 
 from __future__ import annotations
@@ -89,7 +89,7 @@ def main() -> int:
     parser.add_argument(
         "--out",
         type=str,
-        default="demos/nec_quickstart/out",
+        default="docs/nec-quickstart/out",
         help="Output directory for logs.",
     )
     args = parser.parse_args()
