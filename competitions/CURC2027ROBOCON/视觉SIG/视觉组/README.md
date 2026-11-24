@@ -41,7 +41,7 @@
 
 ### 课程资料
 
-- [ ] 参考 26 赛季视觉 SIG 资料：[competitions/CURC2026ROBOCON/视觉SIG](../CURC2026ROBOCON/视觉SIG/)
+- [ ] 参考[26 赛季视觉 SIG 资料](../../../CURC2026ROBOCON/视觉SIG/README.md)
 
 ---
 

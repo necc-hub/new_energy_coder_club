@@ -21,18 +21,21 @@
 ## 🛠️ 硬件平台
 
 ### 主控芯片
+
 - **型号**: [ESP32/STM32F4xx/WS63/其他]
 - **架构**: [ARM Cortex-M4/Xtensa LX6/其他]
 - **主频**: [240MHz/168MHz/其他]
 - **内存**: [RAM: 520KB, Flash: 4MB/其他]
 
 ### 外设模块
+
 - **传感器**: [温湿度传感器/IMU/摄像头/其他]
 - **通信模块**: [WiFi/蓝牙/LoRa/4G/其他]
 - **显示模块**: [OLED/LCD/LED/其他]
 - **存储模块**: [SD卡/EEPROM/其他]
 
 ### 开发板
+
 - **名称**: [开发板型号]
 - **厂商**: [厂商名称]
 - **购买链接**: [购买地址]
@@ -41,12 +44,14 @@
 ## 💻 软件架构
 
 ### 开发框架
+
 - **SDK**: [ESP-IDF/STM32CubeIDE/FBB SDK]
 - **RTOS**: [FreeRTOS/RT-Thread/LiteOS]
 - **编程语言**: [C/C++]
 - **构建系统**: [CMake/Make/其他]
 
 ### 通信协议
+
 - **无线协议**: [WiFi/蓝牙/星闪/LoRa]
 - **网络协议**: [TCP/UDP/HTTP/MQTT]
 - **串行协议**: [UART/SPI/I2C]
@@ -55,11 +60,13 @@
 ## 📋 功能特性
 
 ### 核心功能
+
 - [ ] 功能1：[详细描述]
 - [ ] 功能2：[详细描述]
 - [ ] 功能3：[详细描述]
 
 ### 扩展功能
+
 - [ ] 扩展功能1：[详细描述]
 - [ ] 扩展功能2：[详细描述]
 
@@ -68,6 +75,7 @@
 ### 开发环境搭建
 
 #### 工具安装
+
 ```bash
 # ESP32开发环境（示例）
 git clone --recursive https://github.com/espressif/esp-idf.git
@@ -81,6 +89,7 @@ cd esp-idf
 ```
 
 #### 项目配置
+
 ```bash
 # 克隆项目
 git clone [项目仓库地址]
@@ -96,6 +105,7 @@ idf.py build
 ### 硬件连接
 
 #### 引脚定义
+
 | 功能 | 引脚 | 说明 |
 |------|------|------|
 | LED | GPIO2 | 状态指示灯 |
@@ -105,7 +115,8 @@ idf.py build
 | SPI | GPIO18/GPIO19/GPIO23 | 显示屏接口 |
 
 #### 接线图
-```
+
+```text
 [在此处插入接线图或电路图]
 ```
 
@@ -124,7 +135,7 @@ idf.py build flash monitor
 
 ## 📁 项目结构
 
-```
+```text
 project_name/
 ├── README.md              # 项目说明文档
 ├── CMakeLists.txt         # 构建配置文件
@@ -169,6 +180,7 @@ project_name/
 ## 🔧 配置说明
 
 ### 系统配置
+
 ```c
 // app_config.h
 #define WIFI_SSID "your_wifi_ssid"
@@ -184,6 +196,7 @@ project_name/
 ```
 
 ### 功能配置
+
 ```c
 // 启用/禁用功能模块
 #define ENABLE_WIFI 1
@@ -200,18 +213,21 @@ project_name/
 ## 📊 性能指标
 
 ### 系统性能
+
 - **启动时间**: < 3秒
 - **响应时间**: < 100ms
 - **内存使用**: < 80%
 - **CPU使用率**: < 50%
 
 ### 通信性能
+
 - **WiFi连接时间**: < 10秒
 - **数据传输速率**: > 1Mbps
 - **通信距离**: > 50米
-- **功耗**: < 100mA@3.3V
+- **功耗**: < <100mA@3.3V>
 
 ### 可靠性指标
+
 - **连续运行时间**: > 7天
 - **错误率**: < 0.1%
 - **恢复时间**: < 30秒
@@ -219,6 +235,7 @@ project_name/
 ## 🧪 测试
 
 ### 单元测试
+
 ```bash
 # 编译测试
 idf.py build -T unit_tests
@@ -228,12 +245,14 @@ idf.py flash monitor -T unit_tests
 ```
 
 ### 集成测试
+
 - [ ] WiFi连接测试
 - [ ] 传感器数据采集测试
 - [ ] 显示功能测试
 - [ ] 通信协议测试
 
 ### 压力测试
+
 - [ ] 长时间运行测试
 - [ ] 高频数据传输测试
 - [ ] 极限环境测试
@@ -243,6 +262,7 @@ idf.py flash monitor -T unit_tests
 ### 常见问题
 
 #### 编译错误
+
 ```bash
 # 清理构建缓存
 idf.py fullclean
@@ -255,18 +275,21 @@ idf.py build
 ```
 
 #### 烧录失败
+
 - 检查USB连接
 - 确认开发板进入下载模式
 - 检查串口权限
 - 尝试降低波特率
 
 #### 运行异常
+
 - 检查串口输出日志
 - 使用调试器单步调试
 - 检查硬件连接
 - 验证配置参数
 
 ### 调试工具
+
 - **串口监控**: `idf.py monitor`
 - **GDB调试**: `idf.py gdb`
 - **内存分析**: `idf.py size`
@@ -275,22 +298,26 @@ idf.py build
 ## 📚 相关资源
 
 ### 官方文档
+
 - [ESP32技术参考手册](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/)
 - [STM32开发指南](https://www.st.com/zh/development-tools/stm32cubeide.html)
 - [华为星闪技术文档](https://www.hisilicon.com/)
 
 ### 开源项目
+
 - [ESP32 Arduino库](https://github.com/espressif/arduino-esp32)
 - [STM32 HAL库](https://github.com/STMicroelectronics/STM32CubeF4)
 - [物联网项目集合](https://github.com/phodal/awesome-iot)
 
 ### 学习资源
+
 - [嵌入式系统设计](https://www.coursera.org/specializations/embedded-systems)
 - [物联网开发实战](https://www.edx.org/course/introduction-to-the-internet-of-things-iot)
 
 ## 🤝 贡献指南
 
 ### 如何贡献
+
 1. Fork本项目
 2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
 3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
@@ -298,6 +325,7 @@ idf.py build
 5. 开启Pull Request
 
 ### 代码规范
+
 - 遵循Google C++编码规范
 - 使用有意义的函数和变量名
 - 添加详细的注释
@@ -305,7 +333,7 @@ idf.py build
 
 ## 📄 许可证
 
-本项目采用 [MIT License](LICENSE) 许可证。
+在 NEC 主仓库中默认采用[木兰宽松许可证第 2 版](../../../LICENSE.md)。独立项目应按实际情况选择许可证；第三方 SDK、图纸和资料仍遵循其原始授权。
 
 ## 📞 联系方式
 
@@ -316,11 +344,13 @@ idf.py build
 ## 📝 更新日志
 
 ### v1.0.0 (2025-01-XX)
+
 - 初始版本发布
 - 实现基础功能
 - 添加硬件驱动
 
 ### v0.1.0 (2025-01-XX)
+
 - 项目初始化
 - 搭建基础框架
 
