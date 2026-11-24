@@ -188,7 +188,7 @@ new_energy_coder_club/
         <li><a href="./projects/5axis-fluid-workstation/">🧠 5轴流体工作站</a> - 智能能源管理系统 · <a href="https://github.com/Darrenpig/5-axis-fluid-workstation">GitHub</a></li>
         <li><a href="./projects/robotics/机器狗-k230/">🐶 轮腿机器狗 K230 KFS</a> - 基于K230/KFS的轮腿机器狗工程</li>
         <li><a href="./docs/start-here/60min.md">🚀 Quickstart（新人上手）</a> · <a href="./docs/start-here/first-good-issue.md">First Good Issue</a> · <a href="https://gitee.com/darrenpig/new_energy_coder_club/issues">Join</a></li>
-        <li><a href="./projects/research-horizontal/README.md">🔬 科研横向项目</a> - 产学研合作项目总览</li>
+        <li><a href="./projects/research-horizontal/Readme.md">🔬 科研横向项目</a> - 产学研合作项目总览</li>
         <li><a href="./projects/research-horizontal/mica-validation/README.md">🎯 MICA验证项目</a> - 关键性验证与文档系统</li>
         <li><a href="./projects/templates/README.md">🛠️ 项目模板</a> - 标准化开发模板</li>
       </ul>

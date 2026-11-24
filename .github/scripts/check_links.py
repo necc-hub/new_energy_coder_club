@@ -52,6 +52,26 @@ def heading_anchors(md_text: str) -> set:
     return anchors
 
 
+def path_exists_case_sensitive(path: Path) -> bool:
+    """即使开发机使用 ExFAT/APFS 不敏感模式，也按 Linux CI 的规则检查路径。
+
+    仅比较路径段名，不强制大小写敏感文件系统；不存在时同样返回 False。
+    """
+    if not path.exists():
+        return False
+    current = path
+    while True:
+        parent = current.parent
+        if parent == current:
+            return True
+        try:
+            if current.name not in {entry.name for entry in parent.iterdir()}:
+                return False
+        except OSError:
+            return False
+        current = parent
+
+
 def main() -> int:
     errors = []
     # 支持两种模式：
@@ -105,8 +125,8 @@ def main() -> int:
                 target_path.relative_to(REPO)
             except ValueError:
                 continue  # 指向仓库外（如绝对路径），跳过
-            if not target_path.exists():
-                errors.append(f"{rel}: 链接目标不存在 {target}")
+            if not path_exists_case_sensitive(target_path):
+                errors.append(f"{rel}: 链接目标不存在或路径大小写不匹配 {target}")
             elif anchor:
                 if target_path.suffix == ".md":
                     try:
