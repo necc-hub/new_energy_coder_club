@@ -1,6 +1,6 @@
-# 首批 Good First Issue 候选任务
+# 首批 Good First Issue 任务
 
-> 这些任务已经完成文件定位与验收设计，但尚未发布到 GitHub。维护者使用 **Good first issue** 模板发布，并添加 `good first issue` 与相应类型标签。发布后在此页补充 Issue 链接，避免重复任务。
+> 已于 2026-11-24 发布到 GitHub，统一带有 `good first issue` 标签。认领前先在对应 Issue 下评论预计完成时间；任务完成后由维护者关闭 Issue，并在此保留交付 PR 链接。
 
 ## 通用提交要求
 
@@ -15,21 +15,27 @@ python3 .github/scripts/check_links.py <修改的Markdown文件>
 
 ## 1. 修复 2025 ROBOCON 上位机组文档内部链接
 
+**Issue**：[necc-hub/new_energy_coder_club#30](https://github.com/necc-hub/new_energy_coder_club/issues/30)
+
 - 文件：`competitions/2025-robocon/上位机组.md`
 - 类型：`documentation`
 - 预计：1–2 小时
-- 完成标准：修复当前约 23 个内部链接问题；该文件通过 markdownlint 与链接检查。
+- 完成标准：修复当前约 22 个内部链接问题；该文件通过 markdownlint 与链接检查。
 - 带教人：维护者认领后指定
 
 ## 2. 修复 2025 ROBOCON 赛季主页内部链接
 
+**Issue**：[necc-hub/new_energy_coder_club#31](https://github.com/necc-hub/new_energy_coder_club/issues/31)
+
 - 文件：`competitions/2025-robocon/Readme.md`
 - 类型：`documentation`
 - 预计：1–2 小时
-- 完成标准：修复当前约 20 个内部链接问题；不修改历史竞赛结论；该文件通过 markdownlint 与链接检查。
+- 完成标准：修复当前约 6 个内部链接问题；不修改历史竞赛结论；该文件通过 markdownlint 与链接检查。
 - 带教人：维护者认领后指定
 
 ## 3. 修复 2024 ROBOCON 电控组文档图片链接
+
+**Issue**：[necc-hub/new_energy_coder_club#32](https://github.com/necc-hub/new_energy_coder_club/issues/32)
 
 - 文件：`competitions/2024-robocon/电控组/Readme.md`
 - 类型：`documentation`
@@ -38,6 +44,8 @@ python3 .github/scripts/check_links.py <修改的Markdown文件>
 - 带教人：维护者认领后指定
 
 ## 4. 整理 MICA 验证文档入口与失效链接
+
+**Issue**：[necc-hub/new_energy_coder_club#33](https://github.com/necc-hub/new_energy_coder_club/issues/33)
 
 - 文件：`projects/research-horizontal/mica-validation/README.md`
 - 类型：`documentation`
@@ -48,6 +56,8 @@ python3 .github/scripts/check_links.py <修改的Markdown文件>
 
 ## 5. 补充 Quickstart 的 Windows 实际验证记录
 
+**Issue**：[necc-hub/new_energy_coder_club#34](https://github.com/necc-hub/new_energy_coder_club/issues/34)
+
 - 文件：`docs/start-here/60min.md`、`docs/nec-quickstart/README.md`
 - 类型：`documentation`
 - 预计：30–60 分钟
@@ -56,6 +66,8 @@ python3 .github/scripts/check_links.py <修改的Markdown文件>
 - 带教人：维护者认领后指定
 
 ## 6. 为 hello_nec.py 增加 `--plot` 开关
+
+**Issue**：[necc-hub/new_energy_coder_club#35](https://github.com/necc-hub/new_energy_coder_club/issues/35)
 
 - 文件：`docs/nec-quickstart/hello_nec.py`、`docs/nec-quickstart/README.md`
 - 类型：`enhancement`

@@ -42,7 +42,7 @@
 
 使用 Issue 模板 **Good first issue**。模板会强制填写背景、文件、完成标准、验证方法、耗时和带教人。不要把“学习某技术”“优化项目”“完善文档”这类没有交付物的条目直接标为新人任务。
 
-已设计但尚未发布的任务见[首批 Good First Issue 候选任务](../contribute/good-first-issue-backlog.md)；发布后应补回 GitHub Issue 链接。
+首批任务已经发布，见[首批 Good First Issue 任务及 Issue 链接](../contribute/good-first-issue-backlog.md)。后续新增任务也应在此登记，完成时补充交付 PR 链接。
 
 ## 提问格式
 
