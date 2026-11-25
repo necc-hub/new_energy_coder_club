@@ -1,6 +1,6 @@
 # 电控组
 
-> 27 赛季电控组目录，负责电路设计、嵌入式开发、联调支持等。
+> 27 赛季电控组仓库在https://gitee.com/wwzg469/2027-nec-rc-electronic_control；
 
 ---
 
